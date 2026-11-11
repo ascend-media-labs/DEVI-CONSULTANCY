@@ -7,109 +7,22 @@ import { Logo } from "./Logo";
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState("home");
   const location = useLocation();
 
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 20);
-
-      // On home page, track which section is currently on screen to move the active bubble
-      if (location.pathname === "/") {
-        // If near the top, home is active
-        if (window.scrollY < 180) {
-          setActiveSection("home");
-          return;
-        }
-
-        // If reached the bottom of the page, contact is active
-        const isBottom =
-          window.innerHeight + Math.round(window.scrollY) >=
-          document.documentElement.scrollHeight - 100;
-        if (isBottom) {
-          setActiveSection("contact");
-          return;
-        }
-
-        let current = "home";
-        for (const l of navLinks) {
-          const el = document.getElementById(l.id);
-          if (el) {
-            const rect = el.getBoundingClientRect();
-            // 160px trigger line below top of viewport
-            if (rect.top <= 160 && rect.bottom > 100) {
-              current = l.id;
-            }
-          }
-        }
-        setActiveSection(current);
-      }
     };
-
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, [location.pathname]);
+  }, []);
 
-  // When route changes, close mobile menu and reset scroll
+  // When route changes, close mobile menu and scroll to top smoothly
   useEffect(() => {
     setOpen(false);
-    if (location.pathname === "/") {
-      setActiveSection("home");
-    }
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, [location.pathname]);
-
-  // Check whether link should display active bubble
-  const isLinkActive = (l: (typeof navLinks)[number]) => {
-    if (location.pathname === "/") {
-      return activeSection === l.id;
-    }
-    return location.pathname === l.path;
-  };
-
-  // Smooth scroll handler when on home page
-  const handleNavClick = (e: React.MouseEvent, l: (typeof navLinks)[number]) => {
-    setOpen(false);
-    if (location.pathname === "/") {
-      e.preventDefault();
-      setActiveSection(l.id);
-
-      if (l.id === "home") {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-        window.history.pushState(null, "", "/");
-        return;
-      }
-
-      const el = document.getElementById(l.id);
-      if (el) {
-        const navHeight = 80;
-        const elementPosition = el.getBoundingClientRect().top + window.pageYOffset;
-        window.scrollTo({
-          top: elementPosition - navHeight,
-          behavior: "smooth",
-        });
-        window.history.pushState(null, "", `#${l.id}`);
-      }
-    }
-  };
-
-  const handleQuoteClick = (e: React.MouseEvent) => {
-    setOpen(false);
-    if (location.pathname === "/") {
-      e.preventDefault();
-      setActiveSection("contact");
-      const el = document.getElementById("contact");
-      if (el) {
-        const navHeight = 80;
-        const elementPosition = el.getBoundingClientRect().top + window.pageYOffset;
-        window.scrollTo({
-          top: elementPosition - navHeight,
-          behavior: "smooth",
-        });
-        window.history.pushState(null, "", "#contact");
-      }
-    }
-  };
 
   return (
     <header
@@ -123,7 +36,6 @@ export function Navbar() {
         {/* Brand Logo & Name */}
         <Link
           to="/"
-          onClick={(e) => handleNavClick(e, navLinks[0]!)}
           className="group flex shrink-0 items-center gap-2 sm:gap-2.5 xl:gap-3 cursor-pointer"
         >
           <div className="transition-transform duration-300 group-hover:scale-105 group-hover:drop-shadow-md">
@@ -137,12 +49,11 @@ export function Navbar() {
         {/* Desktop Navigation Links */}
         <ul className="hidden items-center gap-0.5 lg:flex xl:gap-1.5">
           {navLinks.map((l) => {
-            const isActive = isLinkActive(l);
+            const isActive = location.pathname === l.path;
             return (
               <li key={l.id} className="shrink-0">
                 <Link
                   to={l.path}
-                  onClick={(e) => handleNavClick(e, l)}
                   className={`inline-flex items-center rounded-full px-2 py-1 text-[11px] lg:px-2.5 lg:py-1.5 lg:text-xs xl:px-3.5 xl:py-1.5 xl:text-sm font-semibold whitespace-nowrap transition-all duration-300 cursor-pointer ${
                     isActive
                       ? "bg-brand/15 text-brand border border-brand/35 shadow-[0_0_16px_rgba(0,163,224,0.35)] backdrop-blur-sm"
@@ -159,7 +70,6 @@ export function Navbar() {
           <li className="ml-1 shrink-0 lg:ml-2 xl:ml-3">
             <Link
               to="/contact"
-              onClick={handleQuoteClick}
               className="inline-flex items-center justify-center whitespace-nowrap rounded-full bg-navy px-3 py-1.5 text-[11px] lg:px-3.5 lg:py-1.5 lg:text-xs xl:px-5.5 xl:py-2 xl:text-sm font-semibold text-primary-foreground shadow-sm transition-all duration-300 hover:bg-brand hover:shadow-[0_4px_16px_rgba(0,163,224,0.4)] hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
             >
               Get a Quote
@@ -185,12 +95,12 @@ export function Navbar() {
       >
         <ul className="min-h-0 px-4 py-2 sm:px-6">
           {navLinks.map((l) => {
-            const isActive = isLinkActive(l);
+            const isActive = location.pathname === l.path;
             return (
               <li key={l.id}>
                 <Link
                   to={l.path}
-                  onClick={(e) => handleNavClick(e, l)}
+                  onClick={() => setOpen(false)}
                   className={`block rounded-xl px-3.5 py-2.5 my-1 text-sm font-semibold transition-all duration-200 cursor-pointer ${
                     isActive
                       ? "bg-brand/15 text-brand border border-brand/35 shadow-xs"
@@ -205,7 +115,7 @@ export function Navbar() {
           <li className="pt-3 pb-4">
             <Link
               to="/contact"
-              onClick={handleQuoteClick}
+              onClick={() => setOpen(false)}
               className="block w-full text-center rounded-full bg-navy py-3 text-sm font-semibold text-primary-foreground hover:bg-brand cursor-pointer"
             >
               Get a Quote
