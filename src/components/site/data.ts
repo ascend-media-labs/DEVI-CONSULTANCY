@@ -23,7 +23,7 @@ export const navLinks = [
 export const contact = {
   phone: "+91 94401 33003",
   whatsapp: "919440133003",
-  email: "deviconsultancyknr@gmail.com",
+  email: "deviconsultancyofficial@gmail.com",
   address: "DEVI CONSULTANCY, Telangana, India",
 };
 
@@ -34,7 +34,7 @@ export const consultants = [
     qualifications: "B. Tech (Civil), M.I.E, FACCE(I), LMICI",
     role: "Consulting Civil Engineer",
     phone: "94401 33003",
-    email: "deviconsultancyknr@gmail.com",
+    email: "deviconsultancyofficial@gmail.com",
     image: "/founder.jpg",
   },
   {
@@ -42,7 +42,7 @@ export const consultants = [
     qualifications: "B. Tech (Civil), M.E.(Structures), M.Val (Real Estate), A.M.I.E, A.I.V, LMACCE (I)",
     role: "Structural Engineer & IBBI Registered Valuer",
     phone: "94401 33003",
-    email: "deviconsultancyknr@gmail.com",
+    email: "deviconsultancyofficial@gmail.com",
     image: "/karthikk.jpg",
   },
   {
@@ -50,7 +50,7 @@ export const consultants = [
     qualifications: "B. Tech (Civil)",
     role: "Ass. Project Manager & Interior Designer",
     phone: "94401 33003",
-    email: "deviconsultancyknr@gmail.com",
+    email: "deviconsultancyofficial@gmail.com",
     image: "/revanth.jpg",
   },
 ];
