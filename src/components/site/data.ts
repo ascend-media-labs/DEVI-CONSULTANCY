@@ -55,25 +55,39 @@ export const consultants = [
   },
 ];
 
-// 1. HOME Slides
+// 1. HOME Slides & Stats
+export const heroStats = [
+  { value: "26+", label: "Years Experience" },
+  { value: "350+", label: "Projects Completed" },
+  { value: "25+ Lakh", label: "Sq Ft Executed" },
+  { value: "100%", label: "Structural Precision" },
+  { value: "99%", label: "Client Satisfaction" },
+];
+
 export const slides = [
   {
     image: hero1,
-    eyebrow: "Since 2000",
-    title: "DEVI CONSULTANCY",
-    text: "Leaders in Quality Construction & Infrastructure.",
+    eyebrow: "Quality Construction & Infrastructure",
+    titlePrefix: "Engineering",
+    titleAccent: "Excellence.",
+    quote:
+      "Delivering world-class construction consultancy, architectural design & structural engineering with 26+ years of turnkey project experience across India.",
   },
   {
     image: hero2,
-    eyebrow: "Engineering Excellence",
-    title: "DEVI CONSULTANCY",
-    text: "Leaders in Quality Construction & Infrastructure.",
+    eyebrow: "Precision Structural Engineering",
+    titlePrefix: "Building",
+    titleAccent: "Trust & Safety.",
+    quote:
+      "Mastering innovative architectural concepts, rigorous quality inspections, and sustainable infrastructure built to endure for generations.",
   },
   {
     image: hero3,
-    eyebrow: "Since 2000",
-    title: "DEVI CONSULTANCY",
-    text: "Leaders in Quality Construction & Infrastructure.",
+    eyebrow: "Comprehensive Turnkey Solutions",
+    titlePrefix: "Designing",
+    titleAccent: "Tomorrow.",
+    quote:
+      "Transforming complex civil engineering concepts into landmark villas, commercial complexes, hospitals, and institutional edifices.",
   },
 ];
 
