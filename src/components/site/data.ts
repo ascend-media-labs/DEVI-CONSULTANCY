@@ -27,15 +27,25 @@ export const contact = {
   address: "DEVI CONSULTANCY, Telangana, India",
 };
 
-// Founder & Consulting Civil Engineer
-export const founder = {
-  name: "Er. Sabbani Srinivas",
-  qualifications: "B. Tech (Civil), M.I.E, FACCE(I), LMICI",
-  role: "Consulting Civil Engineer",
-  phone: "94401 33003",
-  email: "deviconsultancyknr@gmail.com",
-  image: "/founder.jpg",
-};
+// Leadership & Key Consultants
+export const consultants = [
+  {
+    name: "Er. Sabbani Srinivas",
+    qualifications: "B. Tech (Civil), M.I.E, FACCE(I), LMICI",
+    role: "Consulting Civil Engineer",
+    phone: "94401 33003",
+    email: "deviconsultancyknr@gmail.com",
+    image: "/founder.jpg",
+  },
+  {
+    name: "Er. Vr. Karthikk Sabbani",
+    qualifications: "B. Tech (Civil), M.E.(Structures), M.Val (Real Estate), A.M.I.E, A.I.V, LMACCE (I)",
+    role: "Structural Engineer & IBBI Registered Valuer",
+    phone: "94401 33003",
+    email: "deviconsultancyknr@gmail.com",
+    image: "/karthikk.jpg",
+  },
+];
 
 // 1. HOME Slides
 export const slides = [
