@@ -32,36 +32,36 @@ export function Hero() {
             alt={`${s.titlePrefix} ${s.titleAccent}`}
             width={1920}
             height={1088}
-            className={`h-full w-full object-cover brightness-[0.38] contrast-[1.05] ${
+            className={`h-full w-full object-cover brightness-[0.35] contrast-[1.08] ${
               idx === i ? "animate-ken-burns" : ""
             }`}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/60 to-navy-deep/75 backdrop-blur-[1px]" />
+          <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/65 to-navy-deep/80 backdrop-blur-[1px]" />
         </div>
       ))}
 
-      {/* Subtle ambient lighting accent */}
-      <div className="pointer-events-none absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2 h-96 w-[600px] rounded-full bg-amber-500/10 blur-3xl animate-pulse-glow" />
+      {/* Subtle ambient lighting accent matching logo cyan brand */}
+      <div className="pointer-events-none absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2 h-96 w-[650px] rounded-full bg-[#00a3e0]/15 blur-3xl animate-pulse-glow" />
 
       {/* Centered Hero Content */}
       <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-1 flex-col items-center justify-center px-4 pt-12 pb-6 text-center sm:px-6 sm:pt-16 sm:pb-8 lg:px-8">
         <div key={i} className="flex flex-col items-center">
           {/* Eyebrow badge */}
-          <p className="animate-fade-up inline-flex items-center gap-2 rounded-full border border-white/15 bg-black/45 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-white/90 backdrop-blur-md sm:text-xs">
-            <span className="h-2 w-2 rounded-full bg-amber-400 animate-pulse shadow-[0_0_8px_rgba(251,191,36,0.8)]" />
+          <p className="animate-fade-up inline-flex items-center gap-2 rounded-full border border-cyan-400/25 bg-black/50 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-cyan-200 backdrop-blur-md sm:text-xs">
+            <span className="h-2 w-2 rounded-full bg-[#00a3e0] animate-pulse shadow-[0_0_10px_rgba(0,163,224,0.9)]" />
             {cur.eyebrow}
           </p>
 
           {/* 2-Tone Headline */}
           <h1 className="animate-fade-up mt-4 text-3xl font-extrabold tracking-tight text-white drop-shadow-md [animation-delay:120ms] sm:mt-5 sm:text-5xl lg:text-6xl xl:text-7xl">
             {cur.titlePrefix}{" "}
-            <span className="text-amber-400 drop-shadow-[0_2px_16px_rgba(245,158,11,0.35)]">
+            <span className="bg-gradient-to-r from-cyan-400 via-[#00a3e0] to-sky-300 bg-clip-text text-transparent drop-shadow-[0_2px_24px_rgba(0,163,224,0.5)]">
               {cur.titleAccent}
             </span>
           </h1>
 
           {/* Crisp, simple quote/tagline */}
-          <p className="animate-fade-up mt-4 max-w-2xl text-sm font-normal leading-relaxed text-white/85 drop-shadow-sm [animation-delay:240ms] sm:mt-5 sm:text-base lg:text-lg">
+          <p className="animate-fade-up mt-4 max-w-2xl text-sm font-normal leading-relaxed text-slate-200/90 drop-shadow-sm [animation-delay:240ms] sm:mt-5 sm:text-base lg:text-lg">
             {cur.quote}
           </p>
 
@@ -69,14 +69,14 @@ export function Hero() {
           <div className="animate-fade-up mt-6 flex flex-wrap items-center justify-center gap-3.5 [animation-delay:360ms] sm:mt-7 sm:gap-4">
             <a
               href="#contact"
-              className="group inline-flex items-center gap-2 rounded-full bg-amber-400 px-6 py-3 text-xs font-bold text-slate-950 shadow-[0_4px_20px_rgba(245,158,11,0.35)] transition-all duration-300 hover:bg-amber-300 hover:shadow-[0_6px_25px_rgba(245,158,11,0.5)] hover:-translate-y-0.5 active:translate-y-0 sm:px-7 sm:py-3.5 sm:text-sm"
+              className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#00a3e0] to-[#0284c7] px-6 py-3 text-xs font-bold text-white shadow-[0_4px_22px_rgba(0,163,224,0.45)] transition-all duration-300 hover:from-cyan-400 hover:to-[#00a3e0] hover:shadow-[0_6px_28px_rgba(0,163,224,0.65)] hover:-translate-y-0.5 active:translate-y-0 sm:px-7 sm:py-3.5 sm:text-sm"
             >
               Get Free Quote
               <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
             </a>
             <a
               href="#projects"
-              className="group inline-flex items-center gap-2 rounded-full border border-white/25 bg-black/40 px-6 py-3 text-xs font-medium text-white backdrop-blur-md transition-all duration-300 hover:border-white/50 hover:bg-white/10 hover:-translate-y-0.5 active:translate-y-0 sm:px-7 sm:py-3.5 sm:text-sm"
+              className="group inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-slate-900/60 px-6 py-3 text-xs font-medium text-white backdrop-blur-md transition-all duration-300 hover:border-cyan-400/60 hover:bg-cyan-950/40 hover:-translate-y-0.5 active:translate-y-0 sm:px-7 sm:py-3.5 sm:text-sm"
             >
               View Projects
               <ChevronRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
@@ -92,7 +92,7 @@ export function Hero() {
                 onClick={() => go(idx)}
                 className={`transition-all duration-300 ${
                   idx === i
-                    ? "h-1.5 w-7 rounded-full bg-amber-400 shadow-[0_0_10px_rgba(251,191,36,0.8)]"
+                    ? "h-1.5 w-8 rounded-full bg-cyan-400 shadow-[0_0_12px_rgba(0,163,224,0.9)]"
                     : "h-2 w-2 rounded-full bg-white/35 hover:bg-white/60"
                 }`}
               />
@@ -107,14 +107,14 @@ export function Hero() {
           {heroStats.map((stat, idx) => (
             <div
               key={idx}
-              className={`flex flex-col items-center justify-center rounded-2xl border border-white/10 bg-slate-950/60 p-3.5 sm:p-5 text-center shadow-xl backdrop-blur-md transition-all duration-300 hover:border-amber-400/40 hover:bg-slate-950/75 hover:-translate-y-0.5 ${
+              className={`flex flex-col items-center justify-center rounded-2xl border border-cyan-500/20 bg-slate-950/65 p-3.5 sm:p-5 text-center shadow-xl backdrop-blur-md transition-all duration-300 hover:border-cyan-400/50 hover:bg-slate-950/80 hover:shadow-[0_8px_30px_rgba(0,163,224,0.2)] hover:-translate-y-0.5 ${
                 idx === 4 ? "col-span-2 sm:col-span-1" : ""
               }`}
             >
-              <span className="text-xl font-extrabold tracking-tight text-amber-400 sm:text-2xl lg:text-3xl">
+              <span className="text-xl font-extrabold tracking-tight text-cyan-400 drop-shadow-[0_2px_12px_rgba(0,163,224,0.35)] sm:text-2xl lg:text-3xl">
                 {stat.value}
               </span>
-              <span className="mt-1 text-[10px] font-semibold uppercase tracking-wider text-white/70 sm:text-xs">
+              <span className="mt-1 text-[10px] font-semibold uppercase tracking-wider text-slate-300 sm:text-xs">
                 {stat.label}
               </span>
             </div>
