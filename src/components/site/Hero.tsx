@@ -33,16 +33,16 @@ export function Hero() {
             alt={`${s.titlePrefix} ${s.titleAccent}`}
             width={1920}
             height={1088}
-            className={`h-full w-full object-cover brightness-[0.35] contrast-[1.08] ${
+            className={`h-full w-full object-cover brightness-[0.48] contrast-[1.05] ${
               idx === i ? "animate-ken-burns" : ""
             }`}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/65 to-navy-deep/80 backdrop-blur-[1px]" />
+          <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/45 to-navy-deep/60 backdrop-blur-[0.5px]" />
         </div>
       ))}
 
-      {/* Subtle ambient lighting accent matching logo cyan brand */}
-      <div className="pointer-events-none absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2 h-96 w-[650px] rounded-full bg-[#00a3e0]/15 blur-3xl animate-pulse-glow" />
+      {/* Subtle ambient lighting accent matching logo cyan brand - reduced blue opacity */}
+      <div className="pointer-events-none absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2 h-96 w-[650px] rounded-full bg-[#00a3e0]/5 blur-3xl animate-pulse-glow" />
 
       {/* Centered Hero Content */}
       <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-1 flex-col items-center justify-center px-4 pt-12 pb-6 text-center sm:px-6 sm:pt-16 sm:pb-8 lg:px-8">
