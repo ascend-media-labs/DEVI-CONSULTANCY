@@ -21,10 +21,20 @@ export const navLinks = [
 
 // Contact details
 export const contact = {
-  phone: "+91 00000 00000",
-  whatsapp: "910000000000",
-  email: "info@deviconsultancy.com",
-  address: "Office address, City, State, India",
+  phone: "+91 94401 33003",
+  whatsapp: "919440133003",
+  email: "deviconsultancyknr@gmail.com",
+  address: "DEVI CONSULTANCY, Telangana, India",
+};
+
+// Founder & Consulting Civil Engineer
+export const founder = {
+  name: "Er. Sabbani Srinivas",
+  qualifications: "B. Tech (Civil), M.I.E, FACCE(I), LMICI",
+  role: "Consulting Civil Engineer",
+  phone: "94401 33003",
+  email: "deviconsultancyknr@gmail.com",
+  image: "/founder.jpg",
 };
 
 // 1. HOME Slides

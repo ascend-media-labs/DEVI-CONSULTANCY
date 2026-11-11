@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import { Eye, Target } from "lucide-react";
-import { aboutData, images } from "./data";
+import { Eye, Target, Phone, Mail } from "lucide-react";
+import { aboutData, images, founder } from "./data";
 
 function YearsCounter() {
   const target = new Date().getFullYear() - aboutData.establishedYear;
@@ -108,41 +108,94 @@ export function About() {
             {aboutData.aboutUs}
           </p>
 
-          <div className="mt-4 grid gap-2.5 sm:mt-5 sm:gap-3.5 xl:gap-4">
-            {/* 3. VISION */}
-            <div
-              className={`transition-all duration-1000 delay-450 ease-out transform ${
-                inView ? "translate-x-0 opacity-100" : "-translate-x-10 sm:-translate-x-16 opacity-0"
-              }`}
-            >
-              <div className="group card-glow flex items-start gap-3 rounded-2xl border border-border bg-card p-3.5 shadow-sm cursor-pointer sm:gap-3.5 sm:p-4 xl:p-5">
-                <div className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-secondary text-brand transition-all duration-300 group-hover:scale-110 group-hover:bg-brand group-hover:text-white group-hover:shadow-[0_0_15px_rgba(0,163,224,0.4)] sm:h-10 sm:w-10 xl:h-11 xl:w-11">
-                  <Eye size={20} />
+          <div className="mt-4 grid gap-3 sm:mt-5 sm:gap-3.5">
+            {/* 3. VISION & 4. MISSION in 2 columns */}
+            <div className="grid gap-3 sm:grid-cols-2">
+              {/* VISION */}
+              <div
+                className={`transition-all duration-1000 delay-450 ease-out transform ${
+                  inView ? "translate-x-0 opacity-100" : "-translate-x-10 sm:-translate-x-16 opacity-0"
+                }`}
+              >
+                <div className="group card-glow h-full flex items-start gap-3 rounded-2xl border border-border bg-card p-3.5 shadow-sm cursor-pointer sm:p-4">
+                  <div className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-secondary text-brand transition-all duration-300 group-hover:scale-110 group-hover:bg-brand group-hover:text-white group-hover:shadow-[0_0_15px_rgba(0,163,224,0.4)] sm:h-10 sm:w-10">
+                    <Eye size={20} />
+                  </div>
+                  <div className="min-w-0">
+                    <h3 className="text-sm font-bold text-navy transition-colors group-hover:text-brand sm:text-base">Our Vision</h3>
+                    <p className="mt-0.5 text-xs leading-relaxed text-muted-foreground text-justify">
+                      {aboutData.vision}
+                    </p>
+                  </div>
                 </div>
-                <div className="min-w-0">
-                  <h3 className="text-sm font-bold text-navy transition-colors group-hover:text-brand sm:text-base xl:text-lg">Our Vision</h3>
-                  <p className="mt-0.5 text-xs leading-relaxed text-muted-foreground text-justify sm:mt-1 sm:text-sm">
-                    {aboutData.vision}
-                  </p>
+              </div>
+
+              {/* MISSION */}
+              <div
+                className={`transition-all duration-1000 delay-600 ease-out transform ${
+                  inView ? "translate-x-0 opacity-100" : "-translate-x-10 sm:-translate-x-16 opacity-0"
+                }`}
+              >
+                <div className="group card-glow h-full flex items-start gap-3 rounded-2xl border border-border bg-card p-3.5 shadow-sm cursor-pointer sm:p-4">
+                  <div className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-secondary text-brand transition-all duration-300 group-hover:scale-110 group-hover:bg-brand group-hover:text-white group-hover:shadow-[0_0_15px_rgba(0,163,224,0.4)] sm:h-10 sm:w-10">
+                    <Target size={20} />
+                  </div>
+                  <div className="min-w-0">
+                    <h3 className="text-sm font-bold text-navy transition-colors group-hover:text-brand sm:text-base">Our Mission</h3>
+                    <p className="mt-0.5 text-xs leading-relaxed text-muted-foreground text-justify">
+                      {aboutData.mission}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* 4. MISSION */}
+            {/* 5. CONSULTING CIVIL ENGINEER PROFILE */}
             <div
-              className={`transition-all duration-1000 delay-600 ease-out transform ${
+              className={`transition-all duration-1000 delay-700 ease-out transform ${
                 inView ? "translate-x-0 opacity-100" : "-translate-x-10 sm:-translate-x-16 opacity-0"
               }`}
             >
-              <div className="group card-glow flex items-start gap-3 rounded-2xl border border-border bg-card p-3.5 shadow-sm cursor-pointer sm:gap-3.5 sm:p-4 xl:p-5">
-                <div className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-secondary text-brand transition-all duration-300 group-hover:scale-110 group-hover:bg-brand group-hover:text-white group-hover:shadow-[0_0_15px_rgba(0,163,224,0.4)] sm:h-10 sm:w-10 xl:h-11 xl:w-11">
-                  <Target size={20} />
+              <div className="group card-glow flex flex-col sm:flex-row items-center sm:items-start gap-3.5 sm:gap-4.5 rounded-2xl border border-brand/30 bg-gradient-to-r from-card via-card to-brand/5 p-4 shadow-sm cursor-pointer sm:p-4.5">
+                {/* Founder Photo */}
+                <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-2xl border-2 border-brand/40 shadow-sm sm:h-22 sm:w-22">
+                  <img
+                    src={founder.image}
+                    alt={`${founder.name} - ${founder.role}`}
+                    className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  />
                 </div>
-                <div className="min-w-0">
-                  <h3 className="text-sm font-bold text-navy transition-colors group-hover:text-brand sm:text-base xl:text-lg">Our Mission</h3>
-                  <p className="mt-0.5 text-xs leading-relaxed text-muted-foreground text-justify sm:mt-1 sm:text-sm">
-                    {aboutData.mission}
+
+                {/* Founder Details */}
+                <div className="min-w-0 flex-1 text-center sm:text-left">
+                  <div className="flex flex-wrap items-center justify-center sm:justify-start gap-1.5">
+                    <h3 className="font-display text-base font-bold text-navy transition-colors group-hover:text-brand sm:text-lg">
+                      {founder.name}
+                    </h3>
+                  </div>
+                  <p className="text-xs font-bold text-brand uppercase tracking-wider sm:text-xs">
+                    {founder.role}
                   </p>
+                  <p className="mt-0.5 text-[11px] font-semibold text-muted-foreground sm:text-xs">
+                    {founder.qualifications}
+                  </p>
+
+                  <div className="mt-2.5 flex flex-wrap items-center justify-center sm:justify-start gap-x-4 gap-y-1 text-xs">
+                    <a
+                      href={`tel:${founder.phone.replace(/\s/g, "")}`}
+                      className="inline-flex items-center gap-1.5 font-semibold text-navy transition-colors hover:text-brand"
+                    >
+                      <Phone size={13} className="text-brand shrink-0" />
+                      <span>{founder.phone}</span>
+                    </a>
+                    <a
+                      href={`mailto:${founder.email}`}
+                      className="inline-flex items-center gap-1.5 font-semibold text-navy transition-colors hover:text-brand"
+                    >
+                      <Mail size={13} className="text-brand shrink-0" />
+                      <span className="break-all">{founder.email}</span>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
