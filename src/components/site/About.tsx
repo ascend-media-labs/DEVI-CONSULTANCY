@@ -121,15 +121,15 @@ export function About({ isDedicatedPage = false }: AboutProps) {
                 </p>
               </div>
 
-              {/* 3. VISION & 4. MISSION in 2 columns */}
-              <div className="mt-4 sm:mt-5 grid gap-3.5 sm:grid-cols-2">
+              {/* 3. VISION & 4. MISSION in column-wise line by line */}
+              <div className="mt-4 sm:mt-5 flex flex-col gap-3 sm:gap-3.5">
                 {/* VISION */}
                 <div
                   className={`transition-all duration-1000 delay-450 ease-out transform ${
                     inView ? "translate-x-0 opacity-100" : "-translate-x-10 sm:-translate-x-16 opacity-0"
                   }`}
                 >
-                  <div className="group card-glow h-full flex items-start gap-3 rounded-2xl border border-border bg-card p-4 shadow-sm cursor-pointer">
+                  <div className="group card-glow flex items-start gap-3.5 rounded-2xl border border-border bg-card p-3.5 sm:p-4 shadow-sm cursor-pointer">
                     <div className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-secondary text-brand transition-all duration-300 group-hover:scale-110 group-hover:bg-brand group-hover:text-white group-hover:shadow-[0_0_15px_rgba(0,163,224,0.4)]">
                       <Eye size={20} />
                     </div>
@@ -148,7 +148,7 @@ export function About({ isDedicatedPage = false }: AboutProps) {
                     inView ? "translate-x-0 opacity-100" : "-translate-x-10 sm:-translate-x-16 opacity-0"
                   }`}
                 >
-                  <div className="group card-glow h-full flex items-start gap-3 rounded-2xl border border-border bg-card p-4 shadow-sm cursor-pointer">
+                  <div className="group card-glow flex items-start gap-3.5 rounded-2xl border border-border bg-card p-3.5 sm:p-4 shadow-sm cursor-pointer">
                     <div className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-secondary text-brand transition-all duration-300 group-hover:scale-110 group-hover:bg-brand group-hover:text-white group-hover:shadow-[0_0_15px_rgba(0,163,224,0.4)]">
                       <Target size={20} />
                     </div>
