@@ -45,6 +45,14 @@ export const consultants = [
     email: "deviconsultancyknr@gmail.com",
     image: "/karthikk.jpg",
   },
+  {
+    name: "Er. Sabbani Sai Revanth",
+    qualifications: "B. Tech (Civil)",
+    role: "Ass. Project Manager & Interior Designer",
+    phone: "94401 33003",
+    email: "deviconsultancyknr@gmail.com",
+    image: "/revanth.jpg",
+  },
 ];
 
 // 1. HOME Slides

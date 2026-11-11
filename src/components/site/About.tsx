@@ -150,21 +150,21 @@ export function About() {
               </div>
             </div>
 
-            {/* 5. CONSULTING & STRUCTURAL ENGINEERS PROFILE CARDS */}
-            <div className="grid gap-3 sm:grid-cols-2">
+            {/* 5. CONSULTING & STRUCTURAL ENGINEERING TEAM */}
+            <div className="grid gap-2.5 sm:grid-cols-3 sm:gap-3">
               {consultants.map((c, idx) => (
                 <div
                   key={c.name}
                   className={`transition-all duration-1000 ${
-                    idx === 0 ? "delay-700" : "delay-800"
+                    idx === 0 ? "delay-650" : idx === 1 ? "delay-750" : "delay-850"
                   } ease-out transform ${
                     inView ? "translate-x-0 opacity-100" : "-translate-x-10 sm:-translate-x-16 opacity-0"
                   }`}
                 >
-                  <div className="group card-glow h-full flex flex-col justify-between rounded-2xl border border-brand/30 bg-gradient-to-br from-card via-card to-brand/5 p-3.5 shadow-sm cursor-pointer sm:p-4">
-                    <div className="flex items-start gap-3">
+                  <div className="group card-glow h-full flex flex-col justify-between items-center rounded-2xl border border-brand/25 bg-gradient-to-b from-card via-card to-brand/5 p-3 text-center shadow-sm cursor-pointer sm:p-3.5">
+                    <div className="flex flex-col items-center w-full">
                       {/* Photo */}
-                      <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-xl border-2 border-brand/40 shadow-sm sm:h-18 sm:w-18">
+                      <div className="relative h-18 w-18 shrink-0 overflow-hidden rounded-xl border-2 border-brand/40 shadow-sm sm:h-20 sm:w-20">
                         <img
                           src={c.image}
                           alt={`${c.name} - ${c.role}`}
@@ -173,34 +173,33 @@ export function About() {
                       </div>
 
                       {/* Details */}
-                      <div className="min-w-0 flex-1">
-                        <h3 className="font-display text-sm font-bold text-navy transition-colors group-hover:text-brand sm:text-base">
-                          {c.name}
-                        </h3>
-                        <p className="mt-0.5 text-[11px] font-bold text-brand uppercase tracking-wider sm:text-xs">
-                          {c.role}
-                        </p>
-                        <p className="mt-1 text-[10px] leading-tight font-semibold text-muted-foreground sm:text-[11px]">
-                          {c.qualifications}
-                        </p>
-                      </div>
+                      <h3 className="font-display mt-2 text-xs font-bold text-navy transition-colors group-hover:text-brand sm:text-sm">
+                        {c.name}
+                      </h3>
+                      <p className="mt-0.5 text-[10px] font-bold text-brand uppercase tracking-wider leading-tight sm:text-[11px]">
+                        {c.role}
+                      </p>
+                      <p className="mt-1 text-[9px] leading-tight font-semibold text-muted-foreground sm:text-[10px]">
+                        {c.qualifications}
+                      </p>
                     </div>
 
                     {/* Contact links */}
-                    <div className="mt-2.5 flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-border/60 pt-2 text-[11px] sm:text-xs">
+                    <div className="mt-2.5 flex items-center justify-center gap-2 border-t border-border/60 pt-2 text-[10px] w-full">
                       <a
                         href={`tel:${c.phone.replace(/\s/g, "")}`}
                         className="inline-flex items-center gap-1 font-semibold text-navy transition-colors hover:text-brand"
                       >
-                        <Phone size={12} className="text-brand shrink-0" />
-                        <span>{c.phone}</span>
+                        <Phone size={11} className="text-brand shrink-0" />
+                        <span>Call</span>
                       </a>
+                      <span className="text-border">•</span>
                       <a
                         href={`mailto:${c.email}`}
                         className="inline-flex items-center gap-1 font-semibold text-navy transition-colors hover:text-brand"
                       >
-                        <Mail size={12} className="text-brand shrink-0" />
-                        <span className="truncate max-w-[130px] sm:max-w-none">{c.email}</span>
+                        <Mail size={11} className="text-brand shrink-0" />
+                        <span>Email</span>
                       </a>
                     </div>
                   </div>
