@@ -7,22 +7,65 @@ import { Logo } from "./Logo";
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
   const location = useLocation();
 
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 20);
+
+      // On home page, track which section is currently in view to move the active glowing bubble
+      if (location.pathname === "/") {
+        // If near the top, home is active
+        if (window.scrollY < 200) {
+          setActiveSection("home");
+          return;
+        }
+
+        // If reached near bottom of page, contact is active
+        const isBottom =
+          window.innerHeight + Math.round(window.scrollY) >=
+          document.documentElement.scrollHeight - 100;
+        if (isBottom) {
+          setActiveSection("contact");
+          return;
+        }
+
+        let current = "home";
+        for (const l of navLinks) {
+          const el = document.getElementById(l.id);
+          if (el) {
+            const rect = el.getBoundingClientRect();
+            // Header is 80px high, 200px offset gives responsive trigger
+            if (rect.top <= 200 && rect.bottom > 120) {
+              current = l.id;
+            }
+          }
+        }
+        setActiveSection(current);
+      }
     };
+
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [location.pathname]);
 
   // When route changes, close mobile menu and scroll to top smoothly
   useEffect(() => {
     setOpen(false);
+    if (location.pathname === "/") {
+      setActiveSection("home");
+    }
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [location.pathname]);
+
+  const isLinkActive = (l: (typeof navLinks)[number]) => {
+    if (location.pathname === "/") {
+      return activeSection === l.id;
+    }
+    return location.pathname === l.path;
+  };
 
   return (
     <header
@@ -49,7 +92,7 @@ export function Navbar() {
         {/* Desktop Navigation Links */}
         <ul className="hidden items-center gap-0.5 lg:flex xl:gap-1.5">
           {navLinks.map((l) => {
-            const isActive = location.pathname === l.path;
+            const isActive = isLinkActive(l);
             return (
               <li key={l.id} className="shrink-0">
                 <Link
@@ -95,7 +138,7 @@ export function Navbar() {
       >
         <ul className="min-h-0 px-4 py-2 sm:px-6">
           {navLinks.map((l) => {
-            const isActive = location.pathname === l.path;
+            const isActive = isLinkActive(l);
             return (
               <li key={l.id}>
                 <Link
