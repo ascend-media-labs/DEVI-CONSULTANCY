@@ -30,7 +30,7 @@ function YearsCounter() {
 
 export function About() {
   const sectionRef = useRef<HTMLElement>(null);
-  const [inView, setInView] = useState(false);
+  const [inView, setInView] = useState(true);
 
   useEffect(() => {
     const el = sectionRef.current;

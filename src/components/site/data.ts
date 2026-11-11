@@ -10,13 +10,13 @@ import about from "@/assets/about.jpg";
 export const images = { hero1, hero2, hero3, commercial, industrial, construction, villa, about };
 
 export const navLinks = [
-  { id: "home", label: "Home" },
-  { id: "about", label: "About Us" },
-  { id: "services", label: "Services" },
-  { id: "projects", label: "Project Categories" },
-  { id: "achievements", label: "Achievements" },
-  { id: "testimonials", label: "Testimonials" },
-  { id: "contact", label: "Contact Us" },
+  { id: "home", path: "/", label: "Home" },
+  { id: "about", path: "/about", label: "About Us" },
+  { id: "services", path: "/services", label: "Services" },
+  { id: "projects", path: "/projects", label: "Project Categories" },
+  { id: "achievements", path: "/achievements", label: "Achievements" },
+  { id: "testimonials", path: "/testimonials", label: "Testimonials" },
+  { id: "contact", path: "/contact", label: "Contact Us" },
 ];
 
 // Contact details

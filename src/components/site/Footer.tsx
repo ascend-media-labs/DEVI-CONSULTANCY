@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { contact, navLinks, services } from "./data";
 import { Logo } from "./Logo";
@@ -72,31 +73,13 @@ const socialLinks = [
 ];
 
 export function Footer() {
-  const navigateTo = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
-    e.preventDefault();
-    if (targetId === "home") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      window.history.pushState(null, "", "#home");
-      return;
-    }
-    const el = document.getElementById(targetId);
-    if (el) {
-      const navHeight = 80;
-      const elementPosition = el.getBoundingClientRect().top + window.pageYOffset;
-      window.scrollTo({
-        top: elementPosition - navHeight,
-        behavior: "smooth",
-      });
-      window.history.pushState(null, "", `#${targetId}`);
-      window.dispatchEvent(new HashChangeEvent("hashchange"));
-    }
-  };
-
   return (
     <footer className="bg-navy-deep text-primary-foreground/75">
       <div className="mx-auto grid max-w-7xl gap-8 px-4 py-8 sm:py-10 sm:grid-cols-2 sm:px-6 lg:grid-cols-4 lg:px-8">
         <div>
-          <Logo className="h-20 w-20 transition-transform duration-300 hover:scale-105" />
+          <Link to="/" className="inline-block">
+            <Logo className="h-20 w-20 transition-transform duration-300 hover:scale-105" />
+          </Link>
           <p className="mt-4 text-xs leading-relaxed text-primary-foreground/75 sm:text-sm text-justify">
             DEVI CONSULTANCY — Leaders in Quality Construction &amp; Infrastructure, serving clients since 2000.
           </p>
@@ -120,13 +103,12 @@ export function Footer() {
           <ul className="mt-4 space-y-2.5 text-xs sm:text-sm">
             {navLinks.map((l) => (
               <li key={l.id}>
-                <a
-                  href={`#${l.id}`}
-                  onClick={(e) => navigateTo(e, l.id)}
+                <Link
+                  to={l.path}
                   className="transition-colors hover:text-brand"
                 >
                   {l.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -137,13 +119,13 @@ export function Footer() {
           <ul className="mt-4 space-y-2.5 text-xs sm:text-sm">
             {services.map((s) => (
               <li key={s.title}>
-                <a
-                  href={`#${s.id}`}
-                  onClick={(e) => navigateTo(e, s.id)}
+                <Link
+                  to="/services"
+                  hash={s.id}
                   className="transition-colors hover:text-brand"
                 >
                   {s.title}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
