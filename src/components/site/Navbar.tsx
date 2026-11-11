@@ -75,7 +75,7 @@ export function Navbar() {
           : "bg-background/95 backdrop-blur-sm"
       }`}
     >
-      <nav className="mx-auto flex h-20 max-w-[1400px] items-center justify-between gap-1 sm:gap-2 px-3 sm:px-6 lg:px-6 xl:px-8">
+      <nav className="mx-auto flex h-20 w-full max-w-[1800px] items-center justify-between gap-1 sm:gap-2 px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
         {/* Brand Logo & Name */}
         <Link
           to="/"

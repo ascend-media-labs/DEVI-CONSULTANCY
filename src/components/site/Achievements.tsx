@@ -10,7 +10,7 @@ export function Achievements() {
       <div className="absolute -left-20 -top-20 h-72 w-72 rounded-full bg-brand/15 blur-3xl animate-pulse-glow" />
       <div className="absolute -bottom-20 -right-20 h-72 w-72 rounded-full bg-cyan-500/10 blur-3xl animate-float" />
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="relative mx-auto w-full max-w-[1800px] px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
         {/* Side Heading Layout with reduced spacing */}
         <div className="text-left">
           <p className="eyebrow inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-brand">
@@ -20,7 +20,7 @@ export function Achievements() {
           <h2 className="mt-1 text-2xl font-bold tracking-tight text-white sm:text-3xl">
             Our Achievements
           </h2>
-          <p className="mt-1 text-xs text-primary-foreground/75 sm:text-sm lg:whitespace-nowrap">
+          <p className="mt-1 text-xs text-primary-foreground/75 sm:text-sm">
             Decades of dedicated service in building consultancy and infrastructure.
           </p>
         </div>

@@ -61,7 +61,7 @@ export function About({ isDedicatedPage = false }: AboutProps) {
         id="about"
         className="bg-background py-8 sm:py-12 lg:py-14 overflow-hidden"
       >
-        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto w-full max-w-[1800px] px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
           {/* Top Row: 2nd Image (Left) & 1st Image (Right) - Equal in Height */}
           <div className="grid w-full items-stretch gap-6 lg:grid-cols-2 lg:gap-8 xl:gap-12">
             {/* Left Column: Image with Experience Badge */}
@@ -241,7 +241,7 @@ export function About({ isDedicatedPage = false }: AboutProps) {
       id="about"
       className="flex items-center bg-background py-6 sm:py-8 lg:py-10 overflow-hidden"
     >
-      <div className="mx-auto grid w-full max-w-7xl items-center gap-6 px-4 sm:px-6 lg:grid-cols-2 lg:gap-8 xl:gap-12 lg:px-8">
+      <div className="mx-auto grid w-full max-w-[1800px] items-center gap-6 px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 lg:grid-cols-2 lg:gap-8 xl:gap-12">
         {/* Left Column: Image with Experience Badge - Slides from Left to Right */}
         <div
           className={`relative mx-auto w-full max-w-lg lg:max-w-none transition-all duration-1000 ease-out transform ${

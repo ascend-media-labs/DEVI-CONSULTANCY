@@ -47,7 +47,7 @@ export function Services() {
 
   return (
     <section id="services" className="bg-secondary py-6 sm:py-8 lg:py-10">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto w-full max-w-[1800px] px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
         {/* Side Heading Layout */}
         <div className="text-left">
           <p className="eyebrow inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-brand">
@@ -57,7 +57,7 @@ export function Services() {
           <h2 className="mt-1 text-2xl font-bold tracking-tight text-navy sm:text-3xl lg:text-4xl">
             Comprehensive Construction Solutions
           </h2>
-          <p className="mt-1 text-xs text-muted-foreground sm:text-sm lg:whitespace-nowrap">
+          <p className="mt-1 text-xs text-muted-foreground sm:text-sm">
             End-to-end expertise delivering precision, safety, and modern design standards for all project phases.
           </p>
         </div>
@@ -142,7 +142,7 @@ export function Services() {
           onClick={() => setSelectedService(null)}
         >
           <div
-            className="relative w-full max-w-5xl xl:max-w-6xl overflow-hidden rounded-3xl border border-border/80 bg-card shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] isolate"
+            className="relative w-full max-w-5xl xl:max-w-6xl 2xl:max-w-7xl overflow-hidden rounded-3xl border border-border/80 bg-card shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] isolate"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button top-right */}

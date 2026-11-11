@@ -75,7 +75,7 @@ const socialLinks = [
 export function Footer() {
   return (
     <footer className="bg-navy-deep text-primary-foreground/75">
-      <div className="mx-auto grid max-w-7xl gap-8 px-4 py-8 sm:py-10 sm:grid-cols-2 sm:px-6 lg:grid-cols-4 lg:px-8">
+      <div className="mx-auto grid w-full max-w-[1800px] gap-8 px-4 py-8 sm:py-10 sm:grid-cols-2 md:px-8 lg:grid-cols-4 lg:px-10 xl:px-12">
         <div>
           <Link to="/" className="inline-block">
             <Logo className="h-20 w-20 transition-transform duration-300 hover:scale-105" />

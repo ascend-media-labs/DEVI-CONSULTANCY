@@ -22,7 +22,7 @@ export function Contact() {
 
   return (
     <section id="contact" className="bg-secondary py-6 sm:py-8">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto w-full max-w-[1800px] px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
         {/* Side Heading Layout with reduced spacing */}
         <div className="text-left">
           <p className="eyebrow inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-brand">
@@ -32,7 +32,7 @@ export function Contact() {
           <h2 className="mt-1 text-2xl font-bold tracking-tight text-navy sm:text-3xl">
             {contactSectionData.title}
           </h2>
-          <p className="mt-1 text-xs text-muted-foreground sm:text-sm lg:whitespace-nowrap">
+          <p className="mt-1 text-xs text-muted-foreground sm:text-sm">
             {contactSectionData.subtitle}
           </p>
         </div>

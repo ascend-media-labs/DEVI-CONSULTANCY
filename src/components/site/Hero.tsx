@@ -103,8 +103,8 @@ export function Hero() {
       </div>
 
       {/* Docked Bottom Stats Bar: 5 Glassmorphism Metric Cards */}
-      <div className="relative z-10 w-full px-4 pb-6 sm:px-6 sm:pb-8 lg:px-8">
-        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-2.5 sm:grid-cols-3 sm:gap-3.5 lg:grid-cols-5 lg:gap-4">
+      <div className="relative z-10 w-full px-4 pb-6 sm:px-6 md:px-8 lg:px-10 xl:px-12 sm:pb-8">
+        <div className="mx-auto grid w-full max-w-[1800px] grid-cols-2 gap-2.5 sm:grid-cols-3 sm:gap-3.5 lg:grid-cols-5 lg:gap-4 xl:gap-5">
           {heroStats.map((stat, idx) => (
             <div
               key={idx}
