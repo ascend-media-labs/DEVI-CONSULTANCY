@@ -13,6 +13,20 @@ export function Hero() {
 
   const cur = slides[i]!;
 
+  const scrollTo = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault();
+    const el = document.getElementById(id);
+    if (el) {
+      const navHeight = 80;
+      const elementPosition = el.getBoundingClientRect().top + window.pageYOffset;
+      window.scrollTo({
+        top: elementPosition - navHeight,
+        behavior: "smooth",
+      });
+      window.history.pushState(null, "", `#${id}`);
+    }
+  };
+
   return (
     <section
       id="home"
@@ -69,14 +83,16 @@ export function Hero() {
           <div className="animate-fade-up mt-6 flex flex-wrap items-center justify-center gap-3.5 [animation-delay:360ms] sm:mt-7 sm:gap-4">
             <a
               href="#contact"
-              className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#00a3e0] to-[#0284c7] px-6 py-3 text-xs font-bold text-white shadow-[0_4px_22px_rgba(0,163,224,0.45)] transition-all duration-300 hover:from-cyan-400 hover:to-[#00a3e0] hover:shadow-[0_6px_28px_rgba(0,163,224,0.65)] hover:-translate-y-0.5 active:translate-y-0 sm:px-7 sm:py-3.5 sm:text-sm"
+              onClick={(e) => scrollTo(e, "contact")}
+              className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#00a3e0] to-[#0284c7] px-6 py-3 text-xs font-bold text-white shadow-[0_4px_22px_rgba(0,163,224,0.45)] transition-all duration-300 hover:from-cyan-400 hover:to-[#00a3e0] hover:shadow-[0_6px_28px_rgba(0,163,224,0.65)] hover:-translate-y-0.5 active:translate-y-0 sm:px-7 sm:py-3.5 sm:text-sm cursor-pointer"
             >
               Get Free Quote
               <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
             </a>
             <a
               href="#projects"
-              className="group inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-slate-900/60 px-6 py-3 text-xs font-medium text-white backdrop-blur-md transition-all duration-300 hover:border-cyan-400/60 hover:bg-cyan-950/40 hover:-translate-y-0.5 active:translate-y-0 sm:px-7 sm:py-3.5 sm:text-sm"
+              onClick={(e) => scrollTo(e, "projects")}
+              className="group inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-slate-900/60 px-6 py-3 text-xs font-medium text-white backdrop-blur-md transition-all duration-300 hover:border-cyan-400/60 hover:bg-cyan-950/40 hover:-translate-y-0.5 active:translate-y-0 sm:px-7 sm:py-3.5 sm:text-sm cursor-pointer"
             >
               View Projects
               <ChevronRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />

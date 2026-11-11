@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { DraftingCompass, Building2, Layers, FileSpreadsheet, ClipboardCheck } from "lucide-react";
 import { services } from "./data";
 
@@ -10,6 +11,28 @@ const iconMap = {
 };
 
 export function Services() {
+  const [highlightedId, setHighlightedId] = useState<string | null>(null);
+
+  useEffect(() => {
+    let timer: ReturnType<typeof setTimeout> | undefined;
+    const handleHash = () => {
+      if (typeof window !== "undefined" && window.location.hash) {
+        const hash = window.location.hash.replace("#", "");
+        if (hash.startsWith("service-")) {
+          setHighlightedId(hash);
+          clearTimeout(timer);
+          timer = setTimeout(() => setHighlightedId(null), 3500);
+        }
+      }
+    };
+    handleHash();
+    window.addEventListener("hashchange", handleHash);
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("hashchange", handleHash);
+    };
+  }, []);
+
   return (
     <section id="services" className="bg-secondary py-6 sm:py-8">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -31,10 +54,16 @@ export function Services() {
         <div className="mt-4 sm:mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((s) => {
             const Icon = iconMap[s.icon as keyof typeof iconMap] || Building2;
+            const isHighlighted = highlightedId === s.id;
             return (
               <article
                 key={s.title}
-                className="group card-glow overflow-hidden rounded-2xl border border-border bg-card shadow-sm cursor-pointer"
+                id={s.id}
+                className={`group card-glow overflow-hidden rounded-2xl border bg-card shadow-sm cursor-pointer transition-all duration-500 scroll-mt-24 sm:scroll-mt-28 ${
+                  isHighlighted
+                    ? "border-brand ring-4 ring-brand/40 shadow-[0_0_35px_rgba(0,163,224,0.45)] scale-[1.02]"
+                    : "border-border"
+                }`}
               >
                 <div className="relative h-40 overflow-hidden sm:h-44">
                   <img

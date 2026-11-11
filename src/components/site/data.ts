@@ -162,30 +162,35 @@ export const projects = [
 // 6. SERVICES
 export const services = [
   {
+    id: "service-architectural-modeling",
     icon: "DraftingCompass",
     title: "Architectural Modeling",
     text: "Comprehensive 2D & 3D architectural models providing precise spatial planning and visual realism for your vision.",
     image: villa,
   },
   {
+    id: "service-structural-design",
     icon: "Building2",
     title: "Structural Design",
     text: "Safe, robust, and cost-effective structural engineering designs tailored for long-lasting structural integrity.",
     image: commercial,
   },
   {
+    id: "service-interior-exterior-designs",
     icon: "Layers",
     title: "Interior & Exterior Designs",
     text: "Aesthetic and functional interior and exterior design solutions elevating everyday spaces.",
     image: hero3,
   },
   {
+    id: "service-bank-estimation-valuation",
     icon: "FileSpreadsheet",
     title: "Bank Estimation & Valuation",
     text: "Accurate property valuations, detailed cost estimations, and recognized documentation for bank loans.",
     image: industrial,
   },
   {
+    id: "service-pre-construction-planning",
     icon: "ClipboardCheck",
     title: "Pre-Construction Planning",
     text: "Feasibility analysis, budgeting, scheduling, and regulatory approvals for a seamless project launch.",

@@ -72,6 +72,26 @@ const socialLinks = [
 ];
 
 export function Footer() {
+  const navigateTo = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault();
+    if (targetId === "home") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      window.history.pushState(null, "", "#home");
+      return;
+    }
+    const el = document.getElementById(targetId);
+    if (el) {
+      const navHeight = 80;
+      const elementPosition = el.getBoundingClientRect().top + window.pageYOffset;
+      window.scrollTo({
+        top: elementPosition - navHeight,
+        behavior: "smooth",
+      });
+      window.history.pushState(null, "", `#${targetId}`);
+      window.dispatchEvent(new HashChangeEvent("hashchange"));
+    }
+  };
+
   return (
     <footer className="bg-navy-deep text-primary-foreground/75">
       <div className="mx-auto grid max-w-7xl gap-8 px-4 py-8 sm:py-10 sm:grid-cols-2 sm:px-6 lg:grid-cols-4 lg:px-8">
@@ -100,7 +120,11 @@ export function Footer() {
           <ul className="mt-4 space-y-2.5 text-xs sm:text-sm">
             {navLinks.map((l) => (
               <li key={l.id}>
-                <a href={`#${l.id}`} className="transition-colors hover:text-brand">
+                <a
+                  href={`#${l.id}`}
+                  onClick={(e) => navigateTo(e, l.id)}
+                  className="transition-colors hover:text-brand"
+                >
                   {l.label}
                 </a>
               </li>
@@ -113,7 +137,11 @@ export function Footer() {
           <ul className="mt-4 space-y-2.5 text-xs sm:text-sm">
             {services.map((s) => (
               <li key={s.title}>
-                <a href="#services" className="transition-colors hover:text-brand">
+                <a
+                  href={`#${s.id}`}
+                  onClick={(e) => navigateTo(e, s.id)}
+                  className="transition-colors hover:text-brand"
+                >
                   {s.title}
                 </a>
               </li>
