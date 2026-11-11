@@ -142,26 +142,26 @@ export function Services() {
           onClick={() => setSelectedService(null)}
         >
           <div
-            className="relative w-full max-w-5xl xl:max-w-6xl overflow-hidden rounded-3xl border border-white/20 bg-card shadow-2xl max-h-[92vh] overflow-y-auto lg:overflow-visible"
+            className="relative w-full max-w-5xl xl:max-w-6xl overflow-hidden rounded-3xl border border-border/80 bg-card shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] isolate"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button top-right */}
             <button
               aria-label="Close details"
               onClick={() => setSelectedService(null)}
-              className="absolute right-4 top-4 z-20 grid h-10 w-10 place-items-center rounded-full bg-slate-950/70 text-white backdrop-blur-md transition-all hover:bg-slate-950 hover:scale-105 cursor-pointer shadow-lg border border-white/20"
+              className="absolute right-4 top-4 z-30 grid h-9 w-9 place-items-center rounded-full bg-secondary text-navy transition-all duration-200 hover:bg-navy hover:text-white hover:scale-105 cursor-pointer shadow-md"
             >
-              <X size={20} />
+              <X size={18} />
             </button>
 
-            {/* 2-Column Wide Grid for Zero-Scroll & Wide Fit */}
-            <div className="grid lg:grid-cols-12 items-stretch">
+            {/* 2-Column Wide Grid for Zero-Scroll & Perfect Card Fit */}
+            <div className="grid lg:grid-cols-12 items-stretch overflow-hidden rounded-3xl">
               {/* Left Column (5 cols): High-res Image & Hero Overlay */}
-              <div className="relative min-h-[220px] sm:min-h-[280px] lg:min-h-[480px] lg:col-span-5 bg-slate-950 overflow-hidden">
+              <div className="relative min-h-[220px] sm:min-h-[280px] lg:min-h-[480px] lg:col-span-5 bg-slate-950 overflow-hidden lg:rounded-l-3xl">
                 <img
                   src={selectedService.image}
                   alt={selectedService.title}
-                  className="h-full w-full object-cover brightness-[0.88]"
+                  className="h-full w-full object-cover brightness-[0.88] lg:rounded-l-3xl"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/40 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-navy-deep/70" />
 
@@ -175,9 +175,9 @@ export function Services() {
                 </div>
               </div>
 
-              {/* Right Column (7 cols): Full Details, Deliverables & Actions - Compact & Fitted */}
-              <div className="lg:col-span-7 flex flex-col justify-between p-6 sm:p-7 lg:p-8 bg-card">
-                <div className="space-y-4">
+              {/* Right Column (7 cols): Full Details, Deliverables & Actions */}
+              <div className="lg:col-span-7 flex flex-col justify-between p-6 sm:p-7 lg:p-8 bg-card lg:rounded-r-3xl overflow-hidden">
+                <div className="space-y-4 pr-6 sm:pr-8">
                   <div>
                     <h4 className="text-xs font-bold uppercase tracking-wider text-brand">
                       Technical Overview
@@ -216,7 +216,7 @@ export function Services() {
                   <Link
                     to="/contact"
                     onClick={() => setSelectedService(null)}
-                    className="inline-flex items-center gap-2 rounded-full bg-brand px-6 py-2.5 text-xs sm:text-sm font-bold text-white shadow-md hover:bg-brand/90 hover:shadow-lg transition-all"
+                    className="inline-flex items-center gap-2 rounded-full bg-brand px-6 py-2.5 text-xs sm:text-sm font-bold text-white shadow-md hover:bg-brand/90 hover:shadow-lg transition-all cursor-pointer"
                   >
                     Book Consultation for this Service
                     <ArrowRight size={16} />
