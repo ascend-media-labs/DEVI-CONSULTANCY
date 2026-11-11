@@ -138,84 +138,90 @@ export function Services() {
       {/* Lightbox / Details Modal when clicked on image/card */}
       {selectedService && (
         <div
-          className="fixed inset-0 z-[70] grid place-items-center bg-navy-deep/85 p-4 backdrop-blur-md animate-fade-in"
+          className="fixed inset-0 z-[70] grid place-items-center bg-navy-deep/85 p-3 sm:p-6 backdrop-blur-md animate-fade-in"
           onClick={() => setSelectedService(null)}
         >
           <div
-            className="relative w-full max-w-3xl overflow-hidden rounded-3xl border border-border bg-card shadow-2xl max-h-[90vh] flex flex-col"
+            className="relative w-full max-w-5xl xl:max-w-6xl overflow-hidden rounded-3xl border border-white/20 bg-card shadow-2xl max-h-[92vh] overflow-y-auto lg:overflow-visible"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Modal Header with Close Button */}
-            <div className="relative h-56 sm:h-72 w-full overflow-hidden bg-slate-900 shrink-0">
-              <img
-                src={selectedService.image}
-                alt={selectedService.title}
-                className="h-full w-full object-cover brightness-[0.85]"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/40 to-transparent" />
+            {/* Close Button top-right */}
+            <button
+              aria-label="Close details"
+              onClick={() => setSelectedService(null)}
+              className="absolute right-4 top-4 z-20 grid h-10 w-10 place-items-center rounded-full bg-slate-950/70 text-white backdrop-blur-md transition-all hover:bg-slate-950 hover:scale-105 cursor-pointer shadow-lg border border-white/20"
+            >
+              <X size={20} />
+            </button>
 
-              <button
-                aria-label="Close details"
-                onClick={() => setSelectedService(null)}
-                className="absolute right-4 top-4 grid h-10 w-10 place-items-center rounded-full bg-black/60 text-white backdrop-blur-md transition-all hover:bg-black/90 hover:scale-105 cursor-pointer shadow-lg"
-              >
-                <X size={20} />
-              </button>
+            {/* 2-Column Wide Grid for Zero-Scroll & Wide Fit */}
+            <div className="grid lg:grid-cols-12 items-stretch">
+              {/* Left Column (5 cols): High-res Image & Hero Overlay */}
+              <div className="relative min-h-[220px] sm:min-h-[280px] lg:min-h-[480px] lg:col-span-5 bg-slate-950 overflow-hidden">
+                <img
+                  src={selectedService.image}
+                  alt={selectedService.title}
+                  className="h-full w-full object-cover brightness-[0.88]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/40 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-navy-deep/70" />
 
-              <div className="absolute bottom-4 left-5 right-5">
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-brand/90 px-3 py-1 text-xs font-bold text-white shadow-sm backdrop-blur-sm">
-                  DEVI CONSULTANCY • SERVICE DETAILS
-                </span>
-                <h3 className="mt-2 text-2xl sm:text-3xl font-extrabold text-white drop-shadow-md">
-                  {selectedService.title}
-                </h3>
-              </div>
-            </div>
-
-            {/* Modal Body */}
-            <div className="overflow-y-auto p-5 sm:p-7 space-y-5">
-              <div>
-                <h4 className="text-xs font-bold uppercase tracking-wider text-brand">
-                  Technical Overview
-                </h4>
-                <p className="mt-1 text-sm sm:text-base leading-relaxed text-slate-700 text-justify">
-                  {selectedService.detailedText || selectedService.text}
-                </p>
-              </div>
-
-              {/* Deliverables Checklist */}
-              {selectedService.deliverables && (
-                <div className="rounded-2xl border border-brand/20 bg-brand/5 p-4 sm:p-5">
-                  <h4 className="text-xs font-bold uppercase tracking-wider text-navy">
-                    Key Deliverables &amp; Engineering Scope
-                  </h4>
-                  <ul className="mt-3 grid gap-2.5 sm:grid-cols-2">
-                    {selectedService.deliverables.map((item, idx) => (
-                      <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-800">
-                        <Check size={16} className="shrink-0 text-brand mt-0.5 stroke-[2.5]" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
+                <div className="absolute bottom-5 left-5 right-5">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-brand/90 px-3 py-1 text-xs font-bold text-white shadow-sm backdrop-blur-sm">
+                    DEVI CONSULTANCY • SERVICE DETAILS
+                  </span>
+                  <h3 className="mt-2 text-2xl sm:text-3xl font-extrabold text-white drop-shadow-md">
+                    {selectedService.title}
+                  </h3>
                 </div>
-              )}
+              </div>
 
-              {/* Action Buttons */}
-              <div className="pt-2 flex flex-wrap items-center justify-end gap-3">
-                <button
-                  onClick={() => setSelectedService(null)}
-                  className="rounded-full border border-border px-5 py-2.5 text-xs sm:text-sm font-semibold text-slate-700 hover:bg-secondary cursor-pointer"
-                >
-                  Close
-                </button>
-                <Link
-                  to="/contact"
-                  onClick={() => setSelectedService(null)}
-                  className="inline-flex items-center gap-2 rounded-full bg-brand px-6 py-2.5 text-xs sm:text-sm font-bold text-white shadow-md hover:bg-brand/90 hover:shadow-lg transition-all"
-                >
-                  Book Consultation for this Service
-                  <ArrowRight size={16} />
-                </Link>
+              {/* Right Column (7 cols): Full Details, Deliverables & Actions - Compact & Fitted */}
+              <div className="lg:col-span-7 flex flex-col justify-between p-6 sm:p-7 lg:p-8 bg-card">
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-brand">
+                      Technical Overview
+                    </h4>
+                    <p className="mt-1 text-xs sm:text-sm leading-relaxed text-slate-700 text-justify">
+                      {selectedService.detailedText || selectedService.text}
+                    </p>
+                  </div>
+
+                  {/* Deliverables Checklist in 2 columns */}
+                  {selectedService.deliverables && (
+                    <div className="rounded-2xl border border-brand/20 bg-brand/5 p-4 sm:p-4.5">
+                      <h4 className="text-xs font-bold uppercase tracking-wider text-navy">
+                        Key Deliverables &amp; Engineering Scope
+                      </h4>
+                      <ul className="mt-2.5 grid gap-2 sm:grid-cols-2">
+                        {selectedService.deliverables.map((item, idx) => (
+                          <li key={idx} className="flex items-start gap-2 text-xs sm:text-[13px] text-slate-800 leading-snug">
+                            <Check size={15} className="shrink-0 text-brand mt-0.5 stroke-[2.5]" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+
+                {/* Footer Buttons */}
+                <div className="mt-5 pt-4 border-t border-border flex flex-wrap items-center justify-end gap-3">
+                  <button
+                    onClick={() => setSelectedService(null)}
+                    className="rounded-full border border-border px-5 py-2 text-xs sm:text-sm font-semibold text-slate-700 hover:bg-secondary cursor-pointer transition-colors"
+                  >
+                    Close
+                  </button>
+                  <Link
+                    to="/contact"
+                    onClick={() => setSelectedService(null)}
+                    className="inline-flex items-center gap-2 rounded-full bg-brand px-6 py-2.5 text-xs sm:text-sm font-bold text-white shadow-md hover:bg-brand/90 hover:shadow-lg transition-all"
+                  >
+                    Book Consultation for this Service
+                    <ArrowRight size={16} />
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
