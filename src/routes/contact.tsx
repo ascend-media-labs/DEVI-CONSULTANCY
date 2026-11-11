@@ -17,7 +17,7 @@ export const Route = createFileRoute("/contact")({
 
 function ContactPage() {
   return (
-    <div className="mt-20 min-h-[calc(100vh-5rem)]">
+    <div className="mt-20 min-h-[calc(100vh-5rem)] flex flex-col justify-center py-2 sm:py-3">
       <Contact />
     </div>
   );
