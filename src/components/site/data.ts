@@ -167,6 +167,20 @@ export const services = [
     title: "Architectural Modeling",
     text: "Comprehensive 2D & 3D architectural models providing precise spatial planning and visual realism for your vision.",
     image: villa,
+    points: [
+      "2D & 3D Architectural CAD/BIM Plans",
+      "Photorealistic Exterior & Interior Elevations",
+      "Vasthu Compliant Spatial Floor Layouts",
+      "Municipal Corporation Sanction Drawings",
+    ],
+    detailedText:
+      "Our architectural modeling services combine creative brilliance with structural practicality. Utilizing modern CAD and Building Information Modeling (BIM) platforms, we craft immersive, precise 2D & 3D architectural plans, dynamic sun-path analysis, and photorealistic renderings ensuring complete statutory compliance and breathtaking aesthetic elegance.",
+    deliverables: [
+      "Full architectural set (working drawings, floor plans, elevations & sections)",
+      "High-resolution 3D photorealistic exterior & interior views",
+      "Vasthu-compliant layout optimizations for residential and commercial spaces",
+      "Ready-to-submit municipal authority building sanction documentation",
+    ],
   },
   {
     id: "service-structural-design",
@@ -174,6 +188,20 @@ export const services = [
     title: "Structural Design",
     text: "Safe, robust, and cost-effective structural engineering designs tailored for long-lasting structural integrity.",
     image: commercial,
+    points: [
+      "Earthquake-Resistant Designs (IS 1893 & IS 456)",
+      "Advanced STAAD.Pro & ETABS Structural Analysis",
+      "Complete Column, Beam & Footing Detailing",
+      "Foundation Design Based on Soil Load Capacity",
+    ],
+    detailedText:
+      "DEVI CONSULTANCY specializes in robust, high-performance structural engineering frameworks that strictly adhere to Indian Standard (IS) codes and National Building Codes (NBC). Through finite element analysis, 3D structural modeling, and rigorous seismic simulations, we deliver designs optimized for strength, safety, longevity, and material economy.",
+    deliverables: [
+      "Certified structural design calculations and stability reports",
+      "Comprehensive reinforcement detailing (footings, columns, beams, slabs & staircases)",
+      "Accurate Bar Bending Schedules (BBS) to minimize on-site steel wastage",
+      "Periodic on-site structural auditing and reinforcement placement verification",
+    ],
   },
   {
     id: "service-interior-exterior-designs",
@@ -181,6 +209,20 @@ export const services = [
     title: "Interior & Exterior Designs",
     text: "Aesthetic and functional interior and exterior design solutions elevating everyday spaces.",
     image: hero3,
+    points: [
+      "Bespoke Space Planning & Functional Zoning",
+      "Designer False Ceiling & Ambient Lighting Plans",
+      "Contemporary Facade Elevation & Cladding Finishes",
+      "Premium Material & Hardware Specifications",
+    ],
+    detailedText:
+      "Transforming living and working spaces into captivating works of art, our interior and exterior design division harmonizes ergonomic functionality with modern aesthetics. We develop tailored spatial layouts, custom false ceiling concepts, energy-efficient lighting schemes, and durable facade treatments that elevate luxury and comfort.",
+    deliverables: [
+      "360-degree 3D interior design visualizations and material mood boards",
+      "Coordinated false ceiling, electrical, plumbing, and HVAC schematics",
+      "Custom joinery, modular wardrobe, and kitchen cabinetry details",
+      "Facade styling, weather-resistant exterior cladding, and landscape integration",
+    ],
   },
   {
     id: "service-bank-estimation-valuation",
@@ -188,6 +230,20 @@ export const services = [
     title: "Bank Estimation & Valuation",
     text: "Accurate property valuations, detailed cost estimations, and recognized documentation for bank loans.",
     image: industrial,
+    points: [
+      "IBBI & Govt Registered Certified Valuation Reports",
+      "Detailed Stage-Wise Construction Estimates (BOQ)",
+      "Approved Documentation for Bank Loans & Mortgages",
+      "Fair Market Value & Capital Gains Assessment",
+    ],
+    detailedText:
+      "Headed by certified structural engineers and IBBI Registered Valuers, our valuation division provides authoritative, credible valuation reports and cost estimates accepted by all major nationalized, private banks, housing finance corporations (HFCs), and legal authorities across Telangana and India.",
+    deliverables: [
+      "Official certified valuation certificates conforming to Indian Accounting Standards",
+      "Comprehensive Bill of Quantities (BOQ) with detailed rate analysis",
+      "Stage-wise progress inspection certificates for loan disbursement",
+      "Fair market value, realizable value, and distressed sale value assessments",
+    ],
   },
   {
     id: "service-pre-construction-planning",
@@ -195,6 +251,20 @@ export const services = [
     title: "Pre-Construction Planning",
     text: "Feasibility analysis, budgeting, scheduling, and regulatory approvals for a seamless project launch.",
     image: construction,
+    points: [
+      "Topographical Site Feasibility & Soil Test Review",
+      "DTCP & Municipal Statutory Approval Liaison",
+      "Project Budget Optimization & Bill of Quantities",
+      "Construction Milestones & Material Procurement Schedule",
+    ],
+    detailedText:
+      "A successful construction project begins with thorough, meticulous pre-construction planning. We evaluate site topography, geotechnical reports, municipal guidelines, and supply chain timelines to eliminate risk, control costs, and establish clear execution milestones before groundbreaking.",
+    deliverables: [
+      "Complete site feasibility and technical evaluation report",
+      "Itemized master budget and procurement cash-flow schedule",
+      "Milestone-based project timeline (Gantt chart) for turnkey execution",
+      "Comprehensive on-site quality control and construction safety guidelines",
+    ],
   },
 ];
 
