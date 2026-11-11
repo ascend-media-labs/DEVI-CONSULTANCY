@@ -18,7 +18,7 @@ export const Route = createFileRoute("/about")({
 function AboutPage() {
   return (
     <div className="mt-20 min-h-[calc(100vh-5rem)]">
-      <About />
+      <About isDedicatedPage={true} />
     </div>
   );
 }
