@@ -1,30 +1,26 @@
-<!-- LOVABLE:BEGIN -->
-> [!IMPORTANT]
-> This project is connected to [Lovable](https://lovable.dev). Avoid rewriting
-> published git history — force pushing, or rebasing/amending/squashing commits
-> that are already pushed — as it rewrites history on Lovable's side and the
-> user will likely lose their project history.
->
-> Commits you push to the connected branch sync back to Lovable and show up in
-> the editor, so keep the branch in a working state.
+# DEVI CONSULTANCY — Developer & Agent Guidelines
 
-## What Lovable manages
+Guidelines for building, developing, and deploying the DEVI CONSULTANCY website.
 
-Rules outside this block are the project's own. Change the pieces below in
-Lovable, not by hand. With the [Lovable MCP](https://mcp.lovable.dev)
-connected, `send_message` asks Lovable to do it; otherwise ask the user to
-use the editor.
+---
 
-- **Database.** Do not add or edit `supabase/migrations/` or `drizzle/`.
-  Ask Lovable to change the schema.
-- **Generated files.** Do not edit a file whose header says it is automatically
-  generated.
-- **AI gateway.** Keep model calls on Lovable's gateway, and keep
-  `LOVABLE_API_KEY` out of browser code.
-- **Connectors.** Lovable provides native connectors. `list_connectors` shows
-  which are enabled; `add_connector` only returns the dashboard link. When a
-  connector is enabled, calls go through the connector gateway and need
-  `LOVABLE_API_KEY`. When Lovable does not provide one, users can bring their
-  own key and store it in Secrets.
-- **Secrets.** Lovable manages them. Do not put secret values in the repo.
-<!-- LOVABLE:END -->
+## Architecture & Code Structure
+
+- **Framework**: React 19 + TanStack Start (SSR enabled) with Vite & Nitro.
+- **Components**:
+  - `src/components/site/`: Main marketing pages, navigation, hero, services, projects, achievements, testimonials, contact, and footer.
+  - `src/components/ui/`: Reusable UI elements (dialogs, buttons, tooltips).
+  - `src/components/site/data.ts`: Central data source for all 10 business sections, contact information, navigation links, and project portfolios.
+- **Styling**: Tailwind CSS v4 entry configured via `src/styles.css` with CSS variables for the color palette (`--navy`, `--brand`, `--navy-deep`).
+- **Brand Colors**:
+  - Navy: `#0b1c38` / `oklch(0.20 0.05 255)`
+  - Brand Cyan: `#00a3e0` / `var(--brand)`
+
+---
+
+## Development Principles
+
+1. **Data Integrity**: Preserve official company information, metrics, and text content across all 10 business sections.
+2. **Responsive Design**: Ensure fluid responsiveness across all screens (12", 13", 14", 15", 16", 17" inches and mobile/tablet devices).
+3. **Smooth Performance**: Keep animations hardware-accelerated via CSS transforms and native browser scrolling.
+4. **Testing**: Keep routing and unit tests passing via `npm test`.
