@@ -36,37 +36,6 @@ const socialLinks = [
     ),
   },
   {
-    name: "YouTube",
-    href: "https://youtube.com",
-    btnClass: "bg-[#FF0000] hover:shadow-[0_0_18px_rgba(255,0,0,0.7)]",
-    icon: (
-      <svg viewBox="0 0 24 24" className="h-6 w-6">
-        <rect width="18" height="12.5" x="3" y="5.75" rx="3.5" fill="#FFFFFF" />
-        <polygon points="10,9.25 15.5,12 10,14.75" fill="#FF0000" />
-      </svg>
-    ),
-  },
-  {
-    name: "LinkedIn",
-    href: "https://linkedin.com",
-    btnClass: "bg-[#0A66C2] hover:shadow-[0_0_18px_rgba(10,102,194,0.7)]",
-    icon: (
-      <svg viewBox="0 0 24 24" className="h-5 w-5 fill-white">
-        <path d="M6.94 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.68-2.91V8.48z" />
-      </svg>
-    ),
-  },
-  {
-    name: "X (Twitter)",
-    href: "https://x.com",
-    btnClass: "bg-black border border-white/20 hover:shadow-[0_0_18px_rgba(255,255,255,0.4)]",
-    icon: (
-      <svg viewBox="0 0 24 24" className="h-4.5 w-4.5 fill-white">
-        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-      </svg>
-    ),
-  },
-  {
     name: "WhatsApp",
     href: `https://wa.me/${contact.whatsapp}`,
     btnClass: "bg-[#25D366] hover:shadow-[0_0_18px_rgba(37,211,102,0.7)]",
