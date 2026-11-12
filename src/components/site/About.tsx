@@ -108,13 +108,19 @@ export function About({ isDedicatedPage = false }: AboutProps) {
                 </div>
 
                 {/* Description text */}
-                <p
-                  className={`mt-2.5 text-xs leading-relaxed text-muted-foreground sm:mt-3 sm:text-sm xl:text-base text-justify transition-all duration-1000 delay-300 ease-out transform ${
+                <div
+                  className={`mt-2.5 space-y-2 text-xs leading-relaxed text-muted-foreground sm:mt-3 sm:space-y-2.5 sm:text-sm xl:text-base text-justify transition-all duration-1000 delay-300 ease-out transform ${
                     inView ? "translate-x-0 opacity-100" : "-translate-x-10 sm:-translate-x-16 opacity-0"
                   }`}
                 >
-                  {aboutData.aboutUs}
-                </p>
+                  {aboutData.aboutUsParagraphs ? (
+                    aboutData.aboutUsParagraphs.map((paragraph, idx) => (
+                      <p key={idx}>{paragraph}</p>
+                    ))
+                  ) : (
+                    <p>{aboutData.aboutUs}</p>
+                  )}
+                </div>
               </div>
 
               {/* 3. VISION & 4. MISSION in column-wise line by line */}

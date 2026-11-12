@@ -95,7 +95,11 @@ export const slides = [
 export const aboutData = {
   establishedYear: 2000,
   aboutUs:
-    "We provide professional construction consultancy, architectural design and infrastructure solutions with a focus on quality, innovation and customer satisfaction.",
+    "We operate with belief that everyone deserves a better life. Devi Consultancy has been serving people in the field of construction for two decades. we are one of the leading construction firms in Karimnagar. Our peerless expertise in developing great ideas into the marvellous property as per the client's requirements has gained recognition across Telangana. DEVI Consultancy has a proven track record of property performance and client satisfaction. We design our projects to cater to individual and institutional buyers.\n\nOver the years, Devi consultancy has made a mark with Residential buildings and Commercial Property construction. Our properties are appreciated for adhering to quality, innovation, and environmental laws. Delivering projects on time and within an established budget is key to the company's success. It gives us great honour and immense pleasure to welcome you.",
+  aboutUsParagraphs: [
+    "We operate with belief that everyone deserves a better life. Devi Consultancy has been serving people in the field of construction for two decades. we are one of the leading construction firms in Karimnagar. Our peerless expertise in developing great ideas into the marvellous property as per the client's requirements has gained recognition across Telangana. DEVI Consultancy has a proven track record of property performance and client satisfaction. We design our projects to cater to individual and institutional buyers.",
+    "Over the years, Devi consultancy has made a mark with Residential buildings and Commercial Property construction. Our properties are appreciated for adhering to quality, innovation, and environmental laws. Delivering projects on time and within an established budget is key to the company's success. It gives us great honour and immense pleasure to welcome you.",
+  ],
   // 3. VISION
   vision:
     "To become a trusted leader in construction and infrastructure through innovative, sustainable and high-quality solutions.",
