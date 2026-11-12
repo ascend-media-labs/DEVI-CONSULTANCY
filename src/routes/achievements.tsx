@@ -8,7 +8,7 @@ export const Route = createFileRoute("/achievements")({
       {
         name: "description",
         content:
-          "26+ years of engineering excellence, 350+ completed projects, 25+ lakh sq ft executed with 100% structural precision.",
+          "26+ years of engineering excellence, 2500+ completed projects, 15+ lakh sq ft executed with 100% structural precision.",
       },
     ],
   }),

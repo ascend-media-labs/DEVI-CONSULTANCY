@@ -75,8 +75,8 @@ export const consultants = [
 // 1. HOME Slides & Stats
 export const heroStats = [
   { value: "26+", label: "Years Experience" },
-  { value: "350+", label: "Projects Completed" },
-  { value: "25+ Lakh", label: "Sq Ft Executed" },
+  { value: "2500+", label: "Projects Completed" },
+  { value: "15+ Lakh", label: "Sq Ft Executed" },
   { value: "100%", label: "Structural Precision" },
   { value: "99%", label: "Client Satisfaction" },
 ];
@@ -399,7 +399,7 @@ export const achievements = [
     subtext: "Decades of trusted engineering experience",
   },
   {
-    value: "1000+",
+    value: "2500+",
     label: "Projects Completed",
     subtext: "Successful projects delivered across sectors",
   },

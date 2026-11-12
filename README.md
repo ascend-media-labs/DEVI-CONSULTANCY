@@ -10,7 +10,8 @@ Leaders in Quality Construction & Infrastructure since 2000. Professional constr
 
 - **Founding Year**: 2000
 - **Experience**: 26+ Years of Proven Excellence
-- **Completed Projects**: 350+ Projects Delivered
+- **Completed Projects**: 2500+ Projects Delivered
+- **Square Feet Executed**: 15+ Lakh Sq Ft
 - **Core Philosophy**: Quality, Precision, and Trust
 
 ---
