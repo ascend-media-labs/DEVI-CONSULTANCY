@@ -332,7 +332,7 @@ export function About({ isDedicatedPage = false }: AboutProps) {
                 <div className="mt-6 rounded-2xl border border-brand/20 bg-brand/5 p-4 sm:p-5">
                   <h4 className="text-xs font-bold uppercase tracking-wider text-navy mb-3 flex items-center gap-2">
                     <Briefcase size={15} className="text-brand" />
-                    His Portfolio Includes:
+                    {selectedConsultant.portfolioTitle || "Key Specializations & Portfolio:"}
                   </h4>
                   <div className="grid gap-2 sm:grid-cols-2">
                     {selectedConsultant.portfolio.map((item, idx) => (
