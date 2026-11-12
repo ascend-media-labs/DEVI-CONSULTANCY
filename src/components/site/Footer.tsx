@@ -6,77 +6,75 @@ import { Logo } from "./Logo";
 const socialLinks = [
   {
     name: "Facebook",
-    href: "#",
+    href: "https://facebook.com",
+    btnClass: "bg-[#1877F2] hover:shadow-[0_0_18px_rgba(24,119,242,0.7)]",
     icon: (
-      <svg viewBox="0 0 24 24" className="h-6 w-6 drop-shadow-sm">
-        <circle cx="12" cy="12" r="12" fill="#1877F2" />
-        <path
-          fill="#FFFFFF"
-          d="M15.117 12.012l.379-2.47H13.12V7.938c0-.677.332-1.336 1.394-1.336h1.079V4.498s-.979-.167-1.915-.167c-1.954 0-3.23 1.185-3.23 3.327v1.884H8.281v2.47h2.167v5.972a12.07 12.07 0 0 0 2.672 0v-5.972h2z"
-        />
+      <svg viewBox="0 0 24 24" className="h-5 w-5 fill-white">
+        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
       </svg>
     ),
-    hoverClass: "hover:border-[#1877F2]/80 hover:bg-[#1877F2]/20 hover:shadow-[0_0_18px_rgba(24,119,242,0.5)]",
   },
   {
     name: "Instagram",
-    href: "#",
+    href: "https://instagram.com",
+    btnClass:
+      "bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] hover:shadow-[0_0_18px_rgba(225,48,108,0.7)]",
     icon: (
-      <svg viewBox="0 0 24 24" className="h-6 w-6 drop-shadow-sm">
-        <defs>
-          <radialGradient id="footer-ig-grad" cx="30%" cy="105%" r="105%">
-            <stop offset="0%" stopColor="#fdf497" />
-            <stop offset="5%" stopColor="#fdf497" />
-            <stop offset="45%" stopColor="#fd5949" />
-            <stop offset="60%" stopColor="#d6249f" />
-            <stop offset="90%" stopColor="#285AEB" />
-          </radialGradient>
-        </defs>
-        <rect width="24" height="24" rx="6.5" fill="url(#footer-ig-grad)" />
-        <circle cx="12" cy="12" r="4.2" fill="none" stroke="#FFFFFF" strokeWidth="1.8" />
-        <rect width="14" height="14" x="5" y="5" rx="3.8" fill="none" stroke="#FFFFFF" strokeWidth="1.8" />
-        <circle cx="16.2" cy="7.8" r="1.1" fill="#FFFFFF" />
+      <svg
+        viewBox="0 0 24 24"
+        className="h-5 w-5"
+        fill="none"
+        stroke="#FFFFFF"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+        <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" strokeWidth="2.5" />
       </svg>
     ),
-    hoverClass: "hover:border-[#E1306C]/80 hover:bg-[#E1306C]/20 hover:shadow-[0_0_18px_rgba(225,48,108,0.5)]",
-  },
-  {
-    name: "X (Twitter)",
-    href: "#",
-    icon: (
-      <svg viewBox="0 0 24 24" className="h-5 w-5 fill-white drop-shadow-sm">
-        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-      </svg>
-    ),
-    hoverClass: "hover:border-white/80 hover:bg-white/20 hover:shadow-[0_0_18px_rgba(255,255,255,0.4)]",
-  },
-  {
-    name: "LinkedIn",
-    href: "#",
-    icon: (
-      <svg viewBox="0 0 24 24" className="h-6 w-6 drop-shadow-sm">
-        <rect width="24" height="24" rx="5" fill="#0A66C2" />
-        <path
-          fill="#FFFFFF"
-          d="M7.8 9.3H5.3v7.4h2.5V9.3zm-1.25-3.7a1.4 1.4 0 1 0 0 2.8 1.4 1.4 0 0 0 0-2.8zm11.95 6.7c0-2.3-1.2-3.4-2.8-3.4-1.3 0-1.9.7-2.2 1.2V9.3h-2.5v7.4h2.5v-4.1c0-.2.02-.4.07-.6.17-.4.56-.8 1.23-.8.87 0 1.25.7 1.25 1.7v3.8h2.5v-4.2z"
-        />
-      </svg>
-    ),
-    hoverClass: "hover:border-[#0A66C2]/80 hover:bg-[#0A66C2]/20 hover:shadow-[0_0_18px_rgba(10,102,194,0.5)]",
   },
   {
     name: "YouTube",
-    href: "#",
+    href: "https://youtube.com",
+    btnClass: "bg-[#FF0000] hover:shadow-[0_0_18px_rgba(255,0,0,0.7)]",
     icon: (
-      <svg viewBox="0 0 24 24" className="h-6 w-6 drop-shadow-sm">
-        <path
-          fill="#FF0000"
-          d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z"
-        />
-        <path fill="#FFFFFF" d="m9.545 15.568 6.273-3.568-6.273-3.568z" />
+      <svg viewBox="0 0 24 24" className="h-6 w-6">
+        <rect width="18" height="12.5" x="3" y="5.75" rx="3.5" fill="#FFFFFF" />
+        <polygon points="10,9.25 15.5,12 10,14.75" fill="#FF0000" />
       </svg>
     ),
-    hoverClass: "hover:border-[#FF0000]/80 hover:bg-[#FF0000]/20 hover:shadow-[0_0_18px_rgba(255,0,0,0.5)]",
+  },
+  {
+    name: "LinkedIn",
+    href: "https://linkedin.com",
+    btnClass: "bg-[#0A66C2] hover:shadow-[0_0_18px_rgba(10,102,194,0.7)]",
+    icon: (
+      <svg viewBox="0 0 24 24" className="h-5 w-5 fill-white">
+        <path d="M6.94 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.68-2.91V8.48z" />
+      </svg>
+    ),
+  },
+  {
+    name: "X (Twitter)",
+    href: "https://x.com",
+    btnClass: "bg-black border border-white/20 hover:shadow-[0_0_18px_rgba(255,255,255,0.4)]",
+    icon: (
+      <svg viewBox="0 0 24 24" className="h-4.5 w-4.5 fill-white">
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+      </svg>
+    ),
+  },
+  {
+    name: "WhatsApp",
+    href: `https://wa.me/${contact.whatsapp}`,
+    btnClass: "bg-[#25D366] hover:shadow-[0_0_18px_rgba(37,211,102,0.7)]",
+    icon: (
+      <svg viewBox="0 0 24 24" className="h-5.5 w-5.5 fill-white">
+        <path d="M12.031 2C6.495 2 2 6.495 2 12.031c0 1.95.556 3.774 1.517 5.322L2 22l4.81-1.474a10.007 10.007 0 0 0 5.221 1.463c5.536 0 10.031-4.495 10.031-10.031C22.062 6.495 17.567 2 12.031 2zm0 18.283c-1.637 0-3.172-.452-4.493-1.236l-.322-.191-3.332 1.022 1.042-3.25-.21-.334A8.24 8.24 0 0 1 3.75 12.03c0-4.566 3.715-8.281 8.281-8.281 4.566 0 8.281 3.715 8.281 8.281 0 4.566-3.715 8.283-8.281 8.283zm4.539-6.208c-.249-.124-1.472-.726-1.7-.809-.228-.083-.394-.124-.56.124-.166.249-.643.809-.788.975-.145.166-.29.187-.539.062-.249-.124-1.052-.388-2.003-1.237-.74-.66-1.24-1.475-1.385-1.724-.145-.249-.015-.383.109-.507.112-.111.249-.29.373-.435.124-.145.166-.249.249-.415.083-.166.041-.311-.021-.435-.062-.124-.56-1.349-.768-1.847-.202-.485-.407-.419-.56-.427l-.477-.008c-.166 0-.436.062-.664.311-.228.249-.871.851-.871 2.075s.892 2.407 1.017 2.573c.124.166 1.755 2.68 4.252 3.758.594.257 1.058.41 1.42.525.597.19 1.14.163 1.57.099.479-.072 1.472-.602 1.68-1.183.207-.581.207-1.079.145-1.183-.062-.104-.228-.166-.477-.29z" />
+      </svg>
+    ),
   },
 ];
 
@@ -91,18 +89,25 @@ export function Footer() {
           <p className="mt-4 text-xs leading-relaxed text-primary-foreground/75 sm:text-sm text-justify">
             DEVI CONSULTANCY — Leaders in Quality Construction &amp; Infrastructure, serving clients since 2000.
           </p>
-          {/* Real Official Social Brand Icons + X */}
-          <div className="mt-5 flex items-center gap-3">
-            {socialLinks.map((s) => (
-              <a
-                key={s.name}
-                href={s.href}
-                aria-label={s.name}
-                className={`grid h-11 w-11 place-items-center rounded-full border border-white/15 bg-white/5 shadow-md backdrop-blur-sm transition-all duration-300 hover:scale-110 active:scale-95 ${s.hoverClass}`}
-              >
-                {s.icon}
-              </a>
-            ))}
+          {/* Official Social Channels matching Image 2 */}
+          <div className="mt-6">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-brand mb-3">
+              OFFICIAL SOCIAL CHANNELS
+            </h4>
+            <div className="flex items-center gap-2.5 sm:gap-3">
+              {socialLinks.map((s) => (
+                <a
+                  key={s.name}
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={s.name}
+                  className={`grid h-10 w-10 sm:h-11 sm:w-11 place-items-center rounded-full shadow-md transition-all duration-300 hover:scale-115 active:scale-95 ${s.btnClass}`}
+                >
+                  {s.icon}
+                </a>
+              ))}
+            </div>
           </div>
         </div>
 
