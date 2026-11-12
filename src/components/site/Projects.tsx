@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { X } from "lucide-react";
+import { useState, useEffect } from "react";
+import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { categories, projects } from "./data";
 
 export function Projects() {
@@ -8,6 +8,26 @@ export function Projects() {
 
   const list = filter === "All" ? projects : projects.filter((p) => p.category === filter);
   const sel = open !== null ? projects[open] : undefined;
+
+  // Lock body scroll and handle keyboard navigation when modal is open
+  useEffect(() => {
+    if (open === null) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(null);
+      if (e.key === "ArrowLeft") {
+        setOpen((curr) => (curr !== null ? (curr > 0 ? curr - 1 : projects.length - 1) : null));
+      }
+      if (e.key === "ArrowRight") {
+        setOpen((curr) => (curr !== null ? (curr < projects.length - 1 ? curr + 1 : 0) : null));
+      }
+    };
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [open]);
 
   return (
     <section id="projects" className="bg-background py-6 sm:py-8">
@@ -78,31 +98,81 @@ export function Projects() {
       </div>
 
       {/* Lightbox Modal */}
-      {sel && (
+      {sel && open !== null && (
         <div
-          className="fixed inset-0 z-[60] grid place-items-center bg-navy-deep/90 p-4"
+          className="fixed inset-0 z-[70] flex items-center justify-center bg-navy-deep/85 backdrop-blur-md p-4 sm:p-6 md:p-8 animate-fade-in"
           onClick={() => setOpen(null)}
+          role="dialog"
+          aria-modal="true"
         >
-          <button
-            aria-label="Close"
-            className="absolute right-4 top-4 grid h-11 w-11 place-items-center rounded-full bg-primary-foreground text-navy shadow-lg"
+          <div
+            className="relative w-full max-w-4xl xl:max-w-5xl overflow-hidden rounded-3xl border border-white/20 bg-navy-deep shadow-[0_25px_60px_-15px_rgba(0,0,0,0.7)] backdrop-blur-xl animate-scale-in"
+            onClick={(e) => e.stopPropagation()}
           >
-            <X size={20} />
-          </button>
-          <figure className="max-w-5xl 2xl:max-w-6xl w-full" onClick={(e) => e.stopPropagation()}>
-            <img
-              src={sel.image}
-              alt={sel.title}
-              className="max-h-[75vh] w-full rounded-2xl object-contain shadow-2xl"
-            />
-            <figcaption className="mt-4 text-center text-primary-foreground">
-              <span className="mr-2 rounded-full bg-brand px-3 py-1 text-xs font-semibold text-accent-foreground">
-                {sel.category}
-              </span>
-              <span className="text-lg font-bold">{sel.title}</span>
-              <p className="mt-1 text-sm text-primary-foreground/75">{sel.description}</p>
-            </figcaption>
-          </figure>
+            {/* Close Button */}
+            <button
+              type="button"
+              onClick={() => setOpen(null)}
+              aria-label="Close"
+              className="absolute right-4 top-4 z-30 flex h-10 w-10 items-center justify-center rounded-full bg-navy-deep/80 text-white backdrop-blur-md border border-white/20 transition-all duration-200 hover:bg-brand hover:scale-105 shadow-lg cursor-pointer"
+            >
+              <X size={20} />
+            </button>
+
+            {/* Previous Button */}
+            <button
+              type="button"
+              onClick={() =>
+                setOpen((curr) => (curr !== null ? (curr > 0 ? curr - 1 : projects.length - 1) : null))
+              }
+              aria-label="Previous project"
+              className="absolute left-3 top-1/2 -translate-y-1/2 z-30 flex h-10 w-10 items-center justify-center rounded-full bg-navy-deep/80 text-white backdrop-blur-md border border-white/20 transition-all duration-200 hover:bg-brand hover:scale-110 shadow-lg cursor-pointer"
+            >
+              <ChevronLeft size={22} />
+            </button>
+
+            {/* Next Button */}
+            <button
+              type="button"
+              onClick={() =>
+                setOpen((curr) => (curr !== null ? (curr < projects.length - 1 ? curr + 1 : 0) : null))
+              }
+              aria-label="Next project"
+              className="absolute right-3 top-1/2 -translate-y-1/2 z-30 flex h-10 w-10 items-center justify-center rounded-full bg-navy-deep/80 text-white backdrop-blur-md border border-white/20 transition-all duration-200 hover:bg-brand hover:scale-110 shadow-lg cursor-pointer"
+            >
+              <ChevronRight size={22} />
+            </button>
+
+            {/* Image Frame with curved corners enforced by parent rounded-3xl overflow-hidden */}
+            <div className="relative aspect-[16/10] sm:aspect-[16/9] max-h-[66vh] w-full overflow-hidden bg-slate-950">
+              <img
+                src={sel.image}
+                alt={sel.title}
+                className="h-full w-full object-cover transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/20 to-transparent pointer-events-none" />
+            </div>
+
+            {/* Bottom Caption Bar with seamless matching rounded corners */}
+            <div className="p-5 sm:p-6 bg-navy-deep border-t border-white/10">
+              <div className="flex flex-wrap items-center justify-between gap-2.5">
+                <div className="flex flex-wrap items-center gap-2.5">
+                  <span className="rounded-full bg-brand px-3 py-1 text-xs font-bold text-white shadow-sm uppercase tracking-wider">
+                    {sel.category}
+                  </span>
+                  <h3 className="text-lg sm:text-2xl font-bold text-white tracking-tight">
+                    {sel.title}
+                  </h3>
+                </div>
+                <span className="text-xs font-semibold text-white/50 tracking-wider">
+                  {open + 1} / {projects.length}
+                </span>
+              </div>
+              <p className="mt-2 text-xs sm:text-sm text-white/80 leading-relaxed text-justify sm:text-left">
+                {sel.description}
+              </p>
+            </div>
+          </div>
         </div>
       )}
     </section>
