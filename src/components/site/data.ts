@@ -49,7 +49,7 @@ export const consultants = [
   {
     name: "Er. Sabbani Srinivas",
     qualifications: "B. Tech (Civil), M.I.E, FACCE(I), LMICI",
-    role: "Consulting Civil Engineer",
+    role: "Chief Consultant",
     phone: "94401 33003",
     email: "deviconsultancyofficial@gmail.com",
     image: "/founder.jpg",
