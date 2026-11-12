@@ -104,7 +104,7 @@ export const slides = [
     titlePrefix: "Designing",
     titleAccent: "Tomorrow.",
     quote:
-      "Transforming complex civil engineering concepts into landmark villas, commercial complexes, hospitals, and institutional edifices.",
+      "Transforming complex civil engineering concepts into landmark villas, commercial complexes, conventional halls, and institutional edifices.",
   },
 ];
 
@@ -131,7 +131,6 @@ export const categories = [
   "Residential Villas",
   "Commercial Complexes",
   "Institutional Buildings",
-  "Hospitals",
   "Conventional Halls",
 ] as const;
 
@@ -153,12 +152,6 @@ export const projects = [
     category: "Institutional Buildings",
     image: construction,
     description: "State-of-the-art educational and institutional facility built for longevity.",
-  },
-  {
-    title: "Super-Specialty Hospital",
-    category: "Hospitals",
-    image: hero2,
-    description: "Healthcare facility planned according to stringent medical infrastructure standards.",
   },
   {
     title: "Grand Conventional Hall",

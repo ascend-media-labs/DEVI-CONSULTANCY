@@ -94,7 +94,6 @@ export function Contact() {
                   <option value="Residential Villas">Residential Villas</option>
                   <option value="Commercial Complexes">Commercial Complexes</option>
                   <option value="Institutional Buildings">Institutional Buildings</option>
-                  <option value="Hospitals">Hospitals</option>
                   <option value="Conventional Halls">Conventional Halls</option>
                   <option value="Other">Other Services</option>
                 </select>

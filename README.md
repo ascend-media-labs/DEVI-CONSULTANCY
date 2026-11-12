@@ -6,7 +6,7 @@ Leaders in Quality Construction & Infrastructure since 2000. Professional constr
 
 ## 🏗️ Project Overview
 
-**DEVI CONSULTANCY** delivers end-to-end building consultancy across residential villas, commercial complexes, institutional buildings, hospitals, and convention halls.
+**DEVI CONSULTANCY** delivers end-to-end building consultancy across residential villas, commercial complexes, institutional buildings, and convention halls.
 
 - **Founding Year**: 2000
 - **Experience**: 26+ Years of Proven Excellence
