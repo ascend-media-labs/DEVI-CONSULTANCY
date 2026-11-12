@@ -6,8 +6,25 @@ import industrial from "@/assets/industrial.jpg";
 import construction from "@/assets/construction.jpg";
 import villa from "@/assets/villa.jpg";
 import about from "@/assets/about.jpg";
+import constructionManagementImg from "@/assets/construction-management.jpg";
+import surveyingImg from "@/assets/surveying.jpg";
+import turnkeyServicesImg from "@/assets/turnkey-services.jpg";
+import preConstructionImg from "@/assets/pre-construction.jpg";
 
-export const images = { hero1, hero2, hero3, commercial, industrial, construction, villa, about };
+export const images = {
+  hero1,
+  hero2,
+  hero3,
+  commercial,
+  industrial,
+  construction,
+  villa,
+  about,
+  constructionManagement: constructionManagementImg,
+  surveying: surveyingImg,
+  turnkeyServices: turnkeyServicesImg,
+  preConstruction: preConstructionImg,
+};
 
 export const navLinks = [
   { id: "home", path: "/", label: "Home" },
@@ -254,7 +271,7 @@ export const services = [
     icon: "ClipboardCheck",
     title: "Pre-Construction Planning",
     text: "Feasibility analysis, budgeting, scheduling, and regulatory approvals for a seamless project launch.",
-    image: construction,
+    image: preConstructionImg,
     points: [
       "Topographical Site Feasibility & Soil Test Review",
       "DTCP & Municipal Statutory Approval Liaison",
@@ -275,7 +292,7 @@ export const services = [
     icon: "HardHat",
     title: "Construction Management",
     text: "Construction management is the process of planning, coordinating, and providing monitoring and controlling of a construction project.",
-    image: construction,
+    image: constructionManagementImg,
     points: [
       "End-to-End Project Scheduling & Milestone Tracking",
       "On-Site Quality Assurance & Material Verification",
@@ -296,7 +313,7 @@ export const services = [
     icon: "Compass",
     title: "Surveying",
     text: "Accurate land surveying, contour mapping, boundary demarcation, leveling, and topographical surveys using modern electronic total stations.",
-    image: industrial,
+    image: surveyingImg,
     points: [
       "Electronic Total Station (ETS) & Digital Land Surveying",
       "Topographical Mapping & Contour Level Profiling",
@@ -317,7 +334,7 @@ export const services = [
     icon: "KeyRound",
     title: "Turnkey Services",
     text: "Construction contracts under which our team plans, designs, builds, and makes any other necessary adjustments so the project is ready for use by a specified date and at an agreed price.",
-    image: hero3,
+    image: turnkeyServicesImg,
     points: [
       "Single-Point Accountability from Concept to Handover",
       "Fixed-Price & Milestone-Based Transparent Contracts",
