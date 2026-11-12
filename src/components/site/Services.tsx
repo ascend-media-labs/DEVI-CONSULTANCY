@@ -6,6 +6,9 @@ import {
   Layers,
   FileSpreadsheet,
   ClipboardCheck,
+  HardHat,
+  Compass,
+  KeyRound,
   Check,
   X,
   ArrowRight,
@@ -19,6 +22,9 @@ const iconMap = {
   Layers,
   FileSpreadsheet,
   ClipboardCheck,
+  HardHat,
+  Compass,
+  KeyRound,
 };
 
 export function Services() {
@@ -63,7 +69,7 @@ export function Services() {
         </div>
 
         {/* Services Grid with Image-2 Card Model */}
-        <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {services.map((s) => {
             const Icon = iconMap[s.icon as keyof typeof iconMap] || Building2;
             const isHighlighted = highlightedId === s.id;

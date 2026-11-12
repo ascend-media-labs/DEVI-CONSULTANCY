@@ -270,6 +270,69 @@ export const services = [
       "Comprehensive on-site quality control and construction safety guidelines",
     ],
   },
+  {
+    id: "service-construction-management",
+    icon: "HardHat",
+    title: "Construction Management",
+    text: "Construction management is the process of planning, coordinating, and providing monitoring and controlling of a construction project.",
+    image: construction,
+    points: [
+      "End-to-End Project Scheduling & Milestone Tracking",
+      "On-Site Quality Assurance & Material Verification",
+      "Contractor & Vendor Coordination with Budget Control",
+      "Comprehensive Daily & Weekly Site Progress Audits",
+    ],
+    detailedText:
+      "Construction management is the process of planning, coordinating, and providing monitoring and controlling of a construction project. At DEVI CONSULTANCY, our experienced project managers oversee every stage of development—from resource allocation and contractor supervision to rigorous quality inspections—ensuring seamless project delivery on time and within budget.",
+    deliverables: [
+      "Detailed construction master schedule and critical path analysis",
+      "Daily and weekly site supervision logs and milestone reporting",
+      "Rigorous quality control checklists and material test verification",
+      "Contractor billing review, cost control, and statutory safety oversight",
+    ],
+  },
+  {
+    id: "service-surveying",
+    icon: "Compass",
+    title: "Surveying",
+    text: "Accurate land surveying, contour mapping, boundary demarcation, leveling, and topographical surveys using modern electronic total stations.",
+    image: industrial,
+    points: [
+      "Electronic Total Station (ETS) & Digital Land Surveying",
+      "Topographical Mapping & Contour Level Profiling",
+      "Precise Boundary Demarcation & Area Calculation",
+      "Road, Pipeline & Infrastructure Alignment Surveys",
+    ],
+    detailedText:
+      "Our professional surveying services provide high-precision geospatial data essential for architectural planning and structural foundation design. Utilizing state-of-the-art Electronic Total Stations (ETS), digital levels, and GPS positioning, we deliver accurate topographical mapping, plot demarcation, and contour profiling across Telangana.",
+    deliverables: [
+      "High-precision CAD survey drawings with contour intervals and spot levels",
+      "Certified land demarcation and boundary verification maps",
+      "Earthwork volume calculations for cut and fill optimization",
+      "Geo-referenced layout stakeout coordinates for construction alignment",
+    ],
+  },
+  {
+    id: "service-turnkey-services",
+    icon: "KeyRound",
+    title: "Turnkey Services",
+    text: "Construction contracts under which our team plans, designs, builds, and makes any other necessary adjustments so the project is ready for use by a specified date and at an agreed price.",
+    image: hero3,
+    points: [
+      "Single-Point Accountability from Concept to Handover",
+      "Fixed-Price & Milestone-Based Transparent Contracts",
+      "Integrated Architectural, Structural & MEP Execution",
+      "Ready-to-Move Finished Spaces Delivered on Schedule",
+    ],
+    detailedText:
+      "Construction contracts under which a contractor plans, designs, builds, and makes any other necessary adjustments so the project is ready for use by a specified date and at an agreed price. Under our turnkey construction solutions, DEVI CONSULTANCY handles the complete lifecycle—architectural drawings, structural engineering, statutory approvals, civil construction, interior finishing, and final commissioning.",
+    deliverables: [
+      "Comprehensive turnkey contract with guaranteed completion timelines",
+      "All-inclusive procurement and execution of civil, electrical, and plumbing works",
+      "Premium interior and exterior finishes as per approved specifications",
+      "Complete statutory clearances, test reports, and final key handover",
+    ],
+  },
 ];
 
 // 7. WHY CHOOSE US?

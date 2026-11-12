@@ -8,7 +8,7 @@ export const Route = createFileRoute("/services")({
       {
         name: "description",
         content:
-          "Explore DEVI CONSULTANCY's comprehensive construction services: architectural modeling, structural design, interior & exterior designs, bank estimation, and pre-construction planning.",
+          "Explore DEVI CONSULTANCY's comprehensive construction services: architectural modeling, structural design, interior & exterior designs, bank estimation, pre-construction planning, construction management, surveying, and turnkey services.",
       },
     ],
   }),
