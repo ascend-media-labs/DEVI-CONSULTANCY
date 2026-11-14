@@ -68,10 +68,10 @@ export function Services() {
       : services.filter((s) => getCategoryForService(s.id) === activeCategory);
 
   return (
-    <section id="services" className="bg-[linear-gradient(180deg,#e2f0ee,#f3f8f7)] py-16 sm:py-20 lg:py-24 section-glow-ambient">
+    <section id="services" className="bg-[linear-gradient(180deg,#e2f0ee,#f3f8f7)] py-8 sm:py-10 lg:py-12 section-glow-ambient">
       <div className="mx-auto w-full max-w-[1240px] px-5 sm:px-8 lg:px-10">
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
+        <div className="text-center max-w-2xl mx-auto mb-6 sm:mb-8">
           <p className="eyebrow inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[3px] text-[#cf9f8a]">
             Our Services
           </p>
@@ -84,7 +84,7 @@ export function Services() {
         </div>
 
         {/* Category Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 mb-10">
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 mb-6 sm:mb-8">
           {(["All", "Design", "Engineering", "Valuation", "Construction"] as const).map((cat) => (
             <button
               key={cat}
@@ -173,8 +173,8 @@ export function Services() {
         </div>
 
         {/* Signature Service Banner (.ft from reference design) */}
-        <div className="mt-16 sm:mt-20">
-          <div className="relative rounded-[32px] sm:rounded-[36px] bg-gradient-to-br from-[#1a6c88] to-[#0c3f50] p-8 sm:p-12 lg:p-14 text-[#effaf8] shadow-[0_30px_60px_rgba(12,63,80,0.3)] overflow-hidden isolate">
+        <div className="mt-8 sm:mt-10 lg:mt-12">
+          <div className="relative rounded-[32px] sm:rounded-[36px] bg-gradient-to-br from-[#1a6c88] to-[#0c3f50] p-6 sm:p-10 lg:p-12 text-[#effaf8] shadow-[0_30px_60px_rgba(12,63,80,0.3)] overflow-hidden isolate">
             {/* Ambient glass highlight */}
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/15 via-transparent to-transparent" />
 

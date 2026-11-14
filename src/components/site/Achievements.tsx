@@ -5,13 +5,13 @@ const iconMap = [Calendar, Building, Trophy];
 
 export function Achievements() {
   return (
-    <section id="achievements" className="relative overflow-hidden bg-gradient-to-br from-[#166079] to-[#0c3f50] py-16 sm:py-20 text-[#effaf8] shadow-[inset_0_1px_0_rgba(255,255,255,0.15)]">
+    <section id="achievements" className="relative overflow-hidden bg-gradient-to-br from-[#166079] to-[#0c3f50] py-8 sm:py-10 lg:py-12 text-[#effaf8] shadow-[inset_0_1px_0_rgba(255,255,255,0.15)]">
       {/* Subtle ambient lighting glows */}
       <div className="pointer-events-none absolute -left-20 -top-20 h-80 w-80 rounded-full bg-[#bfe3e0]/15 blur-3xl" />
       <div className="pointer-events-none absolute -bottom-20 -right-20 h-80 w-80 rounded-full bg-[#ecd0c3]/15 blur-3xl" />
 
       <div className="relative mx-auto w-full max-w-[1240px] px-5 sm:px-8 lg:px-10">
-        <div className="text-center max-w-xl mx-auto mb-10 sm:mb-12">
+        <div className="text-center max-w-xl mx-auto mb-6 sm:mb-8">
           <p className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[3px] text-[#ecd0c3]">
             Our Track Record
           </p>

@@ -30,10 +30,10 @@ export function Projects() {
   }, [open]);
 
   return (
-    <section id="projects" className="bg-[#f3f8f7] py-16 sm:py-20 lg:py-24 section-glow-ambient">
+    <section id="projects" className="bg-[#f3f8f7] py-8 sm:py-10 lg:py-12 section-glow-ambient">
       <div className="mx-auto w-full max-w-[1240px] px-5 sm:px-8 lg:px-10">
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
+        <div className="text-center max-w-2xl mx-auto mb-6 sm:mb-8">
           <p className="eyebrow inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[3px] text-[#cf9f8a]">
             Portfolio
           </p>
@@ -46,7 +46,7 @@ export function Projects() {
         </div>
 
         {/* Filter buttons */}
-        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 mb-10">
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 mb-6 sm:mb-8">
           {categories.map((c) => (
             <button
               key={c}

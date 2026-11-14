@@ -28,10 +28,10 @@ const processSteps = [
 
 export function WhyChooseUs() {
   return (
-    <section id="why-us" className="bg-[#f3f8f7] py-16 sm:py-20 lg:py-24 overflow-hidden">
+    <section id="why-us" className="bg-[#f3f8f7] py-8 sm:py-10 lg:py-12 overflow-hidden">
       <div className="mx-auto w-full max-w-[1240px] px-5 sm:px-8 lg:px-10">
         {/* Section 1: Our Process (Directly from reference HTML) */}
-        <div className="text-center max-w-xl mx-auto mb-10 sm:mb-12">
+        <div className="text-center max-w-xl mx-auto mb-6 sm:mb-8">
           <p className="eyebrow inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[3px] text-[#cf9f8a]">
             Our Process
           </p>
@@ -62,8 +62,8 @@ export function WhyChooseUs() {
         </div>
 
         {/* Section 2: Why Choose Us Reasons Marquee */}
-        <div className="mt-16 sm:mt-20">
-          <div className="text-left mb-6">
+        <div className="mt-8 sm:mt-10 lg:mt-12">
+          <div className="text-left mb-4 sm:mb-5">
             <p className="eyebrow inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[3px] text-[#cf9f8a]">
               Why Choose Us
             </p>

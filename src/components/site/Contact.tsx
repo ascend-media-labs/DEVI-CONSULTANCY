@@ -12,10 +12,10 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="bg-[#f3f8f7] py-16 sm:py-20 lg:py-24 section-glow-ambient">
+    <section id="contact" className="bg-[#f3f8f7] py-8 sm:py-10 lg:py-12 section-glow-ambient">
       <div className="mx-auto w-full max-w-[1240px] px-5 sm:px-8 lg:px-10">
         {/* Contact Container Matching Reference (.ct) */}
-        <div className="glass-card !rounded-[32px] sm:!rounded-[36px] p-7 sm:p-12 lg:p-14 shadow-[0_24px_54px_rgba(12,63,80,0.12)] border border-white/85">
+        <div className="glass-card !rounded-[32px] sm:!rounded-[36px] p-6 sm:p-9 lg:p-11 shadow-[0_24px_54px_rgba(12,63,80,0.12)] border border-white/85">
           <div className="grid gap-10 lg:grid-cols-2 lg:gap-14 items-start">
             {/* Left Column: Information */}
             <div>
