@@ -68,7 +68,7 @@ export function Services() {
       : services.filter((s) => getCategoryForService(s.id) === activeCategory);
 
   return (
-    <section id="services" className="bg-[linear-gradient(180deg,#e2f0ee,#f3f8f7)] py-16 sm:py-20 lg:py-24">
+    <section id="services" className="bg-[linear-gradient(180deg,#e2f0ee,#f3f8f7)] py-16 sm:py-20 lg:py-24 section-glow-ambient">
       <div className="mx-auto w-full max-w-[1240px] px-5 sm:px-8 lg:px-10">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">

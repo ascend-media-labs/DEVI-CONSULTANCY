@@ -29,7 +29,7 @@ export function Achievements() {
             return (
               <div
                 key={item.label}
-                className="group relative flex flex-col items-center rounded-[28px] border border-white/20 bg-white/10 p-7 text-center backdrop-blur-md shadow-[0_16px_36px_rgba(0,0,0,0.2)] hover:bg-white/15 transition-all duration-300 hover:-translate-y-1"
+                className="card-glow-dark group relative flex flex-col items-center rounded-[28px] border border-white/20 bg-white/10 p-7 text-center backdrop-blur-md shadow-[0_16px_36px_rgba(0,0,0,0.2)] cursor-pointer"
               >
                 <div className="grid h-12 w-12 place-items-center rounded-2xl bg-white/15 text-[#ecd0c3] mb-4">
                   <Icon size={24} />

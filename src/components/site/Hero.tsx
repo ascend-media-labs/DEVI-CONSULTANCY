@@ -107,7 +107,7 @@ export function Hero() {
             {heroStats.map((stat, idx) => (
               <div
                 key={idx}
-                className={`flex flex-col items-center justify-center rounded-2xl border border-[#bfe3e0]/25 bg-[#0c3f50]/80 p-3.5 sm:p-5 text-center shadow-[0_12px_32px_rgba(0,0,0,0.35)] backdrop-blur-md transition-all duration-300 hover:border-[#bfe3e0]/55 hover:bg-[#0c3f50]/95 hover:shadow-[0_8px_30px_rgba(191,227,224,0.22)] hover:-translate-y-0.5 ${
+                className={`card-glow-dark flex flex-col items-center justify-center rounded-2xl border border-[#bfe3e0]/30 bg-[#0c3f50]/80 p-3.5 sm:p-5 text-center shadow-[0_12px_32px_rgba(0,0,0,0.35)] backdrop-blur-md cursor-pointer ${
                   idx === 4 ? "col-span-2 sm:col-span-1" : ""
                 }`}
               >

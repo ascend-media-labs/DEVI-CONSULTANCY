@@ -72,7 +72,7 @@ export function About({ isDedicatedPage = false }: AboutProps) {
     <section
       ref={sectionRef}
       id="about"
-      className="bg-[#f3f8f7] py-16 sm:py-20 lg:py-24 overflow-hidden"
+      className="bg-[#f3f8f7] py-16 sm:py-20 lg:py-24 section-glow-ambient"
     >
       <div className="mx-auto w-full max-w-[1240px] px-5 sm:px-8 lg:px-10">
         {/* Top Row: Narrative (Left) & Vision/Mission (Right) */}

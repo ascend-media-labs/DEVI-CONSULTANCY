@@ -30,7 +30,7 @@ export function Projects() {
   }, [open]);
 
   return (
-    <section id="projects" className="bg-[#f3f8f7] py-16 sm:py-20 lg:py-24">
+    <section id="projects" className="bg-[#f3f8f7] py-16 sm:py-20 lg:py-24 section-glow-ambient">
       <div className="mx-auto w-full max-w-[1240px] px-5 sm:px-8 lg:px-10">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
@@ -70,7 +70,7 @@ export function Projects() {
               <button
                 key={p.title}
                 onClick={() => setOpen(idx)}
-                className="group relative aspect-[4/3] overflow-hidden rounded-[26px] text-left border border-white/80 shadow-[0_16px_36px_rgba(12,63,80,0.08)] hover:shadow-[0_24px_50px_rgba(12,63,80,0.18)] cursor-pointer transition-all duration-500 hover:-translate-y-1.5 isolate"
+                className="card-glow group relative aspect-[4/3] overflow-hidden rounded-[26px] text-left border border-white/80 shadow-[0_16px_36px_rgba(12,63,80,0.08)] cursor-pointer isolate"
               >
                 <img
                   src={p.image}
