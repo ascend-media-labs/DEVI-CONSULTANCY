@@ -6,7 +6,7 @@ export function Testimonials() {
     <section id="testimonials" className="bg-[#08191f] text-[#eaf6f4] py-5 sm:py-6 lg:py-7 scroll-mt-20">
       <div className="mx-auto w-full max-w-[1240px] px-5 sm:px-8 lg:px-10">
         {/* Side Heading Header */}
-        <div className="mb-4 sm:mb-5 flex flex-col md:flex-row md:items-baseline md:justify-between gap-1 sm:gap-3">
+        <div className="mb-4 sm:mb-5">
           <div className="flex flex-wrap items-baseline gap-2">
             <span className="text-xs font-bold uppercase tracking-[2px] text-[#cf9f8a]">
               Client Feedback
@@ -16,7 +16,7 @@ export function Testimonials() {
               {testimonialsData.sectionTitle}
             </h2>
           </div>
-          <p className="text-xs sm:text-sm text-[#9fbcc2] max-w-md">
+          <p className="mt-1 text-xs sm:text-sm text-[#9fbcc2] max-w-2xl">
             {testimonialsData.subtitle}
           </p>
         </div>

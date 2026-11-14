@@ -12,7 +12,7 @@ export function Achievements() {
 
       <div className="relative mx-auto w-full max-w-[1240px] px-5 sm:px-8 lg:px-10">
         {/* Side Heading Header */}
-        <div className="mb-4 sm:mb-5 flex flex-col md:flex-row md:items-baseline md:justify-between gap-1 sm:gap-3">
+        <div className="mb-4 sm:mb-5">
           <div className="flex flex-wrap items-baseline gap-2">
             <span className="text-xs font-bold uppercase tracking-[2px] text-[#ecd0c3]">
               Our Track Record
@@ -22,7 +22,7 @@ export function Achievements() {
               Our Achievements
             </h2>
           </div>
-          <p className="text-xs sm:text-sm text-[#cfe8e5] max-w-md">
+          <p className="mt-1 text-xs sm:text-sm text-[#cfe8e5] max-w-2xl">
             Decades of dedicated service in building consultancy, structural stability, and infrastructure.
           </p>
         </div>

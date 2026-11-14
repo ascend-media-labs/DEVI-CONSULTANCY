@@ -23,7 +23,7 @@ function YearsCounter() {
     });
     io.observe(el);
     return () => io.disconnect();
-  }, [target]);
+  },[target]);
 
   return <span ref={ref}>{n}+</span>;
 }
@@ -155,7 +155,7 @@ export function About({ isDedicatedPage = false }: AboutProps) {
 
         {/* Leadership Section */}
         <div id="team" className="mt-4 sm:mt-5 scroll-mt-24">
-          <div className="mb-4 sm:mb-5 flex flex-col md:flex-row md:items-baseline md:justify-between gap-1 sm:gap-3">
+          <div className="mb-4 sm:mb-5">
             <div className="flex flex-wrap items-baseline gap-2">
               <span className="text-xs font-bold uppercase tracking-[2px] text-[#cf9f8a]">
                 Leadership
@@ -165,7 +165,7 @@ export function About({ isDedicatedPage = false }: AboutProps) {
                 The experts behind every project
               </h2>
             </div>
-            <p className="text-xs sm:text-sm text-[#9fbcc2]">
+            <p className="mt-1 text-xs sm:text-sm text-[#9fbcc2] max-w-2xl">
               Decades of structural precision, government-approved valuations, and turnkey project delivery.
             </p>
           </div>
