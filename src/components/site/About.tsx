@@ -234,21 +234,21 @@ export function About({ isDedicatedPage = false }: AboutProps) {
           onClick={() => setSelectedConsultant(null)}
         >
           <div
-            className="relative w-full max-w-4xl max-h-[92vh] overflow-y-auto rounded-[32px] border border-white/80 bg-white p-6 sm:p-8 shadow-[0_25px_60px_-15px_rgba(12,63,80,0.35)] isolate text-left"
+            className="relative w-full max-w-5xl lg:max-w-6xl max-h-[94vh] overflow-y-auto rounded-[28px] sm:rounded-[32px] border border-white/80 bg-white p-5 sm:p-7 lg:p-8 shadow-[0_25px_60px_-15px_rgba(12,63,80,0.35)] isolate text-left"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
             <button
               aria-label="Close details"
               onClick={() => setSelectedConsultant(null)}
-              className="absolute right-5 top-5 z-30 grid h-9 w-9 place-items-center rounded-full bg-[#e2f0ee] text-[#0c3f50] hover:bg-[#0c3f50] hover:text-white transition-all cursor-pointer shadow-xs"
+              className="absolute right-4 top-4 sm:right-5 sm:top-5 z-30 grid h-9 w-9 place-items-center rounded-full bg-[#e2f0ee] text-[#0c3f50] hover:bg-[#0c3f50] hover:text-white transition-all cursor-pointer shadow-xs"
             >
               <X size={18} />
             </button>
 
             {/* Header */}
-            <div className="flex flex-col sm:flex-row items-center sm:items-start gap-5 pb-5 border-b border-[#d3e4e2]">
-              <div className="relative h-24 w-24 sm:h-28 sm:w-28 shrink-0 overflow-hidden rounded-full border-4 border-white shadow-[0_0_0_3px_#cf9f8a,0_10px_20px_rgba(12,63,80,0.15)]">
+            <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-5 pb-4 border-b border-[#d3e4e2]">
+              <div className="relative h-20 w-20 sm:h-24 sm:w-24 shrink-0 overflow-hidden rounded-full border-4 border-white shadow-[0_0_0_3px_#cf9f8a,0_10px_20px_rgba(12,63,80,0.15)]">
                 <img
                   src={selectedConsultant.image}
                   alt={selectedConsultant.name}
@@ -256,24 +256,24 @@ export function About({ isDedicatedPage = false }: AboutProps) {
                 />
               </div>
               <div className="text-center sm:text-left flex-1 min-w-0 pr-8">
-                <span className="inline-flex items-center rounded-full bg-[#e2f0ee] px-3 py-1 text-xs font-bold text-[#166079] uppercase tracking-wider">
+                <span className="inline-flex items-center rounded-full bg-[#e2f0ee] px-3 py-0.5 text-xs font-bold text-[#166079] uppercase tracking-wider">
                   {selectedConsultant.role}
                 </span>
-                <h3 className="mt-2 font-display text-2xl sm:text-3xl text-[#0f2e38]">
+                <h3 className="mt-1.5 font-display text-2xl sm:text-3xl text-[#0f2e38]">
                   {selectedConsultant.name}
                 </h3>
                 <p className="mt-0.5 text-xs sm:text-sm font-semibold text-[#cf9f8a]">
                   {selectedConsultant.designation || selectedConsultant.role}
                 </p>
-                <p className="mt-1 text-xs font-medium text-[#587078] leading-relaxed">
+                <p className="mt-0.5 text-xs font-medium text-[#587078] leading-relaxed">
                   {selectedConsultant.qualifications}
                 </p>
               </div>
             </div>
 
             {/* Body */}
-            <div className="mt-6 grid gap-6 lg:grid-cols-12 items-start">
-              <div className="lg:col-span-7 space-y-3">
+            <div className="mt-5 grid gap-5 lg:grid-cols-12 items-start">
+              <div className="lg:col-span-7 space-y-2.5">
                 <h4 className="text-xs font-bold uppercase tracking-[2px] text-[#166079]">
                   Professional Background
                 </h4>
@@ -285,14 +285,14 @@ export function About({ isDedicatedPage = false }: AboutProps) {
               </div>
 
               {selectedConsultant.portfolio && (
-                <div className="lg:col-span-5 rounded-2xl border border-[#d3e4e2] bg-[#f3f8f7] p-5">
-                  <h4 className="text-xs font-bold uppercase tracking-[2px] text-[#0c3f50] mb-3 flex items-center gap-2">
+                <div className="lg:col-span-5 rounded-2xl border border-[#d3e4e2] bg-[#f3f8f7] p-4 sm:p-5">
+                  <h4 className="text-xs font-bold uppercase tracking-[2px] text-[#0c3f50] mb-2.5 flex items-center gap-2">
                     <Briefcase size={14} className="text-[#cf9f8a]" />
                     <span>{selectedConsultant.portfolioTitle || "Key Specializations:"}</span>
                   </h4>
-                  <div className="space-y-2">
+                  <div className={`grid gap-2 text-xs text-[#0f2e38] ${selectedConsultant.portfolio.length > 5 ? "sm:grid-cols-2" : "grid-cols-1"}`}>
                     {selectedConsultant.portfolio.map((item, idx) => (
-                      <div key={idx} className="flex items-start gap-2 text-xs text-[#0f2e38]">
+                      <div key={idx} className="flex items-start gap-1.5">
                         <span className="text-[#cf9f8a] font-bold">◇</span>
                         <span className="leading-snug font-medium">{item}</span>
                       </div>
@@ -303,7 +303,7 @@ export function About({ isDedicatedPage = false }: AboutProps) {
             </div>
 
             {/* Action Buttons */}
-            <div className="mt-6 pt-5 border-t border-[#d3e4e2] flex flex-wrap items-center justify-between gap-3">
+            <div className="mt-5 pt-4 border-t border-[#d3e4e2] flex flex-wrap items-center justify-between gap-3">
               <div className="flex flex-wrap items-center gap-2.5">
                 <a
                   href={`tel:${selectedConsultant.phone.replace(/\s/g, "")}`}
