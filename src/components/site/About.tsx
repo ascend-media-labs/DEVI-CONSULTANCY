@@ -72,7 +72,7 @@ export function About({ isDedicatedPage = false }: AboutProps) {
     <section
       ref={sectionRef}
       id="about"
-      className="bg-[#f3f8f7] py-6 sm:py-8 lg:py-10 section-glow-ambient"
+      className="bg-[#08191f] text-[#eaf6f4] py-5 sm:py-6 lg:py-7 section-glow-ambient scroll-mt-20"
     >
       <div className="mx-auto w-full max-w-[1240px] px-5 sm:px-8 lg:px-10">
         {/* Top Row: Narrative (Left) & Vision/Mission (Right) */}
@@ -88,12 +88,12 @@ export function About({ isDedicatedPage = false }: AboutProps) {
                 About Us
               </span>
               <span className="text-[#cf9f8a]/70">·</span>
-              <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl text-[#0f2e38] tracking-tight leading-[1.15]">
+              <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl text-[#eaf6f4] tracking-tight leading-[1.15]">
                 Building better lives since 2000
               </h2>
             </div>
 
-            <div className="mt-3.5 space-y-2.5 text-sm sm:text-base leading-relaxed text-[#587078] text-justify">
+            <div className="mt-3.5 space-y-2.5 text-sm sm:text-base leading-relaxed text-[#9fbcc2] text-justify">
               <p>
                 Devi Consultancy is one of the leading construction and consulting firms in
                 Karimnagar, recognized across Telangana for turning ideas into well-built,
@@ -107,11 +107,11 @@ export function About({ isDedicatedPage = false }: AboutProps) {
             </div>
 
             {/* Founded badge */}
-            <div className="mt-4 inline-flex items-center gap-3 rounded-2xl bg-white/80 border border-[#d3e4e2] px-4 py-2 shadow-xs">
-              <span className="font-display text-2xl text-[#166079] font-normal">
+            <div className="mt-4 inline-flex items-center gap-3 rounded-2xl bg-[#10303a]/80 border border-[#1f4650] px-4 py-2 shadow-xs">
+              <span className="font-display text-2xl text-[#bfe3e0] font-normal">
                 <YearsCounter />
               </span>
-              <span className="text-xs text-[#587078] font-medium leading-tight">
+              <span className="text-xs text-[#9fbcc2] font-medium leading-tight">
                 Years of engineering excellence
                 <br />
                 Established in {aboutData.establishedYear}
@@ -126,27 +126,27 @@ export function About({ isDedicatedPage = false }: AboutProps) {
             }`}
           >
             {/* Vision */}
-            <div className="glass-card !rounded-[20px] !border-l-[4px] !border-l-[#cf9f8a] p-4.5 sm:p-5 shadow-[0_12px_30px_rgba(12,63,80,0.07)] hover:shadow-[0_16px_36px_rgba(12,63,80,0.12)] transition-shadow">
+            <div className="glass-card !rounded-[20px] !border-l-[4px] !border-l-[#cf9f8a] !border-[#1f4650] p-4.5 sm:p-5 shadow-[0_12px_30px_rgba(0,0,0,0.35)] transition-shadow">
               <div className="flex items-center gap-2.5 mb-1.5">
-                <div className="grid h-8 w-8 place-items-center rounded-lg bg-[#e2f0ee] text-[#166079]">
+                <div className="grid h-8 w-8 place-items-center rounded-lg bg-[#16414b] text-[#bfe3e0]">
                   <Eye size={16} />
                 </div>
-                <h3 className="font-display text-lg sm:text-xl text-[#0f2e38]">Our Vision</h3>
+                <h3 className="font-display text-lg sm:text-xl text-[#eaf6f4]">Our Vision</h3>
               </div>
-              <p className="text-xs sm:text-sm leading-relaxed text-[#587078] text-justify">
+              <p className="text-xs sm:text-sm leading-relaxed text-[#9fbcc2] text-justify">
                 {aboutData.vision}
               </p>
             </div>
 
             {/* Mission */}
-            <div className="glass-card !rounded-[20px] !border-l-[4px] !border-l-[#cf9f8a] p-4.5 sm:p-5 shadow-[0_12px_30px_rgba(12,63,80,0.07)] hover:shadow-[0_16px_36px_rgba(12,63,80,0.12)] transition-shadow">
+            <div className="glass-card !rounded-[20px] !border-l-[4px] !border-l-[#cf9f8a] !border-[#1f4650] p-4.5 sm:p-5 shadow-[0_12px_30px_rgba(0,0,0,0.35)] transition-shadow">
               <div className="flex items-center gap-2.5 mb-1.5">
-                <div className="grid h-8 w-8 place-items-center rounded-lg bg-[#e2f0ee] text-[#166079]">
+                <div className="grid h-8 w-8 place-items-center rounded-lg bg-[#16414b] text-[#bfe3e0]">
                   <Target size={16} />
                 </div>
-                <h3 className="font-display text-lg sm:text-xl text-[#0f2e38]">Our Mission</h3>
+                <h3 className="font-display text-lg sm:text-xl text-[#eaf6f4]">Our Mission</h3>
               </div>
-              <p className="text-xs sm:text-sm leading-relaxed text-[#587078] text-justify">
+              <p className="text-xs sm:text-sm leading-relaxed text-[#9fbcc2] text-justify">
                 {aboutData.mission}
               </p>
             </div>
@@ -154,18 +154,18 @@ export function About({ isDedicatedPage = false }: AboutProps) {
         </div>
 
         {/* Leadership Section */}
-        <div id="team" className="mt-5 sm:mt-6 lg:mt-7">
+        <div id="team" className="mt-4 sm:mt-5 scroll-mt-24">
           <div className="mb-4 sm:mb-5 flex flex-col md:flex-row md:items-baseline md:justify-between gap-1 sm:gap-3">
             <div className="flex flex-wrap items-baseline gap-2">
               <span className="text-xs font-bold uppercase tracking-[2px] text-[#cf9f8a]">
                 Leadership
               </span>
               <span className="text-[#cf9f8a]/70">·</span>
-              <h2 className="font-display text-xl sm:text-2xl lg:text-3xl text-[#0f2e38] tracking-tight">
+              <h2 className="font-display text-xl sm:text-2xl lg:text-3xl text-[#eaf6f4] tracking-tight">
                 The experts behind every project
               </h2>
             </div>
-            <p className="text-xs sm:text-sm text-[#587078]">
+            <p className="text-xs sm:text-sm text-[#9fbcc2]">
               Decades of structural precision, government-approved valuations, and turnkey project delivery.
             </p>
           </div>
@@ -175,11 +175,11 @@ export function About({ isDedicatedPage = false }: AboutProps) {
               <div
                 key={c.name}
                 onClick={() => setSelectedConsultant(c)}
-                className="glass-card group flex flex-col justify-between p-6 sm:p-7 text-center rounded-[28px] hover:-translate-y-1.5 transition-all duration-300 cursor-pointer shadow-[0_16px_36px_rgba(12,63,80,0.09)] hover:shadow-[0_24px_50px_rgba(12,63,80,0.16)]"
+                className="glass-card group flex flex-col justify-between p-6 sm:p-7 text-center rounded-[28px] hover:-translate-y-1.5 transition-all duration-300 cursor-pointer shadow-[0_16px_36px_rgba(0,0,0,0.35)] !border-[#1f4650]"
               >
                 <div>
                   {/* Avatar with circular glowing ring */}
-                  <div className="relative mx-auto mb-4 h-24 w-24 sm:h-28 sm:w-28 overflow-hidden rounded-full border-4 border-white shadow-[0_0_0_3px_#cf9f8a,0_12px_24px_rgba(12,63,80,0.18)] transition-transform duration-300 group-hover:scale-105">
+                  <div className="relative mx-auto mb-4 h-24 w-24 sm:h-28 sm:w-28 overflow-hidden rounded-full border-4 border-white/80 shadow-[0_0_0_3px_#cf9f8a,0_12px_24px_rgba(0,0,0,0.4)] transition-transform duration-300 group-hover:scale-105">
                     <img
                       src={c.image}
                       alt={c.name}
@@ -187,25 +187,25 @@ export function About({ isDedicatedPage = false }: AboutProps) {
                     />
                   </div>
 
-                  <h3 className="font-display text-xl text-[#0f2e38] transition-colors group-hover:text-[#166079]">
+                  <h3 className="font-display text-xl text-[#eaf6f4] transition-colors group-hover:text-[#bfe3e0]">
                     {c.name}
                   </h3>
                   <div className="mt-1 text-xs font-bold text-[#cf9f8a] tracking-wide uppercase">
                     {c.role}
                   </div>
-                  <div className="mt-1 text-[11px] text-[#587078] font-medium leading-snug">
+                  <div className="mt-1 text-[11px] text-[#9fbcc2] font-medium leading-snug">
                     {c.qualifications}
                   </div>
 
                   {c.bio && c.bio.length > 0 && (
-                    <p className="mt-3 text-xs text-[#587078] leading-relaxed line-clamp-3 text-justify">
+                    <p className="mt-3 text-xs text-[#9fbcc2] leading-relaxed line-clamp-3 text-justify">
                       {c.bio[0]}
                     </p>
                   )}
 
                   {/* Highlights list with rose diamond bullet */}
                   {c.portfolio && (
-                    <ul className="mt-4 text-left text-xs text-[#587078] space-y-1.5 border-t border-[#d3e4e2]/80 pt-3">
+                    <ul className="mt-4 text-left text-xs text-[#9fbcc2] space-y-1.5 border-t border-[#1f4650] pt-3">
                       {c.portfolio.slice(0, 4).map((pt, pIdx) => (
                         <li key={pIdx} className="flex items-start gap-2">
                           <span className="text-[#cf9f8a] font-bold">◇</span>
@@ -216,8 +216,8 @@ export function About({ isDedicatedPage = false }: AboutProps) {
                   )}
                 </div>
 
-                <div className="mt-5 pt-3 border-t border-[#d3e4e2]/60 flex items-center justify-center">
-                  <span className="text-xs font-semibold text-[#166079] group-hover:underline">
+                <div className="mt-5 pt-3 border-t border-[#1f4650] flex items-center justify-center">
+                  <span className="text-xs font-semibold text-[#bfe3e0] group-hover:underline">
                     View Full Profile &amp; Contact →
                   </span>
                 </div>
@@ -230,71 +230,71 @@ export function About({ isDedicatedPage = false }: AboutProps) {
       {/* Consultant Details Modal in Pearl & Petrol Theme */}
       {selectedConsultant && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-[#0c3f50]/60 p-4 sm:p-6 backdrop-blur-md animate-fade-in"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-[#0c3f50]/75 p-3 sm:p-5 backdrop-blur-md animate-fade-in"
           onClick={() => setSelectedConsultant(null)}
         >
           <div
-            className="relative w-full max-w-5xl lg:max-w-6xl max-h-[94vh] overflow-y-auto rounded-[28px] sm:rounded-[32px] border border-white/80 bg-white p-5 sm:p-7 lg:p-8 shadow-[0_25px_60px_-15px_rgba(12,63,80,0.35)] isolate text-left"
+            className="relative w-full max-w-5xl xl:max-w-6xl max-h-[95vh] overflow-y-auto rounded-[24px] sm:rounded-[28px] border border-[#1f4650] bg-[#0d2730] p-4 sm:p-6 lg:p-7 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.7)] isolate text-left text-[#eaf6f4]"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
             <button
               aria-label="Close details"
               onClick={() => setSelectedConsultant(null)}
-              className="absolute right-4 top-4 sm:right-5 sm:top-5 z-30 grid h-9 w-9 place-items-center rounded-full bg-[#e2f0ee] text-[#0c3f50] hover:bg-[#0c3f50] hover:text-white transition-all cursor-pointer shadow-xs"
+              className="absolute right-3.5 top-3.5 sm:right-5 sm:top-5 z-30 grid h-8 w-8 sm:h-9 sm:w-9 place-items-center rounded-full bg-[#16414b] text-[#bfe3e0] hover:bg-[#1a6c88] hover:text-white transition-all cursor-pointer shadow-xs"
             >
-              <X size={18} />
+              <X size={16} />
             </button>
 
             {/* Header */}
-            <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-5 pb-4 border-b border-[#d3e4e2]">
-              <div className="relative h-20 w-20 sm:h-24 sm:w-24 shrink-0 overflow-hidden rounded-full border-4 border-white shadow-[0_0_0_3px_#cf9f8a,0_10px_20px_rgba(12,63,80,0.15)]">
+            <div className="flex flex-col sm:flex-row items-center sm:items-start gap-3.5 sm:gap-4 pb-3.5 border-b border-[#1f4650]">
+              <div className="relative h-16 w-16 sm:h-20 sm:w-20 shrink-0 overflow-hidden rounded-full border-3 border-white/80 shadow-[0_0_0_2px_#cf9f8a,0_8px_16px_rgba(0,0,0,0.4)]">
                 <img
                   src={selectedConsultant.image}
                   alt={selectedConsultant.name}
                   className="h-full w-full object-cover object-top"
                 />
               </div>
-              <div className="text-center sm:text-left flex-1 min-w-0 pr-8">
-                <span className="inline-flex items-center rounded-full bg-[#e2f0ee] px-3 py-0.5 text-xs font-bold text-[#166079] uppercase tracking-wider">
+              <div className="text-center sm:text-left flex-1 min-w-0 pr-7">
+                <span className="inline-flex items-center rounded-full bg-[#16414b] px-2.5 py-0.5 text-[10px] sm:text-xs font-bold text-[#bfe3e0] uppercase tracking-wider">
                   {selectedConsultant.role}
                 </span>
-                <h3 className="mt-1.5 font-display text-2xl sm:text-3xl text-[#0f2e38]">
+                <h3 className="mt-1 font-display text-xl sm:text-2xl lg:text-3xl text-[#eaf6f4]">
                   {selectedConsultant.name}
                 </h3>
                 <p className="mt-0.5 text-xs sm:text-sm font-semibold text-[#cf9f8a]">
                   {selectedConsultant.designation || selectedConsultant.role}
                 </p>
-                <p className="mt-0.5 text-xs font-medium text-[#587078] leading-relaxed">
+                <p className="mt-0.5 text-[11px] sm:text-xs font-medium text-[#9fbcc2] leading-tight">
                   {selectedConsultant.qualifications}
                 </p>
               </div>
             </div>
 
             {/* Body */}
-            <div className="mt-5 grid gap-5 lg:grid-cols-12 items-start">
-              <div className="lg:col-span-7 space-y-2.5">
-                <h4 className="text-xs font-bold uppercase tracking-[2px] text-[#166079]">
+            <div className="mt-4 grid gap-4 lg:grid-cols-12 items-start">
+              <div className="lg:col-span-7 space-y-2">
+                <h4 className="text-[11px] sm:text-xs font-bold uppercase tracking-[2px] text-[#bfe3e0]">
                   Professional Background
                 </h4>
                 {selectedConsultant.bio?.map((paragraph, idx) => (
-                  <p key={idx} className="text-xs sm:text-sm leading-relaxed text-[#587078] text-justify">
+                  <p key={idx} className="text-xs sm:text-[13px] leading-relaxed text-[#9fbcc2] text-justify">
                     {paragraph}
                   </p>
                 ))}
               </div>
 
               {selectedConsultant.portfolio && (
-                <div className="lg:col-span-5 rounded-2xl border border-[#d3e4e2] bg-[#f3f8f7] p-4 sm:p-5">
-                  <h4 className="text-xs font-bold uppercase tracking-[2px] text-[#0c3f50] mb-2.5 flex items-center gap-2">
-                    <Briefcase size={14} className="text-[#cf9f8a]" />
+                <div className="lg:col-span-5 rounded-2xl border border-[#1f4650] bg-[#08191f] p-3.5 sm:p-4">
+                  <h4 className="text-[11px] sm:text-xs font-bold uppercase tracking-[2px] text-[#ecd0c3] mb-2 flex items-center gap-1.5">
+                    <Briefcase size={13} className="text-[#cf9f8a]" />
                     <span>{selectedConsultant.portfolioTitle || "Key Specializations:"}</span>
                   </h4>
-                  <div className={`grid gap-2 text-xs text-[#0f2e38] ${selectedConsultant.portfolio.length > 5 ? "sm:grid-cols-2" : "grid-cols-1"}`}>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-2 gap-y-1 text-xs text-[#eaf6f4]">
                     {selectedConsultant.portfolio.map((item, idx) => (
                       <div key={idx} className="flex items-start gap-1.5">
                         <span className="text-[#cf9f8a] font-bold">◇</span>
-                        <span className="leading-snug font-medium">{item}</span>
+                        <span className="leading-snug font-medium text-[#cfe8e5] text-[11px] sm:text-xs">{item}</span>
                       </div>
                     ))}
                   </div>
@@ -303,35 +303,35 @@ export function About({ isDedicatedPage = false }: AboutProps) {
             </div>
 
             {/* Action Buttons */}
-            <div className="mt-5 pt-4 border-t border-[#d3e4e2] flex flex-wrap items-center justify-between gap-3">
-              <div className="flex flex-wrap items-center gap-2.5">
+            <div className="mt-4 pt-3 border-t border-[#1f4650] flex flex-wrap items-center justify-between gap-2.5">
+              <div className="flex flex-wrap items-center gap-2">
                 <a
                   href={`tel:${selectedConsultant.phone.replace(/\s/g, "")}`}
-                  className="btn-petrol !py-2 !px-4 text-xs"
+                  className="btn-petrol !py-1.5 !px-3.5 text-xs"
                 >
-                  <Phone size={13} />
+                  <Phone size={12} />
                   Call
                 </a>
                 <a
                   href={`mailto:${selectedConsultant.email}`}
-                  className="btn-outline-petrol !py-2 !px-4 text-xs"
+                  className="inline-flex items-center gap-1.5 rounded-full border border-[#1f4650] bg-[#10303a] text-[#bfe3e0] px-3.5 py-1.5 text-xs font-bold hover:bg-[#16414b] transition-colors"
                 >
-                  <Mail size={13} />
+                  <Mail size={12} />
                   Email
                 </a>
                 <a
                   href={`https://wa.me/919440133003`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 rounded-full bg-[#25D366] px-4 py-2 text-xs font-bold text-white shadow-sm hover:bg-[#20b858] transition-colors"
+                  className="inline-flex items-center gap-1.5 rounded-full bg-[#25D366] px-3.5 py-1.5 text-xs font-bold text-white shadow-sm hover:bg-[#20b858] transition-colors"
                 >
-                  <MessageCircle size={13} />
+                  <MessageCircle size={12} />
                   WhatsApp
                 </a>
               </div>
               <button
                 onClick={() => setSelectedConsultant(null)}
-                className="rounded-full border border-[#d3e4e2] px-5 py-2 text-xs font-semibold text-[#587078] hover:bg-[#e2f0ee] cursor-pointer"
+                className="rounded-full border border-[#1f4650] bg-[#10303a] px-4 py-1.5 text-xs font-semibold text-[#9fbcc2] hover:bg-[#16414b] hover:text-white cursor-pointer"
               >
                 Close
               </button>

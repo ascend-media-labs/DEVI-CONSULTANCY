@@ -49,7 +49,7 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-[#0c3f50] text-[#a9c8c9] border-t border-white/10">
+    <footer className="bg-[#041218] text-[#9fbcc2] border-t border-[#1f4650]">
       <div className="mx-auto grid w-full max-w-[1240px] gap-10 px-5 py-12 sm:py-16 sm:grid-cols-2 lg:grid-cols-4 sm:px-8 lg:px-10">
         {/* Brand Column */}
         <div className="space-y-4">
@@ -59,7 +59,7 @@ export function Footer() {
               DEVI CONSULTANCY
             </b>
           </Link>
-          <p className="text-xs sm:text-sm leading-relaxed text-[#a9c8c9]/90 text-justify">
+          <p className="text-xs sm:text-sm leading-relaxed text-[#9fbcc2]/90 text-justify">
             Architects &amp; Engineers, Builders &amp; Valuers · Serving clients across Telangana since 2000.
           </p>
           <div className="pt-2">
@@ -126,7 +126,7 @@ export function Footer() {
           <h4 className="font-display text-base text-[#ecd0c3] tracking-wider uppercase">
             Contact
           </h4>
-          <p className="text-xs sm:text-sm text-[#a9c8c9] leading-relaxed">
+          <p className="text-xs sm:text-sm text-[#9fbcc2] leading-relaxed">
             {contact.address}
           </p>
           <p className="text-xs sm:text-sm text-[#effaf8]">
@@ -139,7 +139,7 @@ export function Footer() {
       </div>
 
       {/* Bottom Bar matching reference footer */}
-      <div className="border-t border-white/10 py-6 text-center text-xs text-[#a9c8c9]/80">
+      <div className="border-t border-[#1f4650] py-6 text-center text-xs text-[#9fbcc2]/80">
         <div className="mx-auto max-w-[1240px] px-5">
           <p className="leading-relaxed">
             © 2026 DEVI CONSULTANCY. All rights reserved. Vastu Compliant Architecture &amp; Engineering.

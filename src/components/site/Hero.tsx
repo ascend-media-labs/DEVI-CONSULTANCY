@@ -16,7 +16,7 @@ export function Hero() {
 
   return (
     <div id="home" className="relative mt-20">
-      <section className="relative min-h-[calc(100vh-5rem)] md:h-[calc(100vh-5rem)] md:max-h-[920px] flex flex-col justify-between overflow-hidden bg-[#0c3f50]">
+      <section className="relative min-h-[calc(100vh-5rem)] flex flex-col justify-between overflow-hidden bg-[#0c3f50]">
         {/* Background slide images with ken-burns & Petrol gradient overlay */}
         {slides.map((s, idx) => (
           <div
@@ -102,7 +102,7 @@ export function Hero() {
         </div>
 
         {/* Docked Bottom Stats Bar: 5 Glassmorphism Metric Cards */}
-        <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 pb-3 sm:pb-4 lg:pb-5 pt-1">
+        <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 pb-4 sm:pb-5 lg:pb-6 pt-2">
           <div className="mx-auto grid w-full max-w-5xl xl:max-w-6xl grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3 lg:grid-cols-5 lg:gap-3 xl:gap-4">
             {heroStats.map((stat, idx) => (
               <div
@@ -124,8 +124,8 @@ export function Hero() {
       </section>
 
       {/* Trust Strip */}
-      <div className="bg-white border-y border-[#d3e4e2] py-4 shadow-xs">
-        <div className="mx-auto flex w-full max-w-[1240px] flex-wrap items-center justify-between gap-4 px-5 text-xs sm:text-sm font-semibold text-[#587078]">
+      <div className="bg-[#0d2730] border-y border-[#1f4650] py-3.5 shadow-xs">
+        <div className="mx-auto flex w-full max-w-[1240px] flex-wrap items-center justify-between gap-4 px-5 text-xs sm:text-sm font-semibold text-[#9fbcc2]">
           <span className="inline-flex items-center gap-2">
             <i className="not-italic text-[#cf9f8a]">◇</i>
             Founded 2000

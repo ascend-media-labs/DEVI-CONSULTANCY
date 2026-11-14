@@ -5,7 +5,7 @@ const iconMap = [Calendar, Building, Trophy];
 
 export function Achievements() {
   return (
-    <section id="achievements" className="relative overflow-hidden bg-gradient-to-br from-[#166079] to-[#0c3f50] py-6 sm:py-8 lg:py-10 text-[#effaf8] shadow-[inset_0_1px_0_rgba(255,255,255,0.15)]">
+    <section id="achievements" className="relative overflow-hidden bg-gradient-to-br from-[#0e2c36] to-[#08191f] py-5 sm:py-6 lg:py-7 text-[#effaf8] shadow-[inset_0_1px_0_rgba(255,255,255,0.15)] scroll-mt-20">
       {/* Subtle ambient lighting glows */}
       <div className="pointer-events-none absolute -left-20 -top-20 h-80 w-80 rounded-full bg-[#bfe3e0]/15 blur-3xl" />
       <div className="pointer-events-none absolute -bottom-20 -right-20 h-80 w-80 rounded-full bg-[#ecd0c3]/15 blur-3xl" />

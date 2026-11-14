@@ -71,8 +71,8 @@ export function Navbar() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/80 shadow-[0_10px_30px_rgba(12,63,80,0.08)] backdrop-blur-md border-b border-[#d3e4e2]"
-          : "bg-[#f3f8f7]/85 backdrop-blur-md border-b border-[#d3e4e2]/60"
+          ? "bg-[#08191f]/95 shadow-[0_10px_30px_rgba(0,0,0,0.5)] backdrop-blur-md border-b border-[#1f4650]"
+          : "bg-[#08191f]/90 backdrop-blur-md border-b border-[#1f4650]/80"
       }`}
     >
       <nav className="mx-auto flex h-20 w-full max-w-[1800px] items-center justify-between gap-1 sm:gap-2 px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
@@ -84,7 +84,7 @@ export function Navbar() {
           <div className="transition-transform duration-300 group-hover:scale-105 group-hover:drop-shadow-md">
             <Logo className="h-10 w-10 sm:h-12 sm:w-12 xl:h-13 xl:w-13 rounded-full border border-white/60 shadow-xs" />
           </div>
-          <span className="font-display text-base font-normal tracking-[2px] text-[#0f2e38] uppercase whitespace-nowrap transition-colors duration-200 group-hover:text-[#166079] sm:text-lg lg:text-lg xl:text-xl">
+          <span className="font-display text-base font-normal tracking-[2px] text-[#eaf6f4] uppercase whitespace-nowrap transition-colors duration-200 group-hover:text-[#bfe3e0] sm:text-lg lg:text-lg xl:text-xl">
             Devi <i className="not-italic text-[#cf9f8a]">·</i> Consultancy
           </span>
         </Link>
@@ -99,8 +99,8 @@ export function Navbar() {
                   to={l.path}
                   className={`inline-flex items-center rounded-full px-2.5 py-1.5 text-xs lg:text-[13px] xl:px-4 xl:py-2 xl:text-sm font-medium whitespace-nowrap transition-all duration-200 cursor-pointer ${
                     isActive
-                      ? "bg-[#e2f0ee] text-[#0c3f50] font-semibold border border-[#bfe3e0] shadow-xs"
-                      : "text-[#587078] hover:text-[#166079] hover:bg-white/60 border border-transparent"
+                      ? "bg-white/10 text-white font-semibold border border-[#bfe3e0]/50 shadow-[0_0_15px_rgba(191,227,224,0.25)]"
+                      : "text-[#9fbcc2] hover:text-white hover:bg-white/5 border border-transparent"
                   }`}
                 >
                   {l.label}
@@ -124,7 +124,7 @@ export function Navbar() {
         <button
           aria-label="Toggle menu"
           onClick={() => setOpen(!open)}
-          className="grid h-11 w-11 shrink-0 place-items-center rounded-xl text-[#0c3f50] bg-white/70 border border-[#d3e4e2] hover:bg-[#e2f0ee] lg:hidden cursor-pointer"
+          className="grid h-11 w-11 shrink-0 place-items-center rounded-xl text-[#eaf6f4] bg-[#10303a] border border-[#1f4650] hover:bg-[#16414b] lg:hidden cursor-pointer"
         >
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -132,7 +132,7 @@ export function Navbar() {
 
       {/* Mobile Drawer */}
       <div
-        className={`grid overflow-hidden border-t border-[#d3e4e2] bg-[#f3f8f7]/95 backdrop-blur-xl transition-all duration-300 lg:hidden ${
+        className={`grid overflow-hidden border-t border-[#1f4650] bg-[#08191f]/95 backdrop-blur-xl transition-all duration-300 lg:hidden ${
           open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] border-transparent opacity-0"
         }`}
       >
@@ -146,8 +146,8 @@ export function Navbar() {
                   onClick={() => setOpen(false)}
                   className={`block rounded-xl px-4 py-3 my-1 text-sm font-medium transition-all duration-200 cursor-pointer ${
                     isActive
-                      ? "bg-[#e2f0ee] text-[#0c3f50] font-semibold border border-[#bfe3e0]"
-                      : "text-[#587078] hover:bg-white/70 hover:text-[#0c3f50]"
+                      ? "bg-white/10 text-white font-semibold border border-[#bfe3e0]/50"
+                      : "text-[#9fbcc2] hover:bg-white/5 hover:text-white"
                   }`}
                 >
                   {l.label}

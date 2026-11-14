@@ -105,11 +105,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <head>
         <HeadContent />
       </head>
-      <body>
+      <body className="bg-[#08191f] text-[#eaf6f4]">
         {children}
         <Scripts />
       </body>
@@ -122,7 +122,7 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="min-h-screen flex flex-col justify-between overflow-x-clip bg-background">
+      <div className="min-h-screen flex flex-col justify-between overflow-x-clip bg-[#08191f] text-[#eaf6f4]">
         <Navbar />
         <main className="flex-1">
           <Outlet />

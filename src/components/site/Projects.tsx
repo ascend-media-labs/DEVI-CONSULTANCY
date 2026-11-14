@@ -30,7 +30,7 @@ export function Projects() {
   }, [open]);
 
   return (
-    <section id="projects" className="bg-[#f3f8f7] py-6 sm:py-8 lg:py-10 section-glow-ambient">
+    <section id="projects" className="bg-[#08191f] text-[#eaf6f4] py-5 sm:py-6 lg:py-7 section-glow-ambient scroll-mt-20">
       <div className="mx-auto w-full max-w-[1240px] px-5 sm:px-8 lg:px-10">
         {/* Side Heading Header */}
         <div className="mb-4 sm:mb-5 flex flex-col md:flex-row md:items-baseline md:justify-between gap-1 sm:gap-3">
@@ -39,11 +39,11 @@ export function Projects() {
               Portfolio
             </span>
             <span className="text-[#cf9f8a]/70">·</span>
-            <h2 className="font-display text-xl sm:text-2xl lg:text-3xl text-[#0f2e38] tracking-tight">
+            <h2 className="font-display text-xl sm:text-2xl lg:text-3xl text-[#eaf6f4] tracking-tight">
               Spaces we’re proud of
             </h2>
           </div>
-          <p className="text-xs sm:text-sm text-[#587078] max-w-xl">
+          <p className="text-xs sm:text-sm text-[#9fbcc2] max-w-xl">
             Explore our architectural and structural engineering work across major sectors in Telangana.
           </p>
         </div>
@@ -56,8 +56,8 @@ export function Projects() {
               onClick={() => setFilter(c)}
               className={`rounded-full px-5 py-2 text-xs sm:text-sm font-semibold transition-all duration-300 cursor-pointer ${
                 filter === c
-                  ? "bg-gradient-to-b from-[#1a6c88] to-[#0c3f50] text-white shadow-[0_8px_20px_rgba(12,63,80,0.25)] border-transparent"
-                  : "bg-white text-[#587078] border border-[#d3e4e2] hover:bg-[#e2f0ee] hover:text-[#0c3f50]"
+                  ? "bg-gradient-to-b from-[#1a6c88] to-[#0c3f50] text-white shadow-[0_8px_20px_rgba(0,0,0,0.4)] border-transparent"
+                  : "bg-[#10303a] text-[#9fbcc2] border border-[#1f4650] hover:bg-[#16414b] hover:text-[#eaf6f4]"
               }`}
             >
               {c}

@@ -28,7 +28,7 @@ const processSteps = [
 
 export function WhyChooseUs() {
   return (
-    <section id="why-us" className="bg-[#f3f8f7] py-6 sm:py-8 lg:py-10 overflow-hidden">
+    <section id="why-us" className="bg-[#08191f] text-[#eaf6f4] py-5 sm:py-6 lg:py-7 overflow-hidden scroll-mt-20">
       <div className="mx-auto w-full max-w-[1240px] px-5 sm:px-8 lg:px-10">
         {/* Section 1: Our Process */}
         <div className="mb-4 sm:mb-5 flex flex-col md:flex-row md:items-baseline md:justify-between gap-1 sm:gap-3">
@@ -37,11 +37,11 @@ export function WhyChooseUs() {
               Our Process
             </span>
             <span className="text-[#cf9f8a]/70">·</span>
-            <h2 className="font-display text-xl sm:text-2xl lg:text-3xl text-[#0f2e38] tracking-tight">
+            <h2 className="font-display text-xl sm:text-2xl lg:text-3xl text-[#eaf6f4] tracking-tight">
               Simple, transparent, reliable
             </h2>
           </div>
-          <p className="text-xs sm:text-sm text-[#587078] max-w-md">
+          <p className="text-xs sm:text-sm text-[#9fbcc2] max-w-md">
             A structured four-step journey turning your architectural vision into reality.
           </p>
         </div>
@@ -50,14 +50,14 @@ export function WhyChooseUs() {
           {processSteps.map((s) => (
             <div
               key={s.step}
-              className="glass-card p-6 text-center rounded-[24px] hover:-translate-y-1.5 transition-all duration-300 shadow-[0_16px_36px_rgba(12,63,80,0.07)]"
+              className="glass-card p-6 text-center rounded-[24px] hover:-translate-y-1.5 transition-all duration-300 shadow-[0_16px_36px_rgba(0,0,0,0.35)] !border-[#1f4650]"
             >
               {/* Number Circle in Rose Gradient */}
               <div className="mx-auto mb-4 grid h-14 w-14 place-items-center rounded-full bg-gradient-to-b from-[#e8c4b3] to-[#cf9f8a] text-[#3a1f14] font-display text-2xl shadow-[inset_0_1px_0_rgba(255,255,255,0.7),0_8px_18px_rgba(207,159,138,0.4)]">
                 {s.step}
               </div>
-              <h3 className="font-display text-xl text-[#0f2e38]">{s.title}</h3>
-              <p className="mt-1.5 text-xs sm:text-sm text-[#587078] leading-relaxed">
+              <h3 className="font-display text-xl text-[#eaf6f4]">{s.title}</h3>
+              <p className="mt-1.5 text-xs sm:text-sm text-[#9fbcc2] leading-relaxed">
                 {s.desc}
               </p>
             </div>
@@ -71,15 +71,15 @@ export function WhyChooseUs() {
               Why Choose Us
             </span>
             <span className="text-[#cf9f8a]/70">·</span>
-            <h2 className="font-display text-xl sm:text-2xl lg:text-3xl text-[#0f2e38] tracking-tight">
+            <h2 className="font-display text-xl sm:text-2xl lg:text-3xl text-[#eaf6f4] tracking-tight">
               Committed to Quality, Precision &amp; Trust
             </h2>
           </div>
 
           <div className="relative w-full overflow-hidden">
             {/* Edge fades */}
-            <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-[#f3f8f7] to-transparent" />
-            <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-[#f3f8f7] to-transparent" />
+            <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-[#08191f] to-transparent" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-[#08191f] to-transparent" />
 
             <div className="flex animate-marquee-left hover:[animation-play-state:paused] gap-5 py-3">
               {[...whyChooseUs, ...whyChooseUs].map((item, idx) => {
@@ -87,13 +87,13 @@ export function WhyChooseUs() {
                 return (
                   <div
                     key={`${item.title}-${idx}`}
-                    className="glass-card w-[290px] shrink-0 p-5 rounded-[22px] shadow-sm hover:shadow-md transition-shadow cursor-pointer"
+                    className="glass-card w-[290px] shrink-0 p-5 rounded-[22px] shadow-sm hover:shadow-md transition-shadow cursor-pointer !border-[#1f4650]"
                   >
-                    <div className="grid h-10 w-10 place-items-center rounded-xl bg-[#e2f0ee] text-[#166079] mb-3">
+                    <div className="grid h-10 w-10 place-items-center rounded-xl bg-[#16414b] text-[#bfe3e0] mb-3">
                       <Icon size={20} />
                     </div>
-                    <h3 className="font-display text-lg text-[#0f2e38]">{item.title}</h3>
-                    <p className="mt-1.5 text-xs leading-relaxed text-[#587078] text-justify">
+                    <h3 className="font-display text-lg text-[#eaf6f4]">{item.title}</h3>
+                    <p className="mt-1.5 text-xs leading-relaxed text-[#9fbcc2] text-justify">
                       {item.description}
                     </p>
                   </div>
