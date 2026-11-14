@@ -16,7 +16,7 @@ export function Hero() {
 
   return (
     <div id="home" className="relative mt-20">
-      <section className="relative min-h-[calc(100vh-5rem)] flex flex-col justify-between overflow-hidden bg-[#0c3f50]">
+      <section className="relative min-h-[calc(100vh-5rem)] md:h-[calc(100vh-5rem)] md:max-h-[920px] flex flex-col justify-between overflow-hidden bg-[#0c3f50]">
         {/* Background slide images with ken-burns & Petrol gradient overlay */}
         {slides.map((s, idx) => (
           <div
@@ -41,19 +41,19 @@ export function Hero() {
         ))}
 
         {/* Ambient lighting accent with soft aqua glow */}
-        <div className="pointer-events-none absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2 h-96 w-[650px] rounded-full bg-[#bfe3e0]/12 blur-3xl animate-pulse-glow" />
+        <div className="pointer-events-none absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2 h-80 w-[600px] rounded-full bg-[#bfe3e0]/12 blur-3xl animate-pulse-glow" />
 
         {/* Centered Hero Content */}
-        <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-1 flex-col items-center justify-center px-4 pt-12 pb-6 text-center sm:px-6 sm:pt-16 sm:pb-8 lg:px-8">
+        <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-1 flex-col items-center justify-center px-4 py-2 sm:py-4 text-center sm:px-6 lg:px-8">
           <div key={i} className="flex flex-col items-center">
             {/* Eyebrow badge */}
-            <p className="animate-fade-up inline-flex items-center gap-2 rounded-full border border-[#bfe3e0]/30 bg-[#0c3f50]/75 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#bfe3e0] backdrop-blur-md sm:text-xs shadow-md">
+            <p className="animate-fade-up inline-flex items-center gap-2 rounded-full border border-[#bfe3e0]/30 bg-[#0c3f50]/80 px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#bfe3e0] backdrop-blur-md sm:text-xs shadow-md">
               <span className="h-2 w-2 rounded-full bg-[#cf9f8a] animate-pulse shadow-[0_0_10px_rgba(207,159,138,0.9)]" />
               {cur.eyebrow}
             </p>
 
             {/* 2-Tone Headline */}
-            <h1 className="animate-fade-up mt-4 font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-normal tracking-tight text-white drop-shadow-md [animation-delay:120ms]">
+            <h1 className="animate-fade-up mt-2 sm:mt-3 font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight text-white drop-shadow-md [animation-delay:120ms] leading-[1.15]">
               {cur.titlePrefix}{" "}
               <span className="bg-gradient-to-r from-white via-[#bfe3e0] to-[#ecd0c3] bg-clip-text text-transparent drop-shadow-[0_2px_24px_rgba(191,227,224,0.4)]">
                 {cur.titleAccent}
@@ -61,30 +61,30 @@ export function Hero() {
             </h1>
 
             {/* Crisp, simple quote/tagline */}
-            <p className="animate-fade-up mt-4 max-w-2xl text-sm font-normal leading-relaxed text-[#effaf8]/90 drop-shadow-sm [animation-delay:240ms] sm:mt-5 sm:text-base lg:text-lg">
+            <p className="animate-fade-up mt-2 sm:mt-2.5 max-w-2xl text-xs sm:text-sm lg:text-base font-normal leading-relaxed text-[#effaf8]/90 drop-shadow-sm [animation-delay:240ms]">
               {cur.quote}
             </p>
 
             {/* Action Buttons */}
-            <div className="animate-fade-up mt-6 flex flex-wrap items-center justify-center gap-3.5 [animation-delay:360ms] sm:mt-7 sm:gap-4">
+            <div className="animate-fade-up mt-3.5 sm:mt-4.5 flex flex-wrap items-center justify-center gap-3 [animation-delay:360ms] sm:gap-4">
               <Link
                 to="/contact"
-                className="btn-petrol sm:text-sm shadow-[0_6px_24px_rgba(12,63,80,0.5)] !py-3 !px-7 cursor-pointer"
+                className="btn-petrol !py-2.5 !px-6 text-xs sm:text-sm shadow-[0_6px_24px_rgba(12,63,80,0.5)] cursor-pointer"
               >
                 Get Free Quote
-                <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
+                <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
               <Link
                 to="/projects"
-                className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-6 py-3 text-xs font-semibold text-white backdrop-blur-md transition-all duration-300 hover:border-[#bfe3e0]/60 hover:bg-white/20 hover:-translate-y-0.5 active:translate-y-0 sm:px-7 sm:py-3.5 sm:text-sm cursor-pointer shadow-sm"
+                className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-5 py-2.5 text-xs font-semibold text-white backdrop-blur-md transition-all duration-300 hover:border-[#bfe3e0]/60 hover:bg-white/20 hover:-translate-y-0.5 active:translate-y-0 sm:px-6 sm:text-sm cursor-pointer shadow-sm"
               >
                 View Projects
-                <ChevronRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
+                <ChevronRight size={15} className="transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
             </div>
 
             {/* Centered Slide Dots under buttons */}
-            <div className="mt-6 flex items-center justify-center gap-2 sm:mt-7">
+            <div className="mt-3 sm:mt-3.5 flex items-center justify-center gap-2">
               {slides.map((_, idx) => (
                 <button
                   key={idx}
@@ -92,8 +92,8 @@ export function Hero() {
                   onClick={() => go(idx)}
                   className={`transition-all duration-300 cursor-pointer ${
                     idx === i
-                      ? "h-1.5 w-8 rounded-full bg-[#ecd0c3] shadow-[0_0_12px_rgba(236,208,195,0.9)]"
-                      : "h-2 w-2 rounded-full bg-white/35 hover:bg-white/60"
+                      ? "h-1.5 w-7 rounded-full bg-[#ecd0c3] shadow-[0_0_12px_rgba(236,208,195,0.9)]"
+                      : "h-1.5 w-1.5 rounded-full bg-white/35 hover:bg-white/60"
                   }`}
                 />
               ))}
@@ -102,19 +102,19 @@ export function Hero() {
         </div>
 
         {/* Docked Bottom Stats Bar: 5 Glassmorphism Metric Cards */}
-        <div className="relative z-10 w-full px-4 pb-6 sm:px-6 md:px-8 lg:px-10 xl:px-12 sm:pb-8">
-          <div className="mx-auto grid w-full max-w-[1800px] grid-cols-2 gap-2.5 sm:grid-cols-3 sm:gap-3.5 lg:grid-cols-5 lg:gap-4 xl:gap-5">
+        <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 pb-3 sm:pb-4 lg:pb-5 pt-1">
+          <div className="mx-auto grid w-full max-w-5xl xl:max-w-6xl grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3 lg:grid-cols-5 lg:gap-3 xl:gap-4">
             {heroStats.map((stat, idx) => (
               <div
                 key={idx}
-                className={`card-glow-dark flex flex-col items-center justify-center rounded-2xl border border-[#bfe3e0]/30 bg-[#0c3f50]/80 p-3.5 sm:p-5 text-center shadow-[0_12px_32px_rgba(0,0,0,0.35)] backdrop-blur-md cursor-pointer ${
+                className={`card-glow-dark flex flex-col items-center justify-center rounded-xl sm:rounded-2xl border border-[#bfe3e0]/30 bg-[#0c3f50]/85 p-2 sm:p-2.5 lg:p-3 text-center shadow-[0_8px_24px_rgba(0,0,0,0.3)] backdrop-blur-md cursor-pointer ${
                   idx === 4 ? "col-span-2 sm:col-span-1" : ""
                 }`}
               >
-                <span className="font-display text-2xl sm:text-3xl lg:text-4xl font-normal text-[#ecd0c3] drop-shadow-[0_2px_12px_rgba(236,208,195,0.35)]">
+                <span className="font-display text-lg sm:text-2xl lg:text-3xl font-normal text-[#ecd0c3] drop-shadow-[0_2px_12px_rgba(236,208,195,0.35)] leading-tight">
                   {stat.value}
                 </span>
-                <span className="mt-1 text-[10px] font-semibold uppercase tracking-wider text-[#effaf8]/85 sm:text-xs">
+                <span className="mt-0.5 text-[9px] sm:text-[10px] lg:text-[11px] font-semibold uppercase tracking-wider text-[#effaf8]/85 whitespace-nowrap">
                   {stat.label}
                 </span>
               </div>
