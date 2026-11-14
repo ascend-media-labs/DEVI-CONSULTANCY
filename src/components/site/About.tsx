@@ -72,7 +72,7 @@ export function About({ isDedicatedPage = false }: AboutProps) {
     <section
       ref={sectionRef}
       id="about"
-      className="bg-[#f3f8f7] py-8 sm:py-10 lg:py-12 section-glow-ambient"
+      className="bg-[#f3f8f7] py-6 sm:py-8 lg:py-10 section-glow-ambient"
     >
       <div className="mx-auto w-full max-w-[1240px] px-5 sm:px-8 lg:px-10">
         {/* Top Row: Narrative (Left) & Vision/Mission (Right) */}
@@ -83,14 +83,17 @@ export function About({ isDedicatedPage = false }: AboutProps) {
               inView ? "translate-x-0 opacity-100" : "-translate-x-10 opacity-0"
             }`}
           >
-            <p className="eyebrow inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[3px] text-[#cf9f8a]">
-              About Us
-            </p>
-            <h2 className="mt-2.5 font-display text-3xl sm:text-4xl lg:text-5xl text-[#0f2e38] tracking-tight leading-[1.15]">
-              Building better lives since 2000
-            </h2>
+            <div className="flex flex-wrap items-baseline gap-2 mb-1">
+              <span className="text-xs font-bold uppercase tracking-[2px] text-[#cf9f8a]">
+                About Us
+              </span>
+              <span className="text-[#cf9f8a]/70">·</span>
+              <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl text-[#0f2e38] tracking-tight leading-[1.15]">
+                Building better lives since 2000
+              </h2>
+            </div>
 
-            <div className="mt-5 space-y-3.5 text-sm sm:text-base leading-relaxed text-[#587078] text-justify">
+            <div className="mt-3.5 space-y-2.5 text-sm sm:text-base leading-relaxed text-[#587078] text-justify">
               <p>
                 Devi Consultancy is one of the leading construction and consulting firms in
                 Karimnagar, recognized across Telangana for turning ideas into well-built,
@@ -104,7 +107,7 @@ export function About({ isDedicatedPage = false }: AboutProps) {
             </div>
 
             {/* Founded badge */}
-            <div className="mt-6 inline-flex items-center gap-3 rounded-2xl bg-white/80 border border-[#d3e4e2] px-4 py-2.5 shadow-xs">
+            <div className="mt-4 inline-flex items-center gap-3 rounded-2xl bg-white/80 border border-[#d3e4e2] px-4 py-2 shadow-xs">
               <span className="font-display text-2xl text-[#166079] font-normal">
                 <YearsCounter />
               </span>
@@ -118,32 +121,32 @@ export function About({ isDedicatedPage = false }: AboutProps) {
 
           {/* Right Column: Vision & Mission Glass Cards */}
           <div
-            className={`flex flex-col gap-4.5 transition-all duration-1000 delay-200 ease-out transform ${
+            className={`flex flex-col gap-3 sm:gap-3.5 transition-all duration-1000 delay-200 ease-out transform ${
               inView ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"
             }`}
           >
             {/* Vision */}
-            <div className="glass-card !rounded-[20px] !border-l-[4px] !border-l-[#cf9f8a] p-6 shadow-[0_12px_30px_rgba(12,63,80,0.07)] hover:shadow-[0_16px_36px_rgba(12,63,80,0.12)] transition-shadow">
-              <div className="flex items-center gap-3 mb-2">
-                <div className="grid h-9 w-9 place-items-center rounded-xl bg-[#e2f0ee] text-[#166079]">
-                  <Eye size={18} />
+            <div className="glass-card !rounded-[20px] !border-l-[4px] !border-l-[#cf9f8a] p-4.5 sm:p-5 shadow-[0_12px_30px_rgba(12,63,80,0.07)] hover:shadow-[0_16px_36px_rgba(12,63,80,0.12)] transition-shadow">
+              <div className="flex items-center gap-2.5 mb-1.5">
+                <div className="grid h-8 w-8 place-items-center rounded-lg bg-[#e2f0ee] text-[#166079]">
+                  <Eye size={16} />
                 </div>
-                <h3 className="font-display text-xl text-[#0f2e38]">Our Vision</h3>
+                <h3 className="font-display text-lg sm:text-xl text-[#0f2e38]">Our Vision</h3>
               </div>
-              <p className="text-sm leading-relaxed text-[#587078] text-justify">
+              <p className="text-xs sm:text-sm leading-relaxed text-[#587078] text-justify">
                 {aboutData.vision}
               </p>
             </div>
 
             {/* Mission */}
-            <div className="glass-card !rounded-[20px] !border-l-[4px] !border-l-[#cf9f8a] p-6 shadow-[0_12px_30px_rgba(12,63,80,0.07)] hover:shadow-[0_16px_36px_rgba(12,63,80,0.12)] transition-shadow">
-              <div className="flex items-center gap-3 mb-2">
-                <div className="grid h-9 w-9 place-items-center rounded-xl bg-[#e2f0ee] text-[#166079]">
-                  <Target size={18} />
+            <div className="glass-card !rounded-[20px] !border-l-[4px] !border-l-[#cf9f8a] p-4.5 sm:p-5 shadow-[0_12px_30px_rgba(12,63,80,0.07)] hover:shadow-[0_16px_36px_rgba(12,63,80,0.12)] transition-shadow">
+              <div className="flex items-center gap-2.5 mb-1.5">
+                <div className="grid h-8 w-8 place-items-center rounded-lg bg-[#e2f0ee] text-[#166079]">
+                  <Target size={16} />
                 </div>
-                <h3 className="font-display text-xl text-[#0f2e38]">Our Mission</h3>
+                <h3 className="font-display text-lg sm:text-xl text-[#0f2e38]">Our Mission</h3>
               </div>
-              <p className="text-sm leading-relaxed text-[#587078] text-justify">
+              <p className="text-xs sm:text-sm leading-relaxed text-[#587078] text-justify">
                 {aboutData.mission}
               </p>
             </div>
@@ -151,15 +154,18 @@ export function About({ isDedicatedPage = false }: AboutProps) {
         </div>
 
         {/* Leadership Section */}
-        <div id="team" className="mt-8 sm:mt-10 lg:mt-12">
-          <div className="text-center max-w-xl mx-auto mb-6 sm:mb-8">
-            <p className="eyebrow inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[3px] text-[#cf9f8a]">
-              Leadership
-            </p>
-            <h2 className="mt-2 font-display text-3xl sm:text-4xl text-[#0f2e38] tracking-tight">
-              The experts behind every project
-            </h2>
-            <p className="mt-2 text-sm text-[#587078]">
+        <div id="team" className="mt-5 sm:mt-6 lg:mt-7">
+          <div className="mb-4 sm:mb-5 flex flex-col md:flex-row md:items-baseline md:justify-between gap-1 sm:gap-3">
+            <div className="flex flex-wrap items-baseline gap-2">
+              <span className="text-xs font-bold uppercase tracking-[2px] text-[#cf9f8a]">
+                Leadership
+              </span>
+              <span className="text-[#cf9f8a]/70">·</span>
+              <h2 className="font-display text-xl sm:text-2xl lg:text-3xl text-[#0f2e38] tracking-tight">
+                The experts behind every project
+              </h2>
+            </div>
+            <p className="text-xs sm:text-sm text-[#587078]">
               Decades of structural precision, government-approved valuations, and turnkey project delivery.
             </p>
           </div>

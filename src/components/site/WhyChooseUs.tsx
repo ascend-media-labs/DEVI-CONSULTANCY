@@ -28,17 +28,20 @@ const processSteps = [
 
 export function WhyChooseUs() {
   return (
-    <section id="why-us" className="bg-[#f3f8f7] py-8 sm:py-10 lg:py-12 overflow-hidden">
+    <section id="why-us" className="bg-[#f3f8f7] py-6 sm:py-8 lg:py-10 overflow-hidden">
       <div className="mx-auto w-full max-w-[1240px] px-5 sm:px-8 lg:px-10">
-        {/* Section 1: Our Process (Directly from reference HTML) */}
-        <div className="text-center max-w-xl mx-auto mb-6 sm:mb-8">
-          <p className="eyebrow inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[3px] text-[#cf9f8a]">
-            Our Process
-          </p>
-          <h2 className="mt-2 font-display text-3xl sm:text-4xl lg:text-5xl text-[#0f2e38] tracking-tight">
-            Simple, transparent, reliable
-          </h2>
-          <p className="mt-2 text-sm sm:text-base text-[#587078]">
+        {/* Section 1: Our Process */}
+        <div className="mb-4 sm:mb-5 flex flex-col md:flex-row md:items-baseline md:justify-between gap-1 sm:gap-3">
+          <div className="flex flex-wrap items-baseline gap-2">
+            <span className="text-xs font-bold uppercase tracking-[2px] text-[#cf9f8a]">
+              Our Process
+            </span>
+            <span className="text-[#cf9f8a]/70">·</span>
+            <h2 className="font-display text-xl sm:text-2xl lg:text-3xl text-[#0f2e38] tracking-tight">
+              Simple, transparent, reliable
+            </h2>
+          </div>
+          <p className="text-xs sm:text-sm text-[#587078] max-w-md">
             A structured four-step journey turning your architectural vision into reality.
           </p>
         </div>
@@ -62,12 +65,13 @@ export function WhyChooseUs() {
         </div>
 
         {/* Section 2: Why Choose Us Reasons Marquee */}
-        <div className="mt-8 sm:mt-10 lg:mt-12">
-          <div className="text-left mb-4 sm:mb-5">
-            <p className="eyebrow inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[3px] text-[#cf9f8a]">
+        <div className="mt-5 sm:mt-6 lg:mt-7">
+          <div className="flex flex-wrap items-baseline gap-2 mb-3">
+            <span className="text-xs font-bold uppercase tracking-[2px] text-[#cf9f8a]">
               Why Choose Us
-            </p>
-            <h2 className="mt-1.5 font-display text-2xl sm:text-3xl lg:text-4xl text-[#0f2e38] tracking-tight">
+            </span>
+            <span className="text-[#cf9f8a]/70">·</span>
+            <h2 className="font-display text-xl sm:text-2xl lg:text-3xl text-[#0f2e38] tracking-tight">
               Committed to Quality, Precision &amp; Trust
             </h2>
           </div>

@@ -3,16 +3,20 @@ import { testimonialsData } from "./data";
 
 export function Testimonials() {
   return (
-    <section id="testimonials" className="bg-[#f3f8f7] py-8 sm:py-10 lg:py-12 section-glow-ambient">
+    <section id="testimonials" className="bg-[#f3f8f7] py-6 sm:py-8 lg:py-10 section-glow-ambient">
       <div className="mx-auto w-full max-w-[1240px] px-5 sm:px-8 lg:px-10">
-        <div className="text-center max-w-xl mx-auto mb-6 sm:mb-8">
-          <p className="eyebrow inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[3px] text-[#cf9f8a]">
-            Client Feedback
-          </p>
-          <h2 className="mt-2 font-display text-3xl sm:text-4xl lg:text-5xl text-[#0f2e38] tracking-tight">
-            {testimonialsData.sectionTitle}
-          </h2>
-          <p className="mt-2 text-sm sm:text-base text-[#587078]">
+        {/* Side Heading Header */}
+        <div className="mb-4 sm:mb-5 flex flex-col md:flex-row md:items-baseline md:justify-between gap-1 sm:gap-3">
+          <div className="flex flex-wrap items-baseline gap-2">
+            <span className="text-xs font-bold uppercase tracking-[2px] text-[#cf9f8a]">
+              Client Feedback
+            </span>
+            <span className="text-[#cf9f8a]/70">·</span>
+            <h2 className="font-display text-xl sm:text-2xl lg:text-3xl text-[#0f2e38] tracking-tight">
+              {testimonialsData.sectionTitle}
+            </h2>
+          </div>
+          <p className="text-xs sm:text-sm text-[#587078] max-w-md">
             {testimonialsData.subtitle}
           </p>
         </div>

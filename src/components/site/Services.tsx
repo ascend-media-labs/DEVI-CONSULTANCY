@@ -68,23 +68,26 @@ export function Services() {
       : services.filter((s) => getCategoryForService(s.id) === activeCategory);
 
   return (
-    <section id="services" className="bg-[linear-gradient(180deg,#e2f0ee,#f3f8f7)] py-8 sm:py-10 lg:py-12 section-glow-ambient">
+    <section id="services" className="bg-[linear-gradient(180deg,#e2f0ee,#f3f8f7)] py-6 sm:py-8 lg:py-10 section-glow-ambient">
       <div className="mx-auto w-full max-w-[1240px] px-5 sm:px-8 lg:px-10">
-        {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-6 sm:mb-8">
-          <p className="eyebrow inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[3px] text-[#cf9f8a]">
-            Our Services
-          </p>
-          <h2 className="mt-2 font-display text-3xl sm:text-4xl lg:text-5xl text-[#0f2e38] tracking-tight">
-            Expertise for every stage
-          </h2>
-          <p className="mt-2.5 text-sm sm:text-base text-[#587078]">
+        {/* Side Heading Header */}
+        <div className="mb-4 sm:mb-5 flex flex-col md:flex-row md:items-baseline md:justify-between gap-1 sm:gap-3">
+          <div className="flex flex-wrap items-baseline gap-2">
+            <span className="text-xs font-bold uppercase tracking-[2px] text-[#cf9f8a]">
+              Our Services
+            </span>
+            <span className="text-[#cf9f8a]/70">·</span>
+            <h2 className="font-display text-xl sm:text-2xl lg:text-3xl text-[#0f2e38] tracking-tight">
+              Expertise for every stage
+            </h2>
+          </div>
+          <p className="text-xs sm:text-sm text-[#587078] max-w-xl">
             Vastu-compliant architecture, robust structural engineering, precision bank valuations, and turnkey execution.
           </p>
         </div>
 
         {/* Category Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 mb-6 sm:mb-8">
+        <div className="flex flex-wrap items-center justify-start gap-2 sm:gap-2.5 mb-4 sm:mb-5">
           {(["All", "Design", "Engineering", "Valuation", "Construction"] as const).map((cat) => (
             <button
               key={cat}
@@ -173,7 +176,7 @@ export function Services() {
         </div>
 
         {/* Signature Service Banner (.ft from reference design) */}
-        <div className="mt-8 sm:mt-10 lg:mt-12">
+        <div className="mt-5 sm:mt-6 lg:mt-7">
           <div className="relative rounded-[32px] sm:rounded-[36px] bg-gradient-to-br from-[#1a6c88] to-[#0c3f50] p-6 sm:p-10 lg:p-12 text-[#effaf8] shadow-[0_30px_60px_rgba(12,63,80,0.3)] overflow-hidden isolate">
             {/* Ambient glass highlight */}
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/15 via-transparent to-transparent" />
