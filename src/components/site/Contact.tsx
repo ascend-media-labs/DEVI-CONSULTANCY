@@ -1,9 +1,6 @@
 import { useState, type FormEvent } from "react";
-import { Mail, MapPin, Phone, Send, CheckCircle2 } from "lucide-react";
-import { contact, contactSectionData } from "./data";
-
-const field =
-  "w-full rounded-xl border border-input bg-background px-3.5 py-1.5 sm:py-2 text-xs sm:text-sm text-foreground outline-none transition focus:border-brand focus:ring-2 focus:ring-ring/30";
+import { Mail, MapPin, Phone, Send, CheckCircle2, Clock } from "lucide-react";
+import { contact } from "./data";
 
 export function Contact() {
   const [sent, setSent] = useState(false);
@@ -14,115 +11,151 @@ export function Contact() {
     e.currentTarget.reset();
   };
 
-  const items = [
-    { icon: Phone, label: "Phone", value: contact.phone, href: `tel:${contact.phone.replace(/\s/g, "")}` },
-    { icon: Mail, label: "Email", value: contact.email, href: `mailto:${contact.email}` },
-    { icon: MapPin, label: "Address", value: contact.address },
-  ];
-
   return (
-    <section id="contact" className="bg-secondary py-3 sm:py-4 lg:py-5">
-      <div className="mx-auto w-full max-w-[1800px] px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
-        {/* Side Heading Layout with reduced spacing */}
-        <div className="text-left">
-          <p className="eyebrow inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-brand">
-            <span className="h-1.5 w-1.5 rounded-full bg-brand" />
-            Contact Us
-          </p>
-          <h2 className="mt-0.5 text-2xl font-bold tracking-tight text-navy sm:text-3xl">
-            {contactSectionData.title}
-          </h2>
-          <p className="mt-0.5 text-xs text-muted-foreground sm:text-sm">
-            {contactSectionData.subtitle}
-          </p>
-        </div>
+    <section id="contact" className="bg-[#f3f8f7] py-16 sm:py-20 lg:py-24">
+      <div className="mx-auto w-full max-w-[1240px] px-5 sm:px-8 lg:px-10">
+        {/* Contact Container Matching Reference (.ct) */}
+        <div className="glass-card !rounded-[32px] sm:!rounded-[36px] p-7 sm:p-12 lg:p-14 shadow-[0_24px_54px_rgba(12,63,80,0.12)] border border-white/85">
+          <div className="grid gap-10 lg:grid-cols-2 lg:gap-14 items-start">
+            {/* Left Column: Information */}
+            <div>
+              <p className="eyebrow inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[3px] text-[#cf9f8a]">
+                Contact Us
+              </p>
+              <h2 className="mt-2 font-display text-3xl sm:text-4xl lg:text-5xl text-[#0f2e38] tracking-tight">
+                Let’s plan your space
+              </h2>
+              <p className="mt-3 text-sm sm:text-base text-[#587078] leading-relaxed">
+                Tell us about your project and our expert engineering team will get back to you.
+              </p>
 
-        <div className="mt-3 sm:mt-4 grid gap-4 lg:gap-6 lg:grid-cols-5 items-stretch">
-          <div className="space-y-2 sm:space-y-2.5 lg:col-span-2 flex flex-col justify-between">
-            {items.map(({ icon: Icon, label, value, href }) => (
-              <div
-                key={label}
-                className="group card-glow flex items-start gap-3 rounded-2xl border border-border bg-card p-2.5 sm:p-3 shadow-sm cursor-pointer"
-              >
-                <div className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-navy text-brand transition-all duration-300 group-hover:scale-110 group-hover:bg-brand group-hover:text-white group-hover:shadow-[0_4px_16px_rgba(0,163,224,0.4)] sm:h-10 sm:w-10">
-                  <Icon size={18} />
-                </div>
-                <div className="min-w-0">
-                  <p className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground sm:text-xs">
-                    {label}
-                  </p>
-                  {href ? (
-                    <a href={href} className="break-words text-xs font-semibold text-navy transition-colors group-hover:text-brand sm:text-sm">
-                      {value}
+              <div className="mt-8 space-y-4">
+                <div className="flex items-start gap-3.5">
+                  <div className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-[#e2f0ee] text-[#166079]">
+                    <Phone size={18} />
+                  </div>
+                  <div>
+                    <span className="text-xs font-bold uppercase tracking-wider text-[#587078]">
+                      Phone
+                    </span>
+                    <a
+                      href={`tel:${contact.phone.replace(/\s/g, "")}`}
+                      className="block text-sm sm:text-base font-semibold text-[#0f2e38] hover:text-[#166079] transition-colors"
+                    >
+                      +91 {contact.phone}
                     </a>
-                  ) : (
-                    <p className="text-xs font-semibold text-navy sm:text-sm">{value}</p>
-                  )}
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3.5">
+                  <div className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-[#e2f0ee] text-[#166079]">
+                    <Mail size={18} />
+                  </div>
+                  <div>
+                    <span className="text-xs font-bold uppercase tracking-wider text-[#587078]">
+                      Email
+                    </span>
+                    <a
+                      href={`mailto:${contact.email}`}
+                      className="block text-sm sm:text-base font-semibold text-[#0f2e38] hover:text-[#166079] transition-colors break-all"
+                    >
+                      {contact.email}
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3.5">
+                  <div className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-[#e2f0ee] text-[#166079]">
+                    <MapPin size={18} />
+                  </div>
+                  <div>
+                    <span className="text-xs font-bold uppercase tracking-wider text-[#587078]">
+                      Office Address
+                    </span>
+                    <p className="text-xs sm:text-sm text-[#0f2e38] leading-relaxed max-w-md">
+                      {contact.address}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3.5">
+                  <div className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-[#e2f0ee] text-[#166079]">
+                    <Clock size={18} />
+                  </div>
+                  <div>
+                    <span className="text-xs font-bold uppercase tracking-wider text-[#587078]">
+                      Working Hours
+                    </span>
+                    <p className="text-xs sm:text-sm text-[#0f2e38] leading-relaxed">
+                      Mon–Sat 9:00 AM – 7:00 PM · Sunday by appointment
+                    </p>
+                  </div>
                 </div>
               </div>
-            ))}
-
-            <div className="card-glow rounded-2xl border border-border bg-card p-2.5 sm:p-3 shadow-sm">
-              <h4 className="text-xs font-bold text-navy sm:text-sm">Working Hours</h4>
-              <p className="mt-0.5 text-[11px] text-muted-foreground sm:text-xs leading-relaxed">
-                Monday – Saturday: 9:00 AM – 7:00 PM<br />
-                Sunday: By Appointment
-              </p>
             </div>
-          </div>
 
-          <form
-            onSubmit={onSubmit}
-            className="card-glow rounded-2xl border border-border bg-card p-4 sm:p-5 lg:col-span-3 flex flex-col justify-between"
-          >
-            <div className="grid gap-2 sm:gap-2.5 sm:grid-cols-2">
-              <label className="grid gap-1 text-xs font-semibold text-navy">
-                Name
-                <input required name="name" className={field} placeholder="Your name" />
-              </label>
-              <label className="grid gap-1 text-xs font-semibold text-navy">
-                Email
-                <input required type="email" name="email" className={field} placeholder="you@example.com" />
-              </label>
-              <label className="grid gap-1 text-xs font-semibold text-navy sm:col-span-2">
-                Phone Number
-                <input required type="tel" name="phone" className={field} placeholder="+91 98765 43210" />
-              </label>
-              <label className="grid gap-1 text-xs font-semibold text-navy sm:col-span-2">
-                Project Category
-                <select name="category" className={field}>
-                  <option value="Residential Villas">Residential Villas</option>
-                  <option value="Commercial Complexes">Commercial Complexes</option>
-                  <option value="Institutional Buildings">Institutional Buildings</option>
-                  <option value="Conventional Halls">Conventional Halls</option>
-                  <option value="Other">Other Services</option>
-                </select>
-              </label>
-              <label className="grid gap-1 text-xs font-semibold text-navy sm:col-span-2">
-                Message
+            {/* Right Column: Form */}
+            <form onSubmit={onSubmit} className="flex flex-col gap-3.5">
+              <div>
+                <label className="block text-xs font-bold uppercase tracking-wider text-[#0f2e38] mb-1.5">
+                  Your Name
+                </label>
+                <input
+                  required
+                  placeholder="Your full name"
+                  className="w-full rounded-[14px] border border-[#d3e4e2] bg-white px-4 py-3 text-sm text-[#0f2e38] outline-none transition focus:border-[#166079] focus:ring-2 focus:ring-[#166079]/20"
+                />
+              </div>
+
+              <div>
+                <label className="block text-xs font-bold uppercase tracking-wider text-[#0f2e38] mb-1.5">
+                  Phone Number
+                </label>
+                <input
+                  required
+                  type="tel"
+                  placeholder="+91 94401 33003"
+                  className="w-full rounded-[14px] border border-[#d3e4e2] bg-white px-4 py-3 text-sm text-[#0f2e38] outline-none transition focus:border-[#166079] focus:ring-2 focus:ring-[#166079]/20"
+                />
+              </div>
+
+              <div>
+                <label className="block text-xs font-bold uppercase tracking-wider text-[#0f2e38] mb-1.5">
+                  Email Address
+                </label>
+                <input
+                  required
+                  type="email"
+                  placeholder="you@example.com"
+                  className="w-full rounded-[14px] border border-[#d3e4e2] bg-white px-4 py-3 text-sm text-[#0f2e38] outline-none transition focus:border-[#166079] focus:ring-2 focus:ring-[#166079]/20"
+                />
+              </div>
+
+              <div>
+                <label className="block text-xs font-bold uppercase tracking-wider text-[#0f2e38] mb-1.5">
+                  Project Description
+                </label>
                 <textarea
                   required
-                  name="message"
-                  rows={2}
-                  className={field}
+                  rows={4}
                   placeholder="Tell us about your project requirements..."
+                  className="w-full rounded-[14px] border border-[#d3e4e2] bg-white px-4 py-3 text-sm text-[#0f2e38] outline-none transition focus:border-[#166079] focus:ring-2 focus:ring-[#166079]/20 resize-none"
                 />
-              </label>
-            </div>
-            <div className="mt-3 flex items-center justify-between">
-              <button
-                type="submit"
-                className="inline-flex items-center gap-2 rounded-full bg-navy px-6 py-2 text-xs font-semibold text-primary-foreground shadow-sm transition-all duration-300 hover:bg-brand hover:shadow-[0_4px_16px_rgba(0,163,224,0.4)] hover:-translate-y-0.5 active:translate-y-0 sm:text-sm cursor-pointer"
-              >
-                Send Message <Send size={14} />
-              </button>
-              {sent && (
-                <p className="flex items-center gap-1.5 text-xs font-medium text-brand">
-                  <CheckCircle2 size={15} /> Sent successfully! We will contact you promptly.
-                </p>
+              </div>
+
+              {sent ? (
+                <div className="flex items-center gap-2 rounded-[14px] bg-[#e2f0ee] border border-[#bfe3e0] p-3 text-xs font-semibold text-[#0c3f50]">
+                  <CheckCircle2 size={16} className="text-[#166079]" />
+                  <span>Thank you! Your message has been sent. Our team will contact you shortly.</span>
+                </div>
+              ) : (
+                <button type="submit" className="btn-petrol w-full mt-2">
+                  <Send size={15} />
+                  Send Message
+                </button>
               )}
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
       </div>
     </section>

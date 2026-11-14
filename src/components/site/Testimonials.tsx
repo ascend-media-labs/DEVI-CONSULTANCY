@@ -3,52 +3,49 @@ import { testimonialsData } from "./data";
 
 export function Testimonials() {
   return (
-    <section id="testimonials" className="bg-background py-6 sm:py-8">
-      <div className="mx-auto w-full max-w-[1800px] px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
-        {/* Side Heading Layout with reduced spacing */}
-        <div className="text-left">
-          <p className="eyebrow inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-brand">
-            <span className="h-1.5 w-1.5 rounded-full bg-brand" />
+    <section id="testimonials" className="bg-[#f3f8f7] py-16 sm:py-20 lg:py-24">
+      <div className="mx-auto w-full max-w-[1240px] px-5 sm:px-8 lg:px-10">
+        <div className="text-center max-w-xl mx-auto mb-10 sm:mb-12">
+          <p className="eyebrow inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[3px] text-[#cf9f8a]">
             Client Feedback
           </p>
-          <h2 className="mt-1 text-2xl font-bold tracking-tight text-navy sm:text-3xl">
+          <h2 className="mt-2 font-display text-3xl sm:text-4xl lg:text-5xl text-[#0f2e38] tracking-tight">
             {testimonialsData.sectionTitle}
           </h2>
-          <p className="mt-1 text-xs text-muted-foreground sm:text-sm">
+          <p className="mt-2 text-sm sm:text-base text-[#587078]">
             {testimonialsData.subtitle}
           </p>
         </div>
 
-        {/* 3 Review Cards in a Single Row */}
-        <div className="mt-4 sm:mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {testimonialsData.list.map((item) => (
             <div
               key={item.id}
-              className="group card-glow flex flex-col justify-between rounded-2xl border border-border bg-card p-5 shadow-sm cursor-pointer"
+              className="glass-card flex flex-col justify-between p-6 sm:p-7 rounded-[26px] hover:-translate-y-1.5 transition-all duration-300 shadow-[0_16px_36px_rgba(12,63,80,0.08)] cursor-pointer"
             >
               <div>
-                <div className="flex items-center justify-between">
-                  <div className="flex gap-1 text-amber-500">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex gap-1 text-[#cf9f8a]">
                     {[...Array(item.rating)].map((_, i) => (
-                      <Star key={i} size={16} fill="currentColor" stroke="none" className="drop-shadow-xs" />
+                      <Star key={i} size={16} fill="currentColor" stroke="none" />
                     ))}
                   </div>
-                  <Quote className="h-6 w-6 text-brand/25 transition-colors duration-300 group-hover:text-brand" />
+                  <Quote className="h-6 w-6 text-[#166079]/30" />
                 </div>
-                <p className="mt-3.5 text-xs leading-relaxed text-navy/90 sm:text-sm text-justify">
+                <p className="text-sm leading-relaxed text-[#0f2e38] text-justify font-normal">
                   "{item.quote}"
                 </p>
               </div>
 
-              <div className="mt-5 flex items-center gap-3 border-t border-border pt-3.5">
-                <div className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-secondary text-xs font-bold text-navy transition-all duration-300 group-hover:bg-brand group-hover:text-white group-hover:shadow-[0_0_12px_rgba(0,163,224,0.4)]">
+              <div className="mt-6 flex items-center gap-3.5 border-t border-[#d3e4e2] pt-4">
+                <div className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-gradient-to-br from-[#1a6c88] to-[#0c3f50] text-xs font-bold text-white shadow-xs">
                   {item.initials}
                 </div>
                 <div className="min-w-0">
-                  <p className="truncate text-xs font-bold text-navy transition-colors duration-200 group-hover:text-brand sm:text-sm">
+                  <p className="font-display text-base text-[#0f2e38]">
                     {item.author}
                   </p>
-                  <p className="truncate text-[11px] text-muted-foreground sm:text-xs">
+                  <p className="text-xs text-[#587078]">
                     {item.role}
                   </p>
                 </div>

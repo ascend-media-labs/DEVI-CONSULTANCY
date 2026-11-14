@@ -30,32 +30,31 @@ export function Projects() {
   }, [open]);
 
   return (
-    <section id="projects" className="bg-background py-6 sm:py-8">
-      <div className="mx-auto w-full max-w-[1800px] px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
-        {/* Side Heading Layout with reduced spacing */}
-        <div className="text-left">
-          <p className="eyebrow inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-brand">
-            <span className="h-1.5 w-1.5 rounded-full bg-brand" />
-            Project Categories
+    <section id="projects" className="bg-[#f3f8f7] py-16 sm:py-20 lg:py-24">
+      <div className="mx-auto w-full max-w-[1240px] px-5 sm:px-8 lg:px-10">
+        {/* Header */}
+        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
+          <p className="eyebrow inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[3px] text-[#cf9f8a]">
+            Portfolio
           </p>
-          <h2 className="mt-1 text-2xl font-bold tracking-tight text-navy sm:text-3xl">
-            Our Diverse Project Portfolio
+          <h2 className="mt-2 font-display text-3xl sm:text-4xl lg:text-5xl text-[#0f2e38] tracking-tight">
+            Spaces we’re proud of
           </h2>
-          <p className="mt-1 text-xs text-muted-foreground sm:text-sm">
-            Explore our architectural and structural engineering work across major sectors.
+          <p className="mt-2.5 text-sm sm:text-base text-[#587078]">
+            Explore our architectural and structural engineering work across major sectors in Telangana.
           </p>
         </div>
 
-        {/* Filter buttons - Left-aligned with compact gaps */}
-        <div className="mt-3.5 flex flex-wrap gap-1.5 sm:mt-4 sm:gap-2">
+        {/* Filter buttons */}
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 mb-10">
           {categories.map((c) => (
             <button
               key={c}
               onClick={() => setFilter(c)}
-              className={`rounded-full px-4 py-1.5 text-xs font-semibold transition-all duration-200 sm:px-4 sm:py-2 sm:text-sm ${
+              className={`rounded-full px-5 py-2 text-xs sm:text-sm font-semibold transition-all duration-300 cursor-pointer ${
                 filter === c
-                  ? "bg-navy text-primary-foreground shadow-[0_2px_12px_rgba(11,28,56,0.25)]"
-                  : "bg-secondary text-navy hover:bg-brand hover:text-white hover:shadow-sm"
+                  ? "bg-gradient-to-b from-[#1a6c88] to-[#0c3f50] text-white shadow-[0_8px_20px_rgba(12,63,80,0.25)] border-transparent"
+                  : "bg-white text-[#587078] border border-[#d3e4e2] hover:bg-[#e2f0ee] hover:text-[#0c3f50]"
               }`}
             >
               {c}
@@ -63,31 +62,31 @@ export function Projects() {
           ))}
         </div>
 
-        {/* Project cards with compact margin */}
-        <div className="mt-4 sm:mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Project cards */}
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {list.map((p) => {
             const idx = projects.indexOf(p);
             return (
               <button
                 key={p.title}
                 onClick={() => setOpen(idx)}
-                className="group card-glow animate-fade-up relative aspect-[4/3] overflow-hidden rounded-2xl text-left border border-border/80 shadow-sm cursor-pointer"
+                className="group relative aspect-[4/3] overflow-hidden rounded-[26px] text-left border border-white/80 shadow-[0_16px_36px_rgba(12,63,80,0.08)] hover:shadow-[0_24px_50px_rgba(12,63,80,0.18)] cursor-pointer transition-all duration-500 hover:-translate-y-1.5 isolate"
               >
                 <img
                   src={p.image}
                   alt={p.title}
                   loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-108"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/95 via-navy-deep/35 to-transparent transition-opacity group-hover:from-navy-deep" />
-                <div className="absolute inset-x-0 bottom-0 p-5">
-                  <span className="rounded-full bg-brand/90 backdrop-blur-sm px-2.5 py-0.5 text-xs font-bold text-accent-foreground shadow-sm">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0c3f50]/95 via-[#0c3f50]/35 to-transparent transition-opacity group-hover:from-[#0c3f50]" />
+                <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6">
+                  <span className="rounded-full bg-[#166079]/90 backdrop-blur-md px-3 py-1 text-[11px] font-bold text-white shadow-xs">
                     {p.category}
                   </span>
-                  <h3 className="mt-2 text-lg font-bold text-primary-foreground sm:text-xl transition-colors duration-200 group-hover:text-cyan-200">
+                  <h3 className="mt-2.5 font-display text-xl sm:text-2xl font-normal text-white transition-colors duration-200 group-hover:text-[#ecd0c3]">
                     {p.title}
                   </h3>
-                  <p className="mt-1 text-xs text-primary-foreground/85 line-clamp-2 text-justify">
+                  <p className="mt-1 text-xs text-white/80 line-clamp-2 text-justify">
                     {p.description}
                   </p>
                 </div>
@@ -97,16 +96,16 @@ export function Projects() {
         </div>
       </div>
 
-      {/* Lightbox Modal */}
+      {/* Lightbox Modal in Pearl & Petrol Theme with curved edges */}
       {sel && open !== null && (
         <div
-          className="fixed inset-0 z-[70] flex items-center justify-center bg-navy-deep/85 backdrop-blur-md p-4 sm:p-6 md:p-8 animate-fade-in"
+          className="fixed inset-0 z-[70] flex items-center justify-center bg-[#0c3f50]/80 backdrop-blur-md p-4 sm:p-6 md:p-8 animate-fade-in"
           onClick={() => setOpen(null)}
           role="dialog"
           aria-modal="true"
         >
           <div
-            className="relative w-full max-w-4xl xl:max-w-5xl overflow-hidden rounded-3xl border border-white/20 bg-navy-deep shadow-[0_25px_60px_-15px_rgba(0,0,0,0.7)] backdrop-blur-xl animate-scale-in"
+            className="relative w-full max-w-4xl xl:max-w-5xl overflow-hidden rounded-[32px] border border-white/30 bg-[#0c3f50] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.65)] isolate"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
@@ -114,7 +113,7 @@ export function Projects() {
               type="button"
               onClick={() => setOpen(null)}
               aria-label="Close"
-              className="absolute right-4 top-4 z-30 flex h-10 w-10 items-center justify-center rounded-full bg-navy-deep/80 text-white backdrop-blur-md border border-white/20 transition-all duration-200 hover:bg-brand hover:scale-105 shadow-lg cursor-pointer"
+              className="absolute right-4 top-4 z-30 flex h-10 w-10 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur-md border border-white/20 transition-all duration-200 hover:bg-[#166079] hover:scale-105 shadow-lg cursor-pointer"
             >
               <X size={20} />
             </button>
@@ -126,7 +125,7 @@ export function Projects() {
                 setOpen((curr) => (curr !== null ? (curr > 0 ? curr - 1 : projects.length - 1) : null))
               }
               aria-label="Previous project"
-              className="absolute left-3 top-1/2 -translate-y-1/2 z-30 flex h-10 w-10 items-center justify-center rounded-full bg-navy-deep/80 text-white backdrop-blur-md border border-white/20 transition-all duration-200 hover:bg-brand hover:scale-110 shadow-lg cursor-pointer"
+              className="absolute left-3 top-1/2 -translate-y-1/2 z-30 flex h-10 w-10 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur-md border border-white/20 transition-all duration-200 hover:bg-[#166079] hover:scale-110 shadow-lg cursor-pointer"
             >
               <ChevronLeft size={22} />
             </button>
@@ -138,33 +137,33 @@ export function Projects() {
                 setOpen((curr) => (curr !== null ? (curr < projects.length - 1 ? curr + 1 : 0) : null))
               }
               aria-label="Next project"
-              className="absolute right-3 top-1/2 -translate-y-1/2 z-30 flex h-10 w-10 items-center justify-center rounded-full bg-navy-deep/80 text-white backdrop-blur-md border border-white/20 transition-all duration-200 hover:bg-brand hover:scale-110 shadow-lg cursor-pointer"
+              className="absolute right-3 top-1/2 -translate-y-1/2 z-30 flex h-10 w-10 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur-md border border-white/20 transition-all duration-200 hover:bg-[#166079] hover:scale-110 shadow-lg cursor-pointer"
             >
               <ChevronRight size={22} />
             </button>
 
-            {/* Image Frame with curved corners enforced by parent rounded-3xl overflow-hidden */}
+            {/* Image Frame with curved corners enforced by parent rounded-[32px] overflow-hidden */}
             <div className="relative aspect-[16/10] sm:aspect-[16/9] max-h-[66vh] w-full overflow-hidden bg-slate-950">
               <img
                 src={sel.image}
                 alt={sel.title}
                 className="h-full w-full object-cover transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/20 to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0c3f50] via-[#0c3f50]/20 to-transparent pointer-events-none" />
             </div>
 
-            {/* Bottom Caption Bar with seamless matching rounded corners */}
-            <div className="p-5 sm:p-6 bg-navy-deep border-t border-white/10">
+            {/* Bottom Caption Bar */}
+            <div className="p-5 sm:p-7 bg-[#0c3f50] border-t border-white/10">
               <div className="flex flex-wrap items-center justify-between gap-2.5">
-                <div className="flex flex-wrap items-center gap-2.5">
-                  <span className="rounded-full bg-brand px-3 py-1 text-xs font-bold text-white shadow-sm uppercase tracking-wider">
+                <div className="flex flex-wrap items-center gap-3">
+                  <span className="rounded-full bg-[#cf9f8a] px-3.5 py-1 text-xs font-bold text-[#3a1f14] shadow-sm uppercase tracking-wider">
                     {sel.category}
                   </span>
-                  <h3 className="text-lg sm:text-2xl font-bold text-white tracking-tight">
+                  <h3 className="font-display text-xl sm:text-2xl font-normal text-white tracking-tight">
                     {sel.title}
                   </h3>
                 </div>
-                <span className="text-xs font-semibold text-white/50 tracking-wider">
+                <span className="text-xs font-semibold text-[#ecd0c3]/70 tracking-wider">
                   {open + 1} / {projects.length}
                 </span>
               </div>

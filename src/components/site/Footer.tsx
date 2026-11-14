@@ -49,21 +49,24 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-navy-deep text-primary-foreground/75">
-      <div className="mx-auto grid w-full max-w-[1800px] gap-8 px-4 py-8 sm:py-10 sm:grid-cols-2 md:px-8 lg:grid-cols-4 lg:px-10 xl:px-12">
-        <div>
-          <Link to="/" className="inline-block">
-            <Logo className="h-20 w-20 transition-transform duration-300 hover:scale-105" />
+    <footer className="bg-[#0c3f50] text-[#a9c8c9] border-t border-white/10">
+      <div className="mx-auto grid w-full max-w-[1240px] gap-10 px-5 py-12 sm:py-16 sm:grid-cols-2 lg:grid-cols-4 sm:px-8 lg:px-10">
+        {/* Brand Column */}
+        <div className="space-y-4">
+          <Link to="/" className="inline-flex items-center gap-2">
+            <Logo className="h-12 w-12 rounded-full border border-white/30" />
+            <b className="font-display text-xl font-normal tracking-[2px] text-[#ecd0c3]">
+              DEVI CONSULTANCY
+            </b>
           </Link>
-          <p className="mt-4 text-xs leading-relaxed text-primary-foreground/75 sm:text-sm text-justify">
-            DEVI CONSULTANCY — Leaders in Quality Construction &amp; Infrastructure, serving clients since 2000.
+          <p className="text-xs sm:text-sm leading-relaxed text-[#a9c8c9]/90 text-justify">
+            Architects &amp; Engineers, Builders &amp; Valuers · Serving clients across Telangana since 2000.
           </p>
-          {/* Official Social Channels matching Image 2 */}
-          <div className="mt-6">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-brand mb-3">
-              OFFICIAL SOCIAL CHANNELS
-            </h4>
-            <div className="flex items-center gap-2.5 sm:gap-3">
+          <div className="pt-2">
+            <p className="text-xs font-bold uppercase tracking-[2px] text-[#ecd0c3] mb-3">
+              Official Social Channels
+            </p>
+            <div className="flex items-center gap-3">
               {socialLinks.map((s) => (
                 <a
                   key={s.name}
@@ -71,7 +74,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.name}
-                  className={`grid h-10 w-10 sm:h-11 sm:w-11 place-items-center rounded-full shadow-md transition-all duration-300 hover:scale-115 active:scale-95 ${s.btnClass}`}
+                  className={`grid h-10 w-10 place-items-center rounded-full shadow-md transition-all duration-300 hover:scale-110 ${s.btnClass}`}
                 >
                   {s.icon}
                 </a>
@@ -80,14 +83,17 @@ export function Footer() {
           </div>
         </div>
 
+        {/* Quick Links */}
         <div>
-          <h4 className="text-sm font-bold text-primary-foreground sm:text-base">Quick Links</h4>
+          <h4 className="font-display text-base text-[#ecd0c3] tracking-wider uppercase">
+            Quick Navigation
+          </h4>
           <ul className="mt-4 space-y-2.5 text-xs sm:text-sm">
             {navLinks.map((l) => (
               <li key={l.id}>
                 <Link
                   to={l.path}
-                  className="transition-colors hover:text-brand"
+                  className="transition-colors hover:text-white"
                 >
                   {l.label}
                 </Link>
@@ -96,15 +102,17 @@ export function Footer() {
           </ul>
         </div>
 
+        {/* Services */}
         <div>
-          <h4 className="text-sm font-bold text-primary-foreground sm:text-base">Our Services</h4>
+          <h4 className="font-display text-base text-[#ecd0c3] tracking-wider uppercase">
+            Core Services
+          </h4>
           <ul className="mt-4 space-y-2.5 text-xs sm:text-sm">
-            {services.map((s) => (
-              <li key={s.title}>
+            {services.slice(0, 5).map((s) => (
+              <li key={s.id}>
                 <Link
                   to="/services"
-                  hash={s.id}
-                  className="transition-colors hover:text-brand"
+                  className="transition-colors hover:text-white"
                 >
                   {s.title}
                 </Link>
@@ -113,27 +121,30 @@ export function Footer() {
           </ul>
         </div>
 
-        <div>
-          <h4 className="text-sm font-bold text-primary-foreground sm:text-base">Contact Info</h4>
-          <ul className="mt-4 space-y-3.5 text-xs sm:text-sm">
-            <li className="flex gap-2.5">
-              <Phone size={17} className="shrink-0 text-brand" />
-              <span>{contact.phone}</span>
-            </li>
-            <li className="flex gap-2.5">
-              <Mail size={17} className="shrink-0 text-brand" />
-              <span className="break-all">{contact.email}</span>
-            </li>
-            <li className="flex gap-2.5">
-              <MapPin size={17} className="shrink-0 text-brand" />
-              <span>{contact.address}</span>
-            </li>
-          </ul>
+        {/* Contact Info */}
+        <div className="space-y-3">
+          <h4 className="font-display text-base text-[#ecd0c3] tracking-wider uppercase">
+            Contact
+          </h4>
+          <p className="text-xs sm:text-sm text-[#a9c8c9] leading-relaxed">
+            {contact.address}
+          </p>
+          <p className="text-xs sm:text-sm text-[#effaf8]">
+            Phone: +91 {contact.phone}
+          </p>
+          <p className="text-xs sm:text-sm text-[#effaf8] break-all">
+            Email: {contact.email}
+          </p>
         </div>
       </div>
 
-      <div className="border-t border-primary-foreground/10 py-5 text-center text-xs text-primary-foreground/60">
-        © {new Date().getFullYear()} DEVI CONSULTANCY. All rights reserved.
+      {/* Bottom Bar matching reference footer */}
+      <div className="border-t border-white/10 py-6 text-center text-xs text-[#a9c8c9]/80">
+        <div className="mx-auto max-w-[1240px] px-5">
+          <p className="leading-relaxed">
+            © 2026 DEVI CONSULTANCY. All rights reserved. Vastu Compliant Architecture &amp; Engineering.
+          </p>
+        </div>
       </div>
     </footer>
   );

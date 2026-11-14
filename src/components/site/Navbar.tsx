@@ -71,8 +71,8 @@ export function Navbar() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-background/90 shadow-[0_4px_24px_rgba(11,28,56,0.08)] backdrop-blur-md border-b border-border/70"
-          : "bg-background/95 backdrop-blur-sm"
+          ? "bg-white/80 shadow-[0_10px_30px_rgba(12,63,80,0.08)] backdrop-blur-md border-b border-[#d3e4e2]"
+          : "bg-[#f3f8f7]/85 backdrop-blur-md border-b border-[#d3e4e2]/60"
       }`}
     >
       <nav className="mx-auto flex h-20 w-full max-w-[1800px] items-center justify-between gap-1 sm:gap-2 px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
@@ -82,25 +82,25 @@ export function Navbar() {
           className="group flex shrink-0 items-center gap-2 sm:gap-2.5 xl:gap-3 cursor-pointer"
         >
           <div className="transition-transform duration-300 group-hover:scale-105 group-hover:drop-shadow-md">
-            <Logo className="h-10 w-10 sm:h-12 sm:w-12 xl:h-14 xl:w-14" />
+            <Logo className="h-10 w-10 sm:h-12 sm:w-12 xl:h-13 xl:w-13 rounded-full border border-white/60 shadow-xs" />
           </div>
-          <span className="font-display text-sm font-bold tracking-tight text-navy whitespace-nowrap transition-colors duration-200 group-hover:text-brand sm:text-base lg:text-base xl:text-xl">
-            DEVI CONSULTANCY
+          <span className="font-display text-base font-normal tracking-[2px] text-[#0f2e38] uppercase whitespace-nowrap transition-colors duration-200 group-hover:text-[#166079] sm:text-lg lg:text-lg xl:text-xl">
+            Devi <i className="not-italic text-[#cf9f8a]">·</i> Consultancy
           </span>
         </Link>
 
         {/* Desktop Navigation Links */}
-        <ul className="hidden items-center gap-0.5 lg:flex xl:gap-1.5">
+        <ul className="hidden items-center gap-1 lg:flex xl:gap-2">
           {navLinks.map((l) => {
             const isActive = isLinkActive(l);
             return (
               <li key={l.id} className="shrink-0">
                 <Link
                   to={l.path}
-                  className={`inline-flex items-center rounded-full px-2 py-1 text-[11px] lg:px-2.5 lg:py-1.5 lg:text-xs xl:px-3.5 xl:py-1.5 xl:text-sm font-semibold whitespace-nowrap transition-all duration-300 cursor-pointer ${
+                  className={`inline-flex items-center rounded-full px-2.5 py-1.5 text-xs lg:text-[13px] xl:px-4 xl:py-2 xl:text-sm font-medium whitespace-nowrap transition-all duration-200 cursor-pointer ${
                     isActive
-                      ? "bg-brand/15 text-brand border border-brand/35 shadow-[0_0_16px_rgba(0,163,224,0.35)] backdrop-blur-sm"
-                      : "text-navy hover:text-brand hover:bg-secondary/80 border border-transparent"
+                      ? "bg-[#e2f0ee] text-[#0c3f50] font-semibold border border-[#bfe3e0] shadow-xs"
+                      : "text-[#587078] hover:text-[#166079] hover:bg-white/60 border border-transparent"
                   }`}
                 >
                   {l.label}
@@ -110,10 +110,10 @@ export function Navbar() {
           })}
 
           {/* Call to action button */}
-          <li className="ml-1 shrink-0 lg:ml-2 xl:ml-3">
+          <li className="ml-2 shrink-0 lg:ml-3 xl:ml-4">
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center whitespace-nowrap rounded-full bg-navy px-3 py-1.5 text-[11px] lg:px-3.5 lg:py-1.5 lg:text-xs xl:px-5.5 xl:py-2 xl:text-sm font-semibold text-primary-foreground shadow-sm transition-all duration-300 hover:bg-brand hover:shadow-[0_4px_16px_rgba(0,163,224,0.4)] hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
+              className="btn-petrol whitespace-nowrap !py-2.5 !px-5 text-xs xl:text-sm"
             >
               Get a Quote
             </Link>
@@ -124,7 +124,7 @@ export function Navbar() {
         <button
           aria-label="Toggle menu"
           onClick={() => setOpen(!open)}
-          className="grid h-11 w-11 shrink-0 place-items-center rounded-lg text-navy hover:bg-secondary lg:hidden"
+          className="grid h-11 w-11 shrink-0 place-items-center rounded-xl text-[#0c3f50] bg-white/70 border border-[#d3e4e2] hover:bg-[#e2f0ee] lg:hidden cursor-pointer"
         >
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -132,11 +132,11 @@ export function Navbar() {
 
       {/* Mobile Drawer */}
       <div
-        className={`grid overflow-hidden border-t border-border bg-background transition-all duration-300 lg:hidden ${
+        className={`grid overflow-hidden border-t border-[#d3e4e2] bg-[#f3f8f7]/95 backdrop-blur-xl transition-all duration-300 lg:hidden ${
           open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] border-transparent opacity-0"
         }`}
       >
-        <ul className="min-h-0 px-4 py-2 sm:px-6">
+        <ul className="min-h-0 px-4 py-3 sm:px-6">
           {navLinks.map((l) => {
             const isActive = isLinkActive(l);
             return (
@@ -144,10 +144,10 @@ export function Navbar() {
                 <Link
                   to={l.path}
                   onClick={() => setOpen(false)}
-                  className={`block rounded-xl px-3.5 py-2.5 my-1 text-sm font-semibold transition-all duration-200 cursor-pointer ${
+                  className={`block rounded-xl px-4 py-3 my-1 text-sm font-medium transition-all duration-200 cursor-pointer ${
                     isActive
-                      ? "bg-brand/15 text-brand border border-brand/35 shadow-xs"
-                      : "text-navy hover:bg-secondary"
+                      ? "bg-[#e2f0ee] text-[#0c3f50] font-semibold border border-[#bfe3e0]"
+                      : "text-[#587078] hover:bg-white/70 hover:text-[#0c3f50]"
                   }`}
                 >
                   {l.label}
@@ -159,7 +159,7 @@ export function Navbar() {
             <Link
               to="/contact"
               onClick={() => setOpen(false)}
-              className="block w-full text-center rounded-full bg-navy py-3 text-sm font-semibold text-primary-foreground hover:bg-brand cursor-pointer"
+              className="btn-petrol block w-full text-center cursor-pointer"
             >
               Get a Quote
             </Link>

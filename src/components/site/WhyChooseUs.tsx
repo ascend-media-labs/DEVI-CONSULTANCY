@@ -19,49 +19,83 @@ const iconMap = {
   Headphones,
 };
 
+const processSteps = [
+  { step: "1", title: "Plan", desc: "Site study, approvals liaison and budget optimization." },
+  { step: "2", title: "Design", desc: "Vastu-compliant architecture, structural engineering and refined interiors." },
+  { step: "3", title: "Build", desc: "Rigorous quality-controlled execution and milestone tracking." },
+  { step: "4", title: "Handover", desc: "A finished, ready-to-move space delivered on time and within budget." },
+];
+
 export function WhyChooseUs() {
   return (
-    <section id="why-us" className="bg-secondary py-6 sm:py-8 overflow-hidden">
-      <div className="mx-auto w-full max-w-[1800px] px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
-        {/* Side Heading Layout with reduced spacing */}
-        <div className="text-left">
-          <p className="eyebrow inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-brand">
-            <span className="h-1.5 w-1.5 rounded-full bg-brand" />
-            Why Choose Us?
+    <section id="why-us" className="bg-[#f3f8f7] py-16 sm:py-20 lg:py-24 overflow-hidden">
+      <div className="mx-auto w-full max-w-[1240px] px-5 sm:px-8 lg:px-10">
+        {/* Section 1: Our Process (Directly from reference HTML) */}
+        <div className="text-center max-w-xl mx-auto mb-10 sm:mb-12">
+          <p className="eyebrow inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[3px] text-[#cf9f8a]">
+            Our Process
           </p>
-          <h2 className="mt-1 text-2xl font-bold tracking-tight text-navy sm:text-3xl">
-            Committed to Quality, Precision &amp; Trust
+          <h2 className="mt-2 font-display text-3xl sm:text-4xl lg:text-5xl text-[#0f2e38] tracking-tight">
+            Simple, transparent, reliable
           </h2>
-          <p className="mt-1 text-xs text-muted-foreground sm:text-sm">
-            Here is why clients across residential, commercial, and institutional domains place their confidence in DEVI CONSULTANCY.
+          <p className="mt-2 text-sm sm:text-base text-[#587078]">
+            A structured four-step journey turning your architectural vision into reality.
           </p>
         </div>
 
-        {/* Single Row with Right-to-Left Slide Animation */}
-        <div className="relative mt-4 sm:mt-5 w-full overflow-hidden">
-          {/* Subtle edge fades for smooth entrance/exit */}
-          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-secondary to-transparent sm:w-24" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-secondary to-transparent sm:w-24" />
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 sm:gap-7">
+          {processSteps.map((s) => (
+            <div
+              key={s.step}
+              className="glass-card p-6 text-center rounded-[24px] hover:-translate-y-1.5 transition-all duration-300 shadow-[0_16px_36px_rgba(12,63,80,0.07)]"
+            >
+              {/* Number Circle in Rose Gradient */}
+              <div className="mx-auto mb-4 grid h-14 w-14 place-items-center rounded-full bg-gradient-to-b from-[#e8c4b3] to-[#cf9f8a] text-[#3a1f14] font-display text-2xl shadow-[inset_0_1px_0_rgba(255,255,255,0.7),0_8px_18px_rgba(207,159,138,0.4)]">
+                {s.step}
+              </div>
+              <h3 className="font-display text-xl text-[#0f2e38]">{s.title}</h3>
+              <p className="mt-1.5 text-xs sm:text-sm text-[#587078] leading-relaxed">
+                {s.desc}
+              </p>
+            </div>
+          ))}
+        </div>
 
-          {/* Sliding track moving from right to left */}
-          <div className="flex animate-marquee-left hover:[animation-play-state:paused] gap-5 py-2">
-            {[...whyChooseUs, ...whyChooseUs].map((item, idx) => {
-              const Icon = iconMap[item.icon as keyof typeof iconMap] || ShieldCheck;
-              return (
-                <div
-                  key={`${item.title}-${idx}`}
-                  className="group card-glow w-[280px] shrink-0 rounded-2xl border border-border bg-card p-5 shadow-sm cursor-pointer sm:w-[320px]"
-                >
-                  <div className="grid h-10 w-10 place-items-center rounded-xl bg-secondary text-brand transition-all duration-300 group-hover:scale-110 group-hover:bg-brand group-hover:text-white group-hover:shadow-[0_4px_16px_rgba(0,163,224,0.45)] sm:h-11 sm:w-11">
-                    <Icon size={22} />
+        {/* Section 2: Why Choose Us Reasons Marquee */}
+        <div className="mt-16 sm:mt-20">
+          <div className="text-left mb-6">
+            <p className="eyebrow inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[3px] text-[#cf9f8a]">
+              Why Choose Us
+            </p>
+            <h2 className="mt-1.5 font-display text-2xl sm:text-3xl lg:text-4xl text-[#0f2e38] tracking-tight">
+              Committed to Quality, Precision &amp; Trust
+            </h2>
+          </div>
+
+          <div className="relative w-full overflow-hidden">
+            {/* Edge fades */}
+            <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-[#f3f8f7] to-transparent" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-[#f3f8f7] to-transparent" />
+
+            <div className="flex animate-marquee-left hover:[animation-play-state:paused] gap-5 py-3">
+              {[...whyChooseUs, ...whyChooseUs].map((item, idx) => {
+                const Icon = iconMap[item.icon as keyof typeof iconMap] || ShieldCheck;
+                return (
+                  <div
+                    key={`${item.title}-${idx}`}
+                    className="glass-card w-[290px] shrink-0 p-5 rounded-[22px] shadow-sm hover:shadow-md transition-shadow cursor-pointer"
+                  >
+                    <div className="grid h-10 w-10 place-items-center rounded-xl bg-[#e2f0ee] text-[#166079] mb-3">
+                      <Icon size={20} />
+                    </div>
+                    <h3 className="font-display text-lg text-[#0f2e38]">{item.title}</h3>
+                    <p className="mt-1.5 text-xs leading-relaxed text-[#587078] text-justify">
+                      {item.description}
+                    </p>
                   </div>
-                  <h3 className="mt-3.5 text-base font-bold text-navy transition-colors duration-200 group-hover:text-brand sm:text-lg">{item.title}</h3>
-                  <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground sm:text-sm text-justify">
-                    {item.description}
-                  </p>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>
